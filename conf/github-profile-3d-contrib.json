@@ -1,0 +1,42 @@
+[
+    {
+        "type": "profile-green-animate",
+        "fileName": "profile-green-animate.svg"
+    },
+    {
+        "type": "profile-green",
+        "fileName": "profile-green.svg"
+    },
+    {
+        "type": "profile-season-animate",
+        "fileName": "profile-season-animate.svg"
+    },
+    {
+        "type": "profile-season",
+        "fileName": "profile-season.svg"
+    },
+    {
+        "type": "profile-south-season-animate",
+        "fileName": "profile-south-season-animate.svg"
+    },
+    {
+        "type": "profile-south-season",
+        "fileName": "profile-south-season.svg"
+    },
+    {
+        "type": "profile-night-view",
+        "fileName": "profile-night-view.svg"
+    },
+    {
+        "type": "profile-night-green",
+        "fileName": "profile-night-green.svg"
+    },
+    {
+        "type": "profile-night-rainbow",
+        "fileName": "profile-night-rainbow.svg"
+    },
+    {
+        "type": "profile-gitblock",
+        "fileName": "profile-gitblock.svg"
+    }
+]

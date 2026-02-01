@@ -1,9 +1,9 @@
 <!--
-  - V11 Profile: Professional & High-Impact
-  - Theme: Elite Developer / Security Researcher
+  - V13 Profile: Stability Fix
+  - Theme: Reliable Assets
 -->
 
-<!-- 1. Professional Dynamic Header -->
+<!-- 1. Header -->
 <div align="center">
   <br/>
   <a href="https://github.com/Creepyclient">
@@ -19,20 +19,19 @@
 
 <br/>
 
-<!-- 2. The Professional Hacker Visual -->
+<!-- 2. Visual -->
 <div align="center">
   <img src="https://user-images.githubusercontent.com/74038190/229223156-0cbdaba9-3128-4d8e-8719-b6b4cf741b67.gif" width="600" />
 </div>
 
 <br/>
 
-<!-- Static Glowing Line -->
 <div align="center">
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="900" height="2">
 </div>
 
-<!-- 3. Expanded Operational Tools (3D Icons) -->
-<h2 align="center">⚡ Ｏｐｅｒａｔｉｏｎａｌ Ｔｏｏｌｓ ⚡</h2>
+<!-- 3. Tech Stack (Docker Fixed) -->
+<h2 align="center">Tech Stack</h2>
 
 <div align="center">
   <table>
@@ -48,7 +47,7 @@
       <td align="center" width="100"><img src="assets/react.png" width="50" height="50" /><br/><b>React</b></td>
       <td align="center" width="100"><img src="assets/flutter.png" width="50" height="50" /><br/><b>Flutter</b></td>
       <td align="center" width="100"><img src="assets/springboot.png" width="50" height="50" /><br/><b>Spring</b></td>
-      <td align="center" width="100"><img src="assets/docker.png" width="50" height="50" onerror="this.src='https://img.icons8.com/color/48/000000/docker.png';"/><br/><b>Docker</b></td>
+      <td align="center" width="100"><img src="assets/docker.png" width="50" height="50" /><br/><b>Docker</b></td>
       <td align="center" width="100"><img src="assets/git.png" width="50" height="50" /><br/><b>Git</b></td>
       <td align="center" width="100"><img src="assets/vsCode.png" width="50" height="50" /><br/><b>VS Code</b></td>
     </tr>
@@ -65,42 +64,44 @@
 
 <br/>
 
-<!-- Static Glowing Line -->
 <div align="center">
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="900" height="2">
 </div>
 
-<!-- 4. PROJECT SHOWCASE -->
-<h2 align="center">🚀 Ｐｒｏｊｅｃｔ Ｓｈｏｗｃａｓｅ 🚀</h2>
+<!-- 4. Projects (Simplified Params for Reliability) -->
+<h2 align="center">Selected Works</h2>
 
 <div align="center">
   <a href="https://github.com/Creepyclient/Creepyclient">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Creepyclient&repo=Creepyclient&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FFFB&icon_color=00FFFB" width="48%" />
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Creepyclient&repo=Creepyclient&theme=dracula&hide_border=true" width="48%" />
   </a>
   <a href="https://github.com/Creepyclient/log-archive-2024">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Creepyclient&repo=log-archive-2024&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FFFB&icon_color=00FFFB" width="48%" />
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Creepyclient&repo=log-archive-2024&theme=dracula&hide_border=true" width="48%" />
   </a>
 </div>
 
 <br/>
 
-<!-- 5. ANALYTICS -->
-<h2 align="center">📊 Ａｎａｌｙｔｉｃｓ 📊</h2>
+<!-- 5. Analytics (Simplified Params) -->
+<h2 align="center">Analytics</h2>
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&point=e8df7a&title_color=00FFFB&bg_color=0D1117&line=00FFFB&hide_border=true&area=true&area_color=00FFFB&color=00FFFB" width="100%" />
+  <!-- Neon Activity Graph -->
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&theme=react-dark&hide_border=true&area=true" width="100%" />
   <br/><br/>
+  <!-- 3D Isometric Graph -->
   <img src="profile-3d-contrib/profile-night-green.svg" width="100%" alt="3D Contributions"/>
   <br/><br/>
-  <img src="https://github-readme-stats.vercel.app/api?username=Creepyclient&show_icons=true&line_height=30&rank_icon=github&theme=tokyonight&count_private=true&hide_border=true&bg_color=0D1117&title_color=00FFFB&icon_color=00FFFB" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Creepyclient&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FFFB" />
+  <!-- Stats -->
+  <img src="https://github-readme-stats.vercel.app/api?username=Creepyclient&show_icons=true&rank_icon=github&theme=dracula&count_private=true&hide_border=true" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Creepyclient&layout=compact&theme=dracula&hide_border=true" />
 </div>
 
 <br/>
 
-<!-- 6. GAMES -->
+<!-- 6. Contribution Map -->
 <div align="center">
-    <img src="assets/snakegridtitle.gif" width="300" >
+    <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="300" height="2" >
 </div>
 
 <div align="center">

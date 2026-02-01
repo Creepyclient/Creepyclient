@@ -43,8 +43,14 @@
 <br/>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Creepyclient&show_icons=true&theme=tokyonight" height="170" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Creepyclient&layout=compact&theme=tokyonight" height="170" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Creepyclient&show_icons=true&theme=radical" height="180" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Creepyclient&layout=compact&theme=radical" height="180" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://github.com/Creepyclient/Creepyclient/raw/output/github-contribution-grid-snake-dark.svg" alt="snake animation" />
 </div>
 
 <br/>

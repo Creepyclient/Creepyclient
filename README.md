@@ -1,6 +1,6 @@
 <!--
-  - V16 Profile: Restored Design / No Broken Links
-  - Theme: Cyber Security / High Stability
+  - V17 Profile: Stealth Minimalist
+  - Theme: High Impact / Zero Clutter
 -->
 
 <!-- 1. Header -->
@@ -19,7 +19,7 @@
 
 <br/>
 
-<!-- 2. Visual -->
+<!-- 2. Visual Centerpiece -->
 <div align="center">
   <img src="https://user-images.githubusercontent.com/74038190/229223156-0cbdaba9-3128-4d8e-8719-b6b4cf741b67.gif" width="600" />
 </div>
@@ -51,14 +51,6 @@
       <td align="center" width="100"><img src="assets/git.png" width="50" height="50" /><br/><b>Git</b></td>
       <td align="center" width="100"><img src="assets/vsCode.png" width="50" height="50" /><br/><b>VS Code</b></td>
     </tr>
-    <tr>
-      <td align="center" width="100"><img src="assets/androidstudio.png" width="50" height="50" /><br/><b>Android</b></td>
-      <td align="center" width="100"><img src="assets/Postman.svg" width="50" height="50" /><br/><b>Postman</b></td>
-      <td align="center" width="100"><img src="assets/Ubuntu.svg" width="50" height="50" /><br/><b>Ubuntu</b></td>
-      <td align="center" width="100"><img src="assets/IntelliJIDEA.png" width="50" height="50" /><br/><b>IntelliJ</b></td>
-      <td align="center" width="100"><img src="assets/jupyter.png" width="50" height="50" /><br/><b>Jupyter</b></td>
-      <td align="center" width="100"><img src="assets/copilot.png" width="50" height="50" /><br/><b>AI</b></td>
-    </tr>
   </table>
 </div>
 
@@ -68,7 +60,7 @@
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="900" height="2">
 </div>
 
-<!-- 4. Projects (Text Links instead of Broken Cards) -->
+<!-- 4. Projects (Practical Links) -->
 <h2 align="center">Selected Works</h2>
 
 <div align="center">
@@ -81,20 +73,7 @@
 
 <br/>
 
-<!-- 5. Analytics (Removed Broken Stats Cards) -->
-<h2 align="center">Analytics</h2>
-
-<div align="center">
-  <!-- Neon Activity Graph (Working) -->
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&theme=react-dark&hide_border=true&area=true" width="100%" />
-  <br/><br/>
-  <!-- 3D Isometric Graph (Working) -->
-  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/output-3d-contrib/profile-night-green.svg" width="100%" alt="3D Contributions"/>
-</div>
-
-<br/>
-
-<!-- 6. Contribution Map -->
+<!-- 5. Interactive Contribution Map (Games Only) -->
 <div align="center">
     <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="300" height="2" >
 </div>
@@ -106,14 +85,13 @@
     <br/>
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph.svg">
       <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph.svg">
     </picture>
 </div>
 
 <br/>
 
-<!-- 7. Footer -->
+<!-- 6. Footer -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=00FFFB&height=100&section=footer&text=&fontColor=000000&fontSize=25&fontWeight=700"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=00FFFB&height=100&section=footer" />
 </div>

@@ -62,49 +62,51 @@
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="900" height="2">
 </div>
 
-<!-- 4. EXACT AHTISHAM STATS SECTION -->
+<!-- 4. ANALYTICS (Refined Ahtisham Replica) -->
 <h2 style="color:#e8df7a; display: flex; align-items: center;">
     <a href="https://github.com/Creepyclient" style="display: inline-flex; align-items: center; text-decoration: none;">
         <img src="assets/github_social media_icon.png" height="40" style="vertical-align: middle; margin-right: 8px;"></a>
-        <span style="color:#e8df7a; font-size: 1.5em; vertical-align: middle;">GitHub Stats:</span>
+        <span style="color:#e8df7a; font-size: 1.5em; vertical-align: middle;">GitHub Analytics</span>
 </h2>
 
-<p>
-    <!-- Streak -->
-    <img src="https://github-readme-streak-stats-eight.vercel.app/?user=Creepyclient&theme=omni&hide_border=true&sideNums=e8df7a&fire=e8df7a&dates=e8df7a"><br>
+<div align="center">
+    <!-- Streak Stats -->
+    <img src="https://github-readme-streak-stats-eight.vercel.app/?user=Creepyclient&theme=omni&hide_border=true&sideNums=e8df7a&fire=e8df7a&dates=e8df7a" width="100%"><br/>
     
-    <!-- Top Langs & General Stats (Omni Theme) -->
-    <img src="https://github-readme-stats-ten-olive-80.vercel.app/api/top-langs/?username=Creepyclient&theme=omni&include_all_commits=true&count_private=true&hide_border=true&layout=donut&custom_title=Creepyclient's%20Most%20Used%20Languages&text_color=e8df7a">
-    <img src="https://github-readme-stats-ten-olive-80.vercel.app/api?username=Creepyclient&show_icons=f&line_height=30&rank_icon=github&theme=omni&hide_border=true&text_color=e8df7a"><br>
+    <!-- Language & General Stats -->
+    <img src="https://github-readme-stats-ten-olive-80.vercel.app/api/top-langs/?username=Creepyclient&theme=omni&include_all_commits=true&count_private=true&hide_border=true&layout=donut&custom_title=Top+Used+Languages&text_color=e8df7a" height="180px">
+    <img src="https://github-readme-stats-ten-olive-80.vercel.app/api?username=Creepyclient&show_icons=true&line_height=30&rank_icon=github&theme=omni&hide_border=true&text_color=e8df7a" height="180px"><br/>
     
-    <!-- Summary Cards -->
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Creepyclient&theme=omni&exclude={}" width="33%">
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Creepyclient&theme=omni&exclude={exclude}" width="33%">
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Creepyclient&theme=omni&utcOffset=+6" width="33%"><br>
+    <!-- 3-Column Summary Cards -->
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Creepyclient&theme=omni" width="32%">
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Creepyclient&theme=omni" width="32%">
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Creepyclient&theme=omni&utcOffset=+6" width="32%"><br/>
     
+    <!-- Full Width Profile Details -->
     <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Creepyclient&theme=omni" width="100%">
     
-    <!-- Activity Graph (Exact Ahtisham Colors) -->
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&point=e8df7a&title_color=ff7ac7&bg_color=191622&line=ff7ac7&hide_border=true&area=true&area_color=e8df7a&color=e8df7a">
-    
-    <!-- Snake grid placeholder -->
-    <p align="center"><img src="assets/snakegridtitle.gif" width="500" ></p>
-    
-    <!-- Snake -->
-    <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/snake/github-snake-dark.svg" width="100%"><br>
-    
-    <!-- 3D Graph (Exact Ahtisham Style) -->
-    <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/output-3d-contrib/profile-green-dual.svg" alt="3D Contributions"/>
-</p>
+    <!-- Activity Graph (Neon Palette) -->
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&point=e8df7a&title_color=ff7ac7&bg_color=191622&line=ff7ac7&hide_border=true&area=true&area_color=e8df7a&color=e8df7a" width="100%">
+</div>
 
 ---
 
-<!-- 5. Games Section -->
-<h2 align="center">Interactive Maps</h2>
+<!-- 5. CONTRIBUTION GAMES -->
+<h2 align="center" style="color:#e8df7a;">Contribution Journey</h2>
+
 <div align="center">
+    <!-- Snake Animation -->
+    <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/snake/github-snake-dark.svg" width="100%" alt="Snake Game"><br/><br/>
+    
+    <!-- 3D Isometric View -->
+    <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/output-3d-contrib/profile-green-dual.svg" width="100%" alt="3D Contributions"/>
+    
+    <br/><br/>
+    
+    <!-- Pacman Animation -->
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph-dark.svg">
-      <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph.svg">
+      <img alt="Pacman Game" src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph.svg" width="100%">
     </picture>
 </div>
 

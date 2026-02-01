@@ -1,6 +1,6 @@
 <!--
-  - V17 Profile: Stealth Minimalist
-  - Theme: High Impact / Zero Clutter
+  - V18 Profile: Advanced Data Visualization
+  - Theme: Cyber Security / Stealth / High Impact
 -->
 
 <!-- 1. Header -->
@@ -60,7 +60,7 @@
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="900" height="2">
 </div>
 
-<!-- 4. Projects (Practical Links) -->
+<!-- 4. Projects -->
 <h2 align="center">Selected Works</h2>
 
 <div align="center">
@@ -73,10 +73,31 @@
 
 <br/>
 
-<!-- 5. Interactive Contribution Map (Games Only) -->
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="300" height="2" >
+  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="900" height="2">
 </div>
+
+<!-- 5. OP GRAPHS (Restored from Ahtisham Style) -->
+<h2 align="center">Analytics</h2>
+
+<div align="center">
+  <!-- Activity Graph (Neon Style) -->
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&point=e8df7a&title_color=00FFFB&bg_color=0D1117&line=00FFFB&hide_border=true&area=true&area_color=00FFFB&color=00FFFB" width="100%" />
+  
+  <br/><br/>
+
+  <!-- 3D Isometric Graph -->
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/output-3d-contrib/profile-night-green.svg" width="100%" alt="3D Contributions"/>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="900" height="2">
+</div>
+
+<!-- 6. Games -->
+<h2 align="center">Contribution Games</h2>
 
 <div align="center">
     <a href="https://github.com/Creepyclient">
@@ -91,7 +112,7 @@
 
 <br/>
 
-<!-- 6. Footer -->
+<!-- 7. Footer -->
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=00FFFB&height=100&section=footer" />
 </div>

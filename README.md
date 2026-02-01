@@ -14,7 +14,7 @@
 
 <br/>
 
-<!-- Tech Stack - Categorized like Supuna97 -->
+<!-- Tech Stack - Categorized -->
 <div align="center">
   
   <h3>🚀 Languages</h3>
@@ -43,15 +43,16 @@
 
 <br/>
 
-<!-- Stats - Using Dracula Theme for Reliability -->
+<!-- Stats - Switching to STREAK STATS (More stable) + Trophies -->
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Creepyclient&show_icons=true&theme=dracula&count_private=true" height="180" alt="stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Creepyclient&layout=compact&theme=dracula&card_width=320" height="180" alt="languages" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Creepyclient&theme=dracula&hide_border=true" alt="GitHub Streak" />
+  <br/><br/>
+  <img src="https://github-profile-trophy.vercel.app/?username=Creepyclient&theme=dracula&no-frame=true&no-bg=true&margin-w=4" alt="trophies" />
 </div>
 
 <br/>
 
-<!-- Snake Animation - Correct RAW URL -->
+<!-- Snake Animation -->
 <div align="center">
   <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/output/github-contribution-grid-snake.svg" alt="snake animation" />
 </div>

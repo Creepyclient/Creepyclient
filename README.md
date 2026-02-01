@@ -1,65 +1,123 @@
-<!-- Title & Typing Animation -->
+<!--
+  - V11 Profile: Professional & High-Impact
+  - Theme: Elite Developer / Security Researcher
+-->
+
+<!-- 1. Professional Dynamic Header -->
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=F7F7F7&center=true&vCenter=true&width=500&lines=Hi,+I'm+Creepyclient530;Security+Researcher;Automation+Architect;System+Breach...Success." alt="Typing SVG" />
+  <br/>
+  <a href="https://github.com/Creepyclient">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=50&pause=1000&color=00FFFB&center=true&vCenter=true&width=900&height=100&lines=CREEPYCLIENT;Security+Researcher;System+Architect;Full+Stack+Developer" alt="Professional Header" />
+  </a>
 </div>
 
-<!-- Intro Banner / Gif -->
 <div align="center">
-  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDd5aXF6aW14Zmx6c3g0aXZ1aW14Zmx6c3g0aXZ1aW14Zmx6c3g0aXZ1/qgQUggAC3Pjg687qPC/giphy.gif" width="600" height="300" alt="coding animation" />
-</div>
-
-<div align="center">
-  <h3>⚡ "I turn coffee into secure code and vulnerabilities into reports."</h3>
-</div>
-
-<br/>
-
-<!-- Tech Stack - Categorized -->
-<div align="center">
-  
-  <h3>🚀 Languages</h3>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" />
-  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" />
-
-  <h3>🛡️ Security & Hacking</h3>
-  <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white" />
-  <img src="https://img.shields.io/badge/Metasploit-333333?style=for-the-badge&logo=metasploit&logoColor=white" />
-  <img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" />
-  <img src="https://img.shields.io/badge/Tor-7D4698?style=for-the-badge&logo=tor-browser&logoColor=white" />
-
-  <h3>🛠️ Development & Tools</h3>
-  <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/n8n-FF6584?style=for-the-badge&logo=n8n&logoColor=white" />
-
+  <img src="https://img.shields.io/badge/Security-Level%20100-00FFFB?style=for-the-badge&labelColor=black&logo=shield" />
+  <img src="https://img.shields.io/badge/OS-Arch%20Linux-blue?style=for-the-badge&labelColor=black&logo=arch-linux" />
+  <img src="https://komarev.com/ghpvc/?username=Creepyclient&style=for-the-badge&color=blue" />
 </div>
 
 <br/>
 
-<!-- Stats - Switching to STREAK STATS (More stable) + Trophies -->
+<!-- 2. The Professional Hacker Visual -->
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Creepyclient&theme=dracula&hide_border=true" alt="GitHub Streak" />
+  <img src="https://user-images.githubusercontent.com/74038190/229223156-0cbdaba9-3128-4d8e-8719-b6b4cf741b67.gif" width="600" />
+</div>
+
+<br/>
+
+<!-- Static Glowing Line -->
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="900" height="2">
+</div>
+
+<!-- 3. Expanded Operational Tools (3D Icons) -->
+<h2 align="center">⚡ Ｏｐｅｒａｔｉｏｎａｌ Ｔｏｏｌｓ ⚡</h2>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="100"><img src="assets/python.png" width="50" height="50" /><br/><b>Python</b></td>
+      <td align="center" width="100"><img src="assets/javascript.png" width="50" height="50" /><br/><b>JS</b></td>
+      <td align="center" width="100"><img src="assets/java.png" width="50" height="50" /><br/><b>Java</b></td>
+      <td align="center" width="100"><img src="assets/c++.png" width="50" height="50" /><br/><b>C++</b></td>
+      <td align="center" width="100"><img src="assets/dart.png" width="50" height="50" /><br/><b>Dart</b></td>
+      <td align="center" width="100"><img src="assets/linux.png" width="50" height="50" /><br/><b>Linux</b></td>
+    </tr>
+    <tr>
+      <td align="center" width="100"><img src="assets/react.png" width="50" height="50" /><br/><b>React</b></td>
+      <td align="center" width="100"><img src="assets/flutter.png" width="50" height="50" /><br/><b>Flutter</b></td>
+      <td align="center" width="100"><img src="assets/springboot.png" width="50" height="50" /><br/><b>Spring</b></td>
+      <td align="center" width="100"><img src="assets/docker.png" width="50" height="50" onerror="this.src='https://img.icons8.com/color/48/000000/docker.png';"/><br/><b>Docker</b></td>
+      <td align="center" width="100"><img src="assets/git.png" width="50" height="50" /><br/><b>Git</b></td>
+      <td align="center" width="100"><img src="assets/vsCode.png" width="50" height="50" /><br/><b>VS Code</b></td>
+    </tr>
+    <tr>
+      <td align="center" width="100"><img src="assets/androidstudio.png" width="50" height="50" /><br/><b>Android</b></td>
+      <td align="center" width="100"><img src="assets/Postman.svg" width="50" height="50" /><br/><b>Postman</b></td>
+      <td align="center" width="100"><img src="assets/Ubuntu.svg" width="50" height="50" /><br/><b>Ubuntu</b></td>
+      <td align="center" width="100"><img src="assets/IntelliJIDEA.png" width="50" height="50" /><br/><b>IntelliJ</b></td>
+      <td align="center" width="100"><img src="assets/jupyter.png" width="50" height="50" /><br/><b>Jupyter</b></td>
+      <td align="center" width="100"><img src="assets/copilot.png" width="50" height="50" /><br/><b>AI</b></td>
+    </tr>
+  </table>
+</div>
+
+<br/>
+
+<!-- Static Glowing Line -->
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506556fd.png" width="900" height="2">
+</div>
+
+<!-- 4. PROJECT SHOWCASE -->
+<h2 align="center">🚀 Ｐｒｏｊｅｃｔ Ｓｈｏｗｃａｓｅ 🚀</h2>
+
+<div align="center">
+  <a href="https://github.com/Creepyclient/Creepyclient">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Creepyclient&repo=Creepyclient&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FFFB&icon_color=00FFFB" width="48%" />
+  </a>
+  <a href="https://github.com/Creepyclient/log-archive-2024">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Creepyclient&repo=log-archive-2024&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FFFB&icon_color=00FFFB" width="48%" />
+  </a>
+</div>
+
+<br/>
+
+<!-- 5. ANALYTICS -->
+<h2 align="center">📊 Ａｎａｌｙｔｉｃｓ 📊</h2>
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&point=e8df7a&title_color=00FFFB&bg_color=0D1117&line=00FFFB&hide_border=true&area=true&area_color=00FFFB&color=00FFFB" width="100%" />
   <br/><br/>
-  <img src="https://github-profile-trophy.vercel.app/?username=Creepyclient&theme=dracula&no-frame=true&no-bg=true&margin-w=4" alt="trophies" />
+  <img src="profile-3d-contrib/profile-night-green.svg" width="100%" alt="3D Contributions"/>
+  <br/><br/>
+  <img src="https://github-readme-stats.vercel.app/api?username=Creepyclient&show_icons=true&line_height=30&rank_icon=github&theme=tokyonight&count_private=true&hide_border=true&bg_color=0D1117&title_color=00FFFB&icon_color=00FFFB" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Creepyclient&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FFFB" />
 </div>
 
 <br/>
 
-<!-- Snake Animation -->
+<!-- 6. GAMES -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/output/github-contribution-grid-snake.svg" alt="snake animation" />
+    <img src="assets/snakegridtitle.gif" width="300" >
+</div>
+
+<div align="center">
+    <a href="https://github.com/Creepyclient">
+      <img alt="github-snake" src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/output/github-contribution-grid-snake.svg" />
+    </a>
+    <br/>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph.svg">
+      <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph.svg">
+    </picture>
 </div>
 
 <br/>
 
-<!-- Footer -->
+<!-- 7. Footer -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&text=Encrypting...&fontColor=ffffff&fontSize=20"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=00FFFB&height=100&section=footer&text=&fontColor=000000&fontSize=25&fontWeight=700"/>
 </div>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 160" width="900" height="160">
+  <defs>
+    <linearGradient id="sg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3bffb6"/>
+      <stop offset="1" stop-color="#00b3ff"/>
+    </linearGradient>
+    <filter id="sGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#0b0f14" rx="16"/>
+
+  <g filter="url(#sGlow)">
+    <path id="trail" d="M40,80 C140,40 240,120 340,80 C440,40 540,120 640,80 C740,40 840,120 860,80" fill="none" stroke="url(#sg)" stroke-width="10" stroke-linecap="round"/>
+    <circle id="head" cx="40" cy="80" r="12" fill="#eafff7"/>
+    <circle id="eye" cx="44" cy="76" r="2" fill="#0b0f14"/>
+  </g>
+
+  <animateMotion xlink:href="#head" dur="6s" repeatCount="indefinite" path="M0,0 C100,-40 200,40 300,0 C400,-40 500,40 600,0 C700,-40 800,40 820,0"/>
+  <animateMotion xlink:href="#eye" dur="6s" repeatCount="indefinite" path="M0,0 C100,-40 200,40 300,0 C400,-40 500,40 600,0 C700,-40 800,40 820,0"/>
+
+  <text x="24" y="32" fill="#8fffe0" font-family="'Fira Code', monospace" font-size="16">SNAKE.TRACE()</text>
+  <text x="24" y="142" fill="#6ee7ff" font-family="'Fira Code', monospace" font-size="12" opacity="0.8">stealth · iterate · evolve</text>
+</svg>

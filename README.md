@@ -105,6 +105,18 @@
 <h2 align="center">Live Intel</h2>
 
 <div align="center">
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/focus-stack.svg" width="100%" alt="Focus stack" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://trophy.ryglcloud.net/?username=Creepyclient&theme=onestar&no-frame=true&column=6" width="100%" alt="Trophies" />
+</div>
+
+<br/>
+
+<div align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Creepyclient&theme=omni" width="48%" alt="Stats" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Creepyclient&theme=omni" width="48%" alt="Productive time" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Creepyclient&theme=omni" width="48%" alt="Repos per language" />
@@ -117,6 +129,8 @@
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&point=00fff0&title_color=7c4dff&bg_color=0b0f14&line=7c4dff&hide_border=true&area=true&area_color=00fff0&color=00fff0" width="100%" alt="Activity graph" />
 </div>
+
+
 
 <br/>
 

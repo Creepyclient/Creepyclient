@@ -14,23 +14,13 @@
 <h2 align="center">Ops Summary</h2>
 
 <div align="center">
-  <table>
-    <tr>
-      <td align="left" width="460">
-        <b>Role:</b> Security Researcher, System Architect, Full Stack Developer<br/>
-        <b>Focus:</b> Web exploitation, browser security, automation<br/>
-        <b>Environment:</b> Arch Linux + Hyprland Wayland<br/>
-        <b>Delivery:</b> Clear reports, actionable fixes, modular playbooks
-      </td>
-      <td align="left" width="460">
-        <b>Core Tracks:</b><br/>
-        - Web App Security (XSS, SQLi, auth flows)<br/>
-        - Secure automation pipelines (n8n, scripts)<br/>
-        - Frontend engineering (React, Three.js)<br/>
-        - Linux hardening and ops tooling
-      </td>
-    </tr>
-  </table>
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/ops-card.svg" width="100%" alt="Ops summary card" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/wave.svg" width="100%" alt="Signal wave" />
 </div>
 
 <br/>
@@ -72,6 +62,20 @@
 
 <br/>
 
+<h2 align="center">Ops Arcade (Custom)</h2>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/pacman.svg" width="100%" alt="Custom pacman" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/snake.svg" width="100%" alt="Custom snake" />
+</div>
+
+<br/>
+
 <h2 align="center">Contribution Arcade</h2>
 
 <div align="center">
@@ -92,13 +96,19 @@
 
 <br/>
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/snake/ocean.gif" width="100%" alt="Ocean grid" />
+</div>
+
+<br/>
+
 <h2 align="center">Live Intel</h2>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=Creepyclient&theme=omni&hide_border=true&ring=00fff0&fire=00fff0&currStreakNum=00fff0&sideNums=00fff0&dates=00fff0" width="100%" alt="Streak stats" /><br/>
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Creepyclient&theme=omni" width="32%" alt="Repos per language" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Creepyclient&theme=omni" width="32%" alt="Most commit language" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Creepyclient&theme=omni" width="32%" alt="Stats" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Creepyclient&theme=omni" width="48%" alt="Stats" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Creepyclient&theme=omni" width="48%" alt="Productive time" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Creepyclient&theme=omni" width="48%" alt="Repos per language" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Creepyclient&theme=omni" width="48%" alt="Most commit language" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Creepyclient&theme=omni" width="100%" alt="Profile details" />
 </div>
 

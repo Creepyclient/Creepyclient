@@ -44,7 +44,7 @@
   <g transform="translate(870 64)">
     <rect width="270" height="132" rx="12" fill="#0b0f14" opacity="0.7" stroke="#2a3350"/>
     <text x="20" y="36" fill="#a6f7ff" font-family="'Fira Code', monospace" font-size="14">STATUS: ACTIVE</text>
-    <text x="20" y="64" fill="#7c4dff" font-family="'Fira Code', monospace" font-size="12">ENV: OMARCHY / HYPRLAND</text>
+    <text x="20" y="64" fill="#7c4dff" font-family="'Fira Code', monospace" font-size="12">ENV: ARCH LINUX / HYPRLAND</text>
     <text x="20" y="90" fill="#9de7ff" font-family="'Fira Code', monospace" font-size="12">MODE: DEFENSE FIRST</text>
     <circle cx="235" cy="34" r="6" fill="#00fff0">
       <animate attributeName="r" values="6;10;6" dur="1.6s" repeatCount="indefinite"/>

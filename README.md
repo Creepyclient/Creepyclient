@@ -4,11 +4,11 @@
 -->
 
 <div align="center">
-  <img src="assets/hero.svg" width="100%" alt="Creepyclient hero" />
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/hero.svg" width="100%" alt="Creepyclient hero" />
 </div>
 
 <div align="center">
-  <img src="assets/divider.svg" width="100%" alt="divider" />
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/divider.svg" width="100%" alt="divider" />
 </div>
 
 <h2 align="center">Ops Summary</h2>
@@ -36,13 +36,13 @@
 <br/>
 
 <div align="center">
-  <img src="assets/pulse.svg" width="100%" alt="Ops radar" />
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/pulse.svg" width="100%" alt="Ops radar" />
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/divider.svg" width="100%" alt="divider" />
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/divider.svg" width="100%" alt="divider" />
 </div>
 
 <h2 align="center">Toolchain</h2>
@@ -50,16 +50,16 @@
 <div align="center">
   <table>
     <tr>
-      <td align="center" width="120"><img src="assets/python.png" width="42" height="42" /><br/><b>Python</b></td>
-      <td align="center" width="120"><img src="assets/javascript.png" width="42" height="42" /><br/><b>JavaScript</b></td>
-      <td align="center" width="120"><img src="assets/react.png" width="42" height="42" /><br/><b>React</b></td>
-      <td align="center" width="120"><img src="assets/docker.png" width="42" height="42" /><br/><b>Docker</b></td>
+      <td align="center" width="120"><img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/python.png" width="42" height="42" /><br/><b>Python</b></td>
+      <td align="center" width="120"><img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/javascript.png" width="42" height="42" /><br/><b>JavaScript</b></td>
+      <td align="center" width="120"><img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/react.png" width="42" height="42" /><br/><b>React</b></td>
+      <td align="center" width="120"><img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/docker.png" width="42" height="42" /><br/><b>Docker</b></td>
     </tr>
     <tr>
-      <td align="center" width="120"><img src="assets/linux.png" width="42" height="42" /><br/><b>Linux</b></td>
-      <td align="center" width="120"><img src="assets/git.png" width="42" height="42" /><br/><b>Git</b></td>
-      <td align="center" width="120"><img src="assets/c++.png" width="42" height="42" /><br/><b>C++</b></td>
-      <td align="center" width="120"><img src="assets/java.png" width="42" height="42" /><br/><b>Java</b></td>
+      <td align="center" width="120"><img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/linux.png" width="42" height="42" /><br/><b>Linux</b></td>
+      <td align="center" width="120"><img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/git.png" width="42" height="42" /><br/><b>Git</b></td>
+      <td align="center" width="120"><img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/c++.png" width="42" height="42" /><br/><b>C++</b></td>
+      <td align="center" width="120"><img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/java.png" width="42" height="42" /><br/><b>Java</b></td>
     </tr>
   </table>
 </div>
@@ -67,13 +67,13 @@
 <br/>
 
 <div align="center">
-  <img src="assets/pacman.svg" width="100%" alt="Contribution path" />
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/pacman.svg" width="100%" alt="Contribution path" />
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/snake.svg" width="100%" alt="Trace pipeline" />
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/snake.svg" width="100%" alt="Trace pipeline" />
 </div>
 
 <br/>
@@ -96,5 +96,5 @@
 <br/>
 
 <div align="center">
-  <img src="assets/divider.svg" width="100%" alt="divider" />
+  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/main/assets/divider.svg" width="100%" alt="divider" />
 </div>

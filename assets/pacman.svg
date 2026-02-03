@@ -33,7 +33,7 @@
       <animateTransform attributeName="transform" type="translate" values="0 0; 760 0; 0 0" dur="7s" repeatCount="indefinite"/>
     </g>
 
-    <animate xlink:href="#mouth" attributeName="d"
+    <animate href="#mouth" attributeName="d"
       values="M70,60 L98,48 A24,24 0 0 0 98,72 Z; M70,60 L98,60 A24,24 0 0 0 98,60 Z; M70,60 L98,48 A24,24 0 0 0 98,72 Z"
       dur="0.6s" repeatCount="indefinite"/>
   </g>

@@ -35,7 +35,7 @@
   </g>
 
   <rect id="scan" x="-320" y="34" width="320" height="192" fill="url(#accent)" opacity="0.18"/>
-  <animate xlink:href="#scan" attributeName="x" values="-320;1200" dur="6s" repeatCount="indefinite"/>
+  <animate href="#scan" attributeName="x" values="-320;1200" dur="6s" repeatCount="indefinite"/>
 
   <text x="70" y="110" fill="#e6f7ff" font-family="'Fira Code', monospace" font-size="46" font-weight="700" filter="url(#glow)">CREEPYCLIENT</text>
   <text x="72" y="148" fill="#8fdcff" font-family="'Fira Code', monospace" font-size="18">Security Researcher | System Architect | Full Stack Developer</text>

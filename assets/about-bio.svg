@@ -1,96 +1,158 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="100%">
   <style>
     .card-border {
       fill: none;
       stroke: #ffffff;
       stroke-width: 1;
-      stroke-dasharray: 1920;
-      stroke-dashoffset: 1920;
+      stroke-dasharray: 2400;
+      stroke-dashoffset: 2400;
       animation: draw-border 2s cubic-bezier(0.4,0,0.2,1) 0.2s forwards;
     }
     @keyframes draw-border { to { stroke-dashoffset: 0; } }
 
     .section-label {
       font-family: 'JetBrains Mono', 'Courier New', monospace;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 700;
       fill: #555555;
-      letter-spacing: 3px;
-      animation: fade-up 0.5s ease 1.2s both;
+      letter-spacing: 4px;
+    }
+    .name-text {
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      fill: #ffffff;
+      letter-spacing: -0.5px;
     }
     .bio-text {
       font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 400;
-      fill: #cccccc;
+      fill: #aaaaaa;
+      line-height: 1.7;
     }
     .stat-key {
       font-family: 'JetBrains Mono', 'Courier New', monospace;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 400;
-      fill: #555555;
-      letter-spacing: 1px;
+      fill: #444444;
+      letter-spacing: 2px;
     }
     .stat-val {
       font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       fill: #ffffff;
     }
     .section-line {
       stroke: #ffffff;
       stroke-width: 1;
-      stroke-dasharray: 500;
-      stroke-dashoffset: 500;
-      animation: draw-border 0.8s ease 1.2s forwards;
+      stroke-dasharray: 750;
+      stroke-dashoffset: 750;
+      animation: draw-border 1s ease 1.2s forwards;
     }
     .divider-dash {
-      stroke: #222222;
+      stroke: #1e1e1e;
       stroke-width: 1;
-      stroke-dasharray: 3 5;
+      stroke-dasharray: 4 6;
     }
-    .bio-line-1 { animation: fade-up 0.5s ease 1.4s both; }
-    .bio-line-2 { animation: fade-up 0.5s ease 1.6s both; }
-    .bio-line-3 { animation: fade-up 0.5s ease 1.8s both; }
-    .bio-line-4 { animation: fade-up 0.5s ease 2.0s both; }
-    .stat-row-1 { animation: fade-up 0.5s ease 2.2s both; }
-    .stat-row-2 { animation: fade-up 0.5s ease 2.4s both; }
-    .stat-row-3 { animation: fade-up 0.5s ease 2.6s both; }
+    .accent-line {
+      stroke: #ffffff;
+      stroke-width: 2;
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      animation: draw-border 0.5s ease 1.6s forwards;
+    }
+
+    /* Corner decorations */
+    .corner { stroke: #333333; stroke-width: 1; fill: none; }
+
+    /* Stagger animations */
+    .l0 { animation: fade-up 0.5s ease 1.0s both; }
+    .l1 { animation: fade-up 0.5s ease 1.2s both; }
+    .l2 { animation: fade-up 0.5s ease 1.5s both; }
+    .l3 { animation: fade-up 0.5s ease 1.7s both; }
+    .l4 { animation: fade-up 0.5s ease 1.9s both; }
+    .l5 { animation: fade-up 0.5s ease 2.1s both; }
+    .l6 { animation: fade-up 0.5s ease 2.3s both; }
+    .l7 { animation: fade-up 0.5s ease 2.5s both; }
+    .l8 { animation: fade-up 0.5s ease 2.7s both; }
+    .l9 { animation: fade-up 0.5s ease 2.9s both; }
 
     @keyframes fade-up {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Pulsing status dot */
+    .pulse-dot {
+      fill: #ffffff;
+      animation: pulse 2s ease-in-out 3s infinite alternate;
+    }
+    @keyframes pulse {
+      from { opacity: 0.4; r: 3px; }
+      to   { opacity: 1;   r: 4.5px; }
     }
   </style>
 
-  <rect width="680" height="300" fill="#000000" rx="8"/>
-  <rect class="card-border" x="1" y="1" width="678" height="298" rx="7"/>
+  <!-- Background -->
+  <rect width="820" height="380" fill="#000000" rx="10"/>
 
-  <g transform="translate(30, 0)">
-    <!-- Label -->
-    <text x="0" y="52" class="section-label bio-line-1">ABOUT</text>
-    <line class="section-line" x1="0" y1="60" x2="620" y2="60"/>
+  <!-- Corner accents -->
+  <g class="corner">
+    <line x1="18" y1="22" x2="32" y2="22"/><line x1="25" y1="15" x2="25" y2="29"/>
+    <line x1="788" y1="22" x2="802" y2="22"/><line x1="795" y1="15" x2="795" y2="29"/>
+    <line x1="18" y1="358" x2="32" y2="358"/><line x1="25" y1="351" x2="25" y2="365"/>
+    <line x1="788" y1="358" x2="802" y2="358"/><line x1="795" y1="351" x2="795" y2="365"/>
+  </g>
 
-    <!-- Bio -->
-    <text x="0" y="90"  class="bio-text bio-line-2">First-year college student, full-stack engineer,</text>
-    <text x="0" y="112" class="bio-text bio-line-3">and systems architect. I design and build software</text>
-    <text x="0" y="134" class="bio-text bio-line-4">that prioritizes performance, clarity, and structure.</text>
+  <!-- Card border draws itself -->
+  <rect class="card-border" x="1" y="1" width="818" height="378" rx="9"/>
+
+  <g transform="translate(48, 0)">
+
+    <!-- ABOUT label -->
+    <text x="0" y="60" class="section-label l0">ABOUT</text>
+
+    <!-- Section underline -->
+    <line class="section-line" x1="0" y1="68" x2="720" y2="68"/>
+
+    <!-- Left accent bar -->
+    <line class="accent-line" x1="-18" y1="100" x2="-18" y2="220"/>
+
+    <!-- Name -->
+    <text x="0" y="108" class="name-text l1">Neyamul Islam</text>
+
+    <!-- Bio paragraphs -->
+    <text x="0" y="144" class="bio-text l2">First-year college student, full-stack engineer, and self-taught systems thinker.</text>
+    <text x="0" y="168" class="bio-text l3">I build software that's fast, well-structured, and built to last — from polished</text>
+    <text x="0" y="192" class="bio-text l4">UIs to reliable backend services. Curious by nature, precise by habit.</text>
 
     <!-- Divider -->
-    <line class="divider-dash" x1="0" y1="158" x2="620" y2="158"/>
+    <line class="divider-dash l5" x1="0" y1="218" x2="720" y2="218"/>
 
-    <!-- Stats -->
-    <g class="stat-row-1">
-      <text x="0"   y="186" class="stat-key">FOCUS</text>
-      <text x="110" y="186" class="stat-val">Full-Stack · System Design · Web Performance</text>
+    <!-- Stat rows — 2 column layout -->
+    <!-- Row 1 -->
+    <g class="l6">
+      <text x="0"   y="248" class="stat-key">FOCUS</text>
+      <text x="100" y="248" class="stat-val">Full-Stack Development · System Design</text>
     </g>
-    <g class="stat-row-2">
-      <text x="0"   y="216" class="stat-key">STACK</text>
-      <text x="110" y="216" class="stat-val">React · Next.js · Node.js · Docker · Linux</text>
+    <g class="l7">
+      <text x="0"   y="278" class="stat-key">STACK</text>
+      <text x="100" y="278" class="stat-val">React · Next.js · Node.js · Docker · Linux</text>
     </g>
-    <g class="stat-row-3">
-      <text x="0"   y="246" class="stat-key">OPEN TO</text>
-      <text x="110" y="246" class="stat-val">Remote collaboration worldwide</text>
+    <g class="l8">
+      <text x="0"   y="308" class="stat-key">INTERESTS</text>
+      <text x="100" y="308" class="stat-val">Web Performance · Open Source · Clean Architecture</text>
     </g>
+    <g class="l9">
+      <text x="0"   y="338" class="stat-key">OPEN TO</text>
+      <text x="100" y="338" class="stat-val">Remote collaboration · Projects · Internships</text>
+    </g>
+
+    <!-- Pulsing online indicator at top right -->
+    <circle class="pulse-dot" cx="700" cy="60" r="4"/>
+    <text x="712" y="64" class="stat-key" style="fill:#333333; letter-spacing:2px; font-size:9px; animation: fade-up 0.3s ease 3.2s both;">ONLINE</text>
+
   </g>
 </svg>

@@ -1,161 +1,91 @@
-<!--
-  Neyamul Islam (Creepyclient) — GitHub Profile
-  Design: ZERO SIGNAL · Black & White · Systems Engineering
--->
+<!--  Neyamul Islam (Creepyclient) — GitHub Profile · ZERO SIGNAL  -->
 
 <div align="center">
-  <img src="assets/hero.svg?v=3" width="100%" alt="Neyamul Islam" />
+  <img src="assets/hero.svg?v=4" width="100%" alt="Neyamul Islam" />
 </div>
 
-<div align="center">
-  <img src="assets/divider.svg?v=3" width="100%" alt="" />
-</div>
-
-<br/>
+<img src="assets/divider.svg?v=4" width="100%" alt="" />
 
 <h2 align="center">About</h2>
 
-<div align="center">
-  <img src="assets/about.svg?v=3" width="100%" alt="About Neyamul Islam" />
-</div>
+<table>
+  <tr>
+    <td align="center" width="220" valign="middle">
+      <img src="assets/avatar.jpg" width="200" style="border-radius:8px;" alt="Neyamul Islam" />
+    </td>
+    <td valign="middle">
+      <img src="assets/about-bio.svg?v=4" width="100%" alt="Bio" />
+    </td>
+  </tr>
+</table>
 
-<br/>
-
-<div align="center">
-  <img src="assets/divider.svg?v=3" width="100%" alt="" />
-</div>
+<img src="assets/divider.svg?v=4" width="100%" alt="" />
 
 <h2 align="center">System Profile</h2>
 
-<div align="center">
-  <img src="assets/ops-card.svg?v=3" width="100%" alt="System architecture card" />
-</div>
+<img src="assets/ops-card.svg?v=4" width="100%" alt="System architecture card" />
 
-<br/>
+<img src="assets/wave.svg?v=4" width="100%" alt="" />
 
-<div align="center">
-  <img src="assets/wave.svg?v=3" width="100%" alt="" />
-</div>
+<img src="assets/pulse.svg?v=4" width="100%" alt="Architecture flow" />
 
-<br/>
+<img src="assets/matrix.svg?v=4" width="100%" alt="" />
 
-<div align="center">
-  <img src="assets/pulse.svg?v=3" width="100%" alt="Architecture flow" />
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="assets/matrix.svg?v=3" width="100%" alt="" />
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="assets/divider.svg?v=3" width="100%" alt="" />
-</div>
+<img src="assets/divider.svg?v=4" width="100%" alt="" />
 
 <h2 align="center">Technical Stack</h2>
 
 <div align="center">
-  <table>
-    <tr>
-      <td align="center" width="120"><img src="assets/python.svg?v=3" width="42" height="42" /><br/><b>Python</b></td>
-      <td align="center" width="120"><img src="assets/javascript.svg?v=3" width="42" height="42" /><br/><b>JavaScript</b></td>
-      <td align="center" width="120"><img src="assets/react.svg?v=3" width="42" height="42" /><br/><b>React</b></td>
-      <td align="center" width="120"><img src="assets/docker.svg?v=3" width="42" height="42" /><br/><b>Docker</b></td>
-    </tr>
-    <tr>
-      <td align="center" width="120"><img src="assets/linux.svg?v=3" width="42" height="42" /><br/><b>Linux</b></td>
-      <td align="center" width="120"><img src="assets/git.svg?v=3" width="42" height="42" /><br/><b>Git</b></td>
-      <td align="center" width="120"><img src="assets/cpp.svg?v=3" width="42" height="42" /><br/><b>C++</b></td>
-      <td align="center" width="120"><img src="assets/java.svg?v=3" width="42" height="42" /><br/><b>Java</b></td>
-    </tr>
-  </table>
+
+| | | | |
+|:---:|:---:|:---:|:---:|
+| <img src="assets/python.svg?v=4" width="48" /><br/>**Python** | <img src="assets/javascript.svg?v=4" width="48" /><br/>**JavaScript** | <img src="assets/react.svg?v=4" width="48" /><br/>**React** | <img src="assets/docker.svg?v=4" width="48" /><br/>**Docker** |
+| <img src="assets/linux.svg?v=4" width="48" /><br/>**Linux** | <img src="assets/git.svg?v=4" width="48" /><br/>**Git** | <img src="assets/cpp.svg?v=4" width="48" /><br/>**C++** | <img src="assets/java.svg?v=4" width="48" /><br/>**Java** |
+
 </div>
 
-<br/>
-
-<div align="center">
-  <img src="assets/divider.svg?v=3" width="100%" alt="" />
-</div>
+<img src="assets/divider.svg?v=4" width="100%" alt="" />
 
 <h2 align="center">Specializations</h2>
 
-<div align="center">
-  <img src="assets/focus-stack.svg?v=3" width="100%" alt="Specializations" />
-</div>
-
-<br/>
+<img src="assets/focus-stack.svg?v=4" width="100%" alt="Specializations" />
 
 <h2 align="center">Developer Arcade</h2>
 
-<div align="center">
-  <img src="assets/pacman.svg?v=3" width="100%" alt="Pacman" />
-</div>
+<img src="assets/pacman.svg?v=4" width="100%" alt="Pacman" />
 
-<br/>
+<img src="assets/snake.svg?v=4" width="100%" alt="Snake" />
 
-<div align="center">
-  <img src="assets/snake.svg?v=3" width="100%" alt="Snake" />
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="assets/divider.svg?v=3" width="100%" alt="" />
-</div>
+<img src="assets/divider.svg?v=4" width="100%" alt="" />
 
 <h2 align="center">Contribution Activity</h2>
 
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph-dark.svg" />
-    <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph.svg" width="100%" alt="Pacman contribution graph" />
+    <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/pacman/pacman-contribution-graph.svg" width="100%" alt="Contribution graph" />
   </picture>
 </div>
-
-<br/>
 
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Creepyclient/Creepyclient/snake/github-snake-dark.svg" />
-    <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/snake/github-contribution-grid-snake.svg" width="100%" alt="Snake contribution graph" />
+    <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/snake/github-contribution-grid-snake.svg" width="100%" alt="Snake contribution" />
   </picture>
 </div>
 
-<br/>
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/Creepyclient/Creepyclient/snake/ocean.gif" width="100%" alt="Ocean contribution grid" />
-</div>
-
-<br/>
+<img src="assets/divider.svg?v=4" width="100%" alt="" />
 
 <h2 align="center">GitHub Stats</h2>
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Creepyclient&theme=darkhub&no-frame=true&column=6&margin-w=10" width="100%" alt="Trophies" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Creepyclient&show_icons=true&bg_color=000000&title_color=ffffff&icon_color=ffffff&text_color=888888&border_color=333333&hide_border=false&rank_icon=github" width="49%" alt="GitHub Stats" />
+  <img src="https://streak-stats.demolab.com/?user=Creepyclient&background=000000&stroke=333333&ring=ffffff&fire=ffffff&currStreakNum=ffffff&sideNums=888888&currStreakLabel=888888&sideLabels=888888&dates=555555&border=333333" width="49%" alt="GitHub Streak" />
 </div>
-
-<br/>
 
 <div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Creepyclient&theme=github_dark" width="48%" alt="Stats" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Creepyclient&theme=github_dark" width="48%" alt="Productive time" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Creepyclient&theme=github_dark" width="48%" alt="Repos per language" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Creepyclient&theme=github_dark" width="48%" alt="Most commit language" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Creepyclient&theme=github_dark" width="100%" alt="Profile details" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Creepyclient&layout=compact&bg_color=000000&title_color=ffffff&text_color=888888&border_color=333333&langs_count=8" width="49%" alt="Top Languages" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&bg_color=000000&color=ffffff&line=ffffff&point=ffffff&area=true&area_color=1a1a1a&hide_border=true&title_color=ffffff" width="49%" alt="Activity Graph" />
 </div>
 
-<br/>
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&bg_color=000000&color=ffffff&line=ffffff&point=ffffff&area=true&area_color=333333&hide_border=true&title_color=ffffff" width="100%" alt="Activity graph" />
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="assets/divider.svg?v=3" width="100%" alt="" />
-</div>
+<img src="assets/divider.svg?v=4" width="100%" alt="" />

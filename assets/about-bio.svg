@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" width="100%">
+  <style>
+    .card-border {
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 1;
+      stroke-dasharray: 1920;
+      stroke-dashoffset: 1920;
+      animation: draw-border 2s cubic-bezier(0.4,0,0.2,1) 0.2s forwards;
+    }
+    @keyframes draw-border { to { stroke-dashoffset: 0; } }
+
+    .section-label {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      fill: #555555;
+      letter-spacing: 3px;
+      animation: fade-up 0.5s ease 1.2s both;
+    }
+    .bio-text {
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      fill: #cccccc;
+    }
+    .stat-key {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      fill: #555555;
+      letter-spacing: 1px;
+    }
+    .stat-val {
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      fill: #ffffff;
+    }
+    .section-line {
+      stroke: #ffffff;
+      stroke-width: 1;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation: draw-border 0.8s ease 1.2s forwards;
+    }
+    .divider-dash {
+      stroke: #222222;
+      stroke-width: 1;
+      stroke-dasharray: 3 5;
+    }
+    .bio-line-1 { animation: fade-up 0.5s ease 1.4s both; }
+    .bio-line-2 { animation: fade-up 0.5s ease 1.6s both; }
+    .bio-line-3 { animation: fade-up 0.5s ease 1.8s both; }
+    .bio-line-4 { animation: fade-up 0.5s ease 2.0s both; }
+    .stat-row-1 { animation: fade-up 0.5s ease 2.2s both; }
+    .stat-row-2 { animation: fade-up 0.5s ease 2.4s both; }
+    .stat-row-3 { animation: fade-up 0.5s ease 2.6s both; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <rect width="680" height="300" fill="#000000" rx="8"/>
+  <rect class="card-border" x="1" y="1" width="678" height="298" rx="7"/>
+
+  <g transform="translate(30, 0)">
+    <!-- Label -->
+    <text x="0" y="52" class="section-label bio-line-1">ABOUT</text>
+    <line class="section-line" x1="0" y1="60" x2="620" y2="60"/>
+
+    <!-- Bio -->
+    <text x="0" y="90"  class="bio-text bio-line-2">First-year college student, full-stack engineer,</text>
+    <text x="0" y="112" class="bio-text bio-line-3">and systems architect. I design and build software</text>
+    <text x="0" y="134" class="bio-text bio-line-4">that prioritizes performance, clarity, and structure.</text>
+
+    <!-- Divider -->
+    <line class="divider-dash" x1="0" y1="158" x2="620" y2="158"/>
+
+    <!-- Stats -->
+    <g class="stat-row-1">
+      <text x="0"   y="186" class="stat-key">FOCUS</text>
+      <text x="110" y="186" class="stat-val">Full-Stack · System Design · Web Performance</text>
+    </g>
+    <g class="stat-row-2">
+      <text x="0"   y="216" class="stat-key">STACK</text>
+      <text x="110" y="216" class="stat-val">React · Next.js · Node.js · Docker · Linux</text>
+    </g>
+    <g class="stat-row-3">
+      <text x="0"   y="246" class="stat-key">OPEN TO</text>
+      <text x="110" y="246" class="stat-val">Remote collaboration worldwide</text>
+    </g>
+  </g>
+</svg>

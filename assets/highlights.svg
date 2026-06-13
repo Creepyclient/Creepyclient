@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 160" width="100%" style="background:#000000;">
+  <defs>
+    <style>
+      @import url('data:text/css,');
+
+      /* ── Font stacks ── */
+      .font-mono  { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .font-grotesk { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; }
+
+      /* ── Border draw ── */
+      .border-rect {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 2320;
+        stroke-dashoffset: 2320;
+        animation: borderDraw 1.5s cubic-bezier(0.4,0,0.2,1) 0.1s forwards;
+      }
+
+      @keyframes borderDraw {
+        to { stroke-dashoffset: 0; }
+      }
+
+      /* ── Vertical separators ── */
+      .sep {
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 120;
+        stroke-dashoffset: 120;
+      }
+      .sep-1 { animation: sepDraw 0.6s ease 1.0s forwards; }
+      .sep-2 { animation: sepDraw 0.6s ease 1.15s forwards; }
+      .sep-3 { animation: sepDraw 0.6s ease 1.3s forwards; }
+
+      @keyframes sepDraw {
+        to { stroke-dashoffset: 0; }
+      }
+
+      /* ── Stat block entry ── */
+      .stat-block {
+        opacity: 0;
+        animation: statIn 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
+      }
+      .stat-1 { animation-delay: 0.5s; }
+      .stat-2 { animation-delay: 0.8s; }
+      .stat-3 { animation-delay: 1.1s; }
+      .stat-4 { animation-delay: 1.4s; }
+
+      @keyframes statIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      /* ── Number clip-path reveal (typewriter) ── */
+      .num-clip {
+        animation: numReveal 0.5s ease forwards;
+      }
+      .stat-1 .num-clip { animation-delay: 0.65s; }
+      .stat-2 .num-clip { animation-delay: 0.95s; }
+      .stat-3 .num-clip { animation-delay: 1.25s; }
+      .stat-4 .num-clip { animation-delay: 1.55s; }
+
+      @keyframes numReveal {
+        from { clip-path: inset(0 100% 0 0); }
+        to   { clip-path: inset(0 0% 0 0); }
+      }
+
+      /* ── Corner brackets ── */
+      .bracket {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1.5;
+        stroke-linecap: square;
+        opacity: 0;
+        animation: bracketFade 0.4s ease 1.5s forwards;
+      }
+
+      @keyframes bracketFade {
+        to { opacity: 1; }
+      }
+    </style>
+
+    <!-- Clip rects for number text reveal -->
+    <clipPath id="clip1"><rect x="0" y="0" width="200" height="120"/></clipPath>
+    <clipPath id="clip2"><rect x="240" y="0" width="200" height="120"/></clipPath>
+    <clipPath id="clip3"><rect x="480" y="0" width="200" height="120"/></clipPath>
+    <clipPath id="clip4"><rect x="720" y="0" width="200" height="120"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="160" fill="#000000"/>
+
+  <!-- Outer border draw -->
+  <rect class="border-rect" x="1" y="1" width="998" height="158" rx="0"/>
+
+  <!-- Corner bracket: top-left -->
+  <polyline class="bracket" points="1,13 1,1 13,1"/>
+  <!-- Corner bracket: top-right -->
+  <polyline class="bracket" points="987,1 999,1 999,13"/>
+  <!-- Corner bracket: bottom-left -->
+  <polyline class="bracket" points="1,147 1,159 13,159"/>
+  <!-- Corner bracket: bottom-right -->
+  <polyline class="bracket" points="987,159 999,159 999,147"/>
+
+  <!-- Vertical separators -->
+  <line class="sep sep-1" x1="250" y1="20" x2="250" y2="140"/>
+  <line class="sep sep-2" x1="490" y1="20" x2="490" y2="140"/>
+  <line class="sep sep-3" x1="730" y1="20" x2="730" y2="140"/>
+
+  <!-- STAT 1: 721+ / CONTRIBUTIONS 2026 -->
+  <g class="stat-block stat-1" transform="translate(100,80)">
+    <g clip-path="url(#clip1)">
+      <g class="num-clip">
+        <text
+          class="font-grotesk"
+          x="0" y="0"
+          font-size="52"
+          font-weight="900"
+          fill="#ffffff"
+          text-anchor="middle"
+          dominant-baseline="central">721+</text>
+      </g>
+    </g>
+    <text
+      class="font-mono"
+      x="0" y="46"
+      font-size="10"
+      fill="#888888"
+      text-anchor="middle"
+      letter-spacing="2">CONTRIBUTIONS 2026</text>
+  </g>
+
+  <!-- STAT 2: 4 / ACTIVE REPOS -->
+  <g class="stat-block stat-2" transform="translate(340,80)">
+    <g clip-path="url(#clip2)">
+      <g class="num-clip">
+        <text
+          class="font-grotesk"
+          x="0" y="0"
+          font-size="52"
+          font-weight="900"
+          fill="#ffffff"
+          text-anchor="middle"
+          dominant-baseline="central">4</text>
+      </g>
+    </g>
+    <text
+      class="font-mono"
+      x="0" y="46"
+      font-size="10"
+      fill="#888888"
+      text-anchor="middle"
+      letter-spacing="2">ACTIVE REPOS</text>
+  </g>
+
+  <!-- STAT 3: 8+ / LANGUAGES -->
+  <g class="stat-block stat-3" transform="translate(580,80)">
+    <g clip-path="url(#clip3)">
+      <g class="num-clip">
+        <text
+          class="font-grotesk"
+          x="0" y="0"
+          font-size="52"
+          font-weight="900"
+          fill="#ffffff"
+          text-anchor="middle"
+          dominant-baseline="central">8+</text>
+      </g>
+    </g>
+    <text
+      class="font-mono"
+      x="0" y="46"
+      font-size="10"
+      fill="#888888"
+      text-anchor="middle"
+      letter-spacing="2">LANGUAGES</text>
+  </g>
+
+  <!-- STAT 4: 1yr / BUILDING SINCE -->
+  <g class="stat-block stat-4" transform="translate(820,80)">
+    <g clip-path="url(#clip4)">
+      <g class="num-clip">
+        <text
+          class="font-grotesk"
+          x="0" y="0"
+          font-size="52"
+          font-weight="900"
+          fill="#ffffff"
+          text-anchor="middle"
+          dominant-baseline="central">1yr</text>
+      </g>
+    </g>
+    <text
+      class="font-mono"
+      x="0" y="46"
+      font-size="10"
+      fill="#888888"
+      text-anchor="middle"
+      letter-spacing="2">BUILDING SINCE</text>
+  </g>
+</svg>

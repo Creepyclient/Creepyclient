@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" width="100%" style="background:#000000;">
+  <defs>
+    <style>
+      /* ── Font stacks ── */
+      .font-mono   { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .font-grotesk{ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; }
+
+      /* ── Outer border draw ── */
+      .border-outer {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 2640;
+        stroke-dashoffset: 2640;
+        animation: borderDraw 1.5s cubic-bezier(0.4,0,0.2,1) 0.1s forwards;
+      }
+      @keyframes borderDraw { to { stroke-dashoffset: 0; } }
+
+      /* ── Section title ── */
+      .section-title {
+        opacity: 0;
+        animation: fadeUp 0.6s ease 1.6s forwards;
+      }
+
+      /* ── Underline draw ── */
+      .underline-draw {
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 940;
+        stroke-dashoffset: 940;
+        animation: underlineDraw 1s ease 1.7s forwards;
+      }
+      @keyframes underlineDraw { to { stroke-dashoffset: 0; } }
+
+      /* ── Card border draws ── */
+      .card-border {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+      }
+      .card-border-1 {
+        stroke-dasharray: 1060;
+        stroke-dashoffset: 1060;
+        animation: cardBorder 0.8s ease 1.8s forwards;
+      }
+      .card-border-2 {
+        stroke-dasharray: 1060;
+        stroke-dashoffset: 1060;
+        animation: cardBorder 0.8s ease 2.1s forwards;
+      }
+      .card-border-3 {
+        stroke-dasharray: 1060;
+        stroke-dashoffset: 1060;
+        animation: cardBorder 0.8s ease 2.4s forwards;
+      }
+      @keyframes cardBorder { to { stroke-dashoffset: 0; } }
+
+      /* ── Card entry ── */
+      .card-group {
+        opacity: 0;
+        animation: cardIn 0.65s cubic-bezier(0.22,1,0.36,1) forwards;
+      }
+      .card-group-1 { animation-delay: 1.7s; }
+      .card-group-2 { animation-delay: 2.0s; }
+      .card-group-3 { animation-delay: 2.3s; }
+
+      @keyframes cardIn {
+        from { opacity: 0; transform: translateY(25px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      /* ── Pulse dot (LIVE) ── */
+      .pulse-ring {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        transform-origin: 8px 8px;
+        animation: pulseRing 2s ease-out 2.5s infinite;
+      }
+      @keyframes pulseRing {
+        0%   { r: 4; opacity: 0.9; stroke-width: 1.5; }
+        100% { r: 9; opacity: 0; stroke-width: 0.5; }
+      }
+
+      /* ── Static dot ── */
+      .static-dot { fill: #ffffff; }
+
+      /* ── Generic fade-up ── */
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(8px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      /* ── Corner brackets ── */
+      .bracket {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1.5;
+        stroke-linecap: square;
+        opacity: 0;
+        animation: bracketFade 0.4s ease 1.5s forwards;
+      }
+      @keyframes bracketFade { to { opacity: 1; } }
+    </style>
+
+    <!-- Clip paths for card interiors -->
+    <clipPath id="cardClip1"><rect x="30"  y="78" width="240" height="202"/></clipPath>
+    <clipPath id="cardClip2"><rect x="370" y="78" width="240" height="202"/></clipPath>
+    <clipPath id="cardClip3"><rect x="710" y="78" width="240" height="202"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="320" fill="#000000"/>
+
+  <!-- Outer border -->
+  <rect class="border-outer" x="1" y="1" width="998" height="318"/>
+
+  <!-- Corner brackets -->
+  <polyline class="bracket" points="1,13 1,1 13,1"/>
+  <polyline class="bracket" points="987,1 999,1 999,13"/>
+  <polyline class="bracket" points="1,307 1,319 13,319"/>
+  <polyline class="bracket" points="987,319 999,319 999,307"/>
+
+  <!-- Section title -->
+  <text class="font-mono section-title" x="30" y="42"
+    font-size="11" fill="#ffffff" letter-spacing="3">FEATURED PROJECTS</text>
+
+  <!-- Underline -->
+  <line class="underline-draw" x1="30" y1="58" x2="970" y2="58"/>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1 — Portfolio V2
+  ══════════════════════════════════════════════ -->
+  <g class="card-group card-group-1">
+    <!-- Card border (drawn) -->
+    <rect class="card-border card-border-1" x="30" y="78" width="240" height="202" rx="0"/>
+
+    <!-- Inner content clipped -->
+    <g clip-path="url(#cardClip1)">
+      <!-- Title -->
+      <text class="font-grotesk" x="50" y="112"
+        font-size="13" font-weight="700" fill="#ffffff">Portfolio V2</text>
+
+      <!-- Top divider -->
+      <line x1="30" y1="122" x2="270" y2="122" stroke="#333333" stroke-width="0.5"/>
+
+      <!-- Description -->
+      <text class="font-grotesk" x="50" y="148"
+        font-size="11" fill="#888888" xml:space="preserve">Personal portfolio site built</text>
+      <text class="font-grotesk" x="50" y="163"
+        font-size="11" fill="#888888">with Next.js and deployed on</text>
+      <text class="font-grotesk" x="50" y="178"
+        font-size="11" fill="#888888">Vercel. Optimized for perf.</text>
+
+      <!-- Tags -->
+      <rect x="50" y="220" width="70" height="18" rx="2" fill="none" stroke="#444444" stroke-width="0.8"/>
+      <text class="font-mono" x="85" y="232" font-size="9" fill="#aaaaaa" text-anchor="middle">NEXT.JS</text>
+
+      <rect x="130" y="220" width="54" height="18" rx="2" fill="none" stroke="#444444" stroke-width="0.8"/>
+      <text class="font-mono" x="157" y="232" font-size="9" fill="#aaaaaa" text-anchor="middle">VERCEL</text>
+
+      <!-- Status: LIVE (pulse) -->
+      <circle cx="52" cy="262" r="4" fill="#ffffff"/>
+      <circle class="pulse-ring" cx="52" cy="262" r="4"/>
+      <text class="font-mono" x="62" y="266" font-size="9" fill="#ffffff" letter-spacing="1">LIVE</text>
+    </g>
+  </g>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2 — ChessBit
+  ══════════════════════════════════════════════ -->
+  <g class="card-group card-group-2">
+    <rect class="card-border card-border-2" x="370" y="78" width="240" height="202" rx="0"/>
+
+    <g clip-path="url(#cardClip2)">
+      <text class="font-grotesk" x="390" y="112"
+        font-size="13" font-weight="700" fill="#ffffff">ChessBit</text>
+
+      <line x1="370" y1="122" x2="610" y2="122" stroke="#333333" stroke-width="0.5"/>
+
+      <text class="font-grotesk" x="390" y="148"
+        font-size="11" fill="#888888">A browser-based chess engine</text>
+      <text class="font-grotesk" x="390" y="163"
+        font-size="11" fill="#888888">with move validation, check</text>
+      <text class="font-grotesk" x="390" y="178"
+        font-size="11" fill="#888888">detection, and clean UI.</text>
+
+      <rect x="390" y="220" width="30" height="18" rx="2" fill="none" stroke="#444444" stroke-width="0.8"/>
+      <text class="font-mono" x="405" y="232" font-size="9" fill="#aaaaaa" text-anchor="middle">JS</text>
+
+      <rect x="430" y="220" width="54" height="18" rx="2" fill="none" stroke="#444444" stroke-width="0.8"/>
+      <text class="font-mono" x="457" y="232" font-size="9" fill="#aaaaaa" text-anchor="middle">CANVAS</text>
+
+      <!-- Status: SHIPPED -->
+      <circle class="static-dot" cx="392" cy="262" r="4"/>
+      <text class="font-mono" x="402" y="266" font-size="9" fill="#ffffff" letter-spacing="1">SHIPPED</text>
+    </g>
+  </g>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3 — CeXletial-X
+  ══════════════════════════════════════════════ -->
+  <g class="card-group card-group-3">
+    <rect class="card-border card-border-3" x="710" y="78" width="240" height="202" rx="0"/>
+
+    <g clip-path="url(#cardClip3)">
+      <text class="font-grotesk" x="730" y="112"
+        font-size="13" font-weight="700" fill="#ffffff">CeXletial-X</text>
+
+      <line x1="710" y1="122" x2="950" y2="122" stroke="#333333" stroke-width="0.5"/>
+
+      <text class="font-grotesk" x="730" y="148"
+        font-size="11" fill="#888888">Experimental video frame</text>
+      <text class="font-grotesk" x="730" y="163"
+        font-size="11" fill="#888888">extraction and visual</text>
+      <text class="font-grotesk" x="730" y="178"
+        font-size="11" fill="#888888">processing pipeline.</text>
+
+      <rect x="730" y="220" width="52" height="18" rx="2" fill="none" stroke="#444444" stroke-width="0.8"/>
+      <text class="font-mono" x="756" y="232" font-size="9" fill="#aaaaaa" text-anchor="middle">PYTHON</text>
+
+      <rect x="792" y="220" width="28" height="18" rx="2" fill="none" stroke="#444444" stroke-width="0.8"/>
+      <text class="font-mono" x="806" y="232" font-size="9" fill="#aaaaaa" text-anchor="middle">CV</text>
+
+      <!-- Status: ARCHIVED -->
+      <circle class="static-dot" cx="732" cy="262" r="4" fill="#555555"/>
+      <text class="font-mono" x="742" y="266" font-size="9" fill="#888888" letter-spacing="1">ARCHIVED</text>
+    </g>
+  </g>
+</svg>

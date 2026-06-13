@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 220" width="100%">
   <defs>
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07090e" />
-      <stop offset="100%" stop-color="#0c101b" />
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030508" />
+      <stop offset="100%" stop-color="#090d16" />
     </linearGradient>
     
-    <linearGradient id="cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f0ff" />
-      <stop offset="100%" stop-color="#7c4dff" />
+    <linearGradient id="primary-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4" />
+      <stop offset="100%" stop-color="#7b2cbf" />
     </linearGradient>
 
-    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3.5" result="blur" />
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -20,127 +20,128 @@
   </defs>
 
   <style>
+    .background {
+      fill: url(#bg-gradient);
+    }
+
     .stack-title {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 14px;
       fill: #ffffff;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
     }
 
     .stack-header-line {
-      stroke: url(#cyan-purple);
-      stroke-width: 1.5;
+      stroke: url(#primary-glow);
+      stroke-width: 1;
     }
 
     .stack-card {
-      fill: #0c1220;
-      stroke: #172237;
+      fill: #060910;
+      stroke: #121a24;
       stroke-width: 1.2;
       rx: 6px;
-      transition: all 0.3s ease;
     }
 
     .stack-card:hover {
-      stroke: #00f0ff;
+      stroke: #00f5d4;
     }
 
     .card-label {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       font-weight: 600;
       font-size: 14px;
       fill: #ffffff;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
     .card-desc {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       font-weight: 400;
       font-size: 12px;
-      fill: #8b9bb4;
+      fill: #6b7c96;
+      line-height: 1.6;
     }
 
     .card-tag {
       font-family: 'Courier New', monospace;
       font-weight: bold;
       font-size: 10px;
-      fill: #00f0ff;
+      fill: #00f5d4;
     }
 
     .tag-border {
       fill: none;
-      stroke: #00f0ff;
+      stroke: #00f5d4;
       stroke-width: 1;
       rx: 2px;
-      opacity: 0.8;
+      opacity: 0.7;
     }
 
-    .glow-dot {
-      fill: #7c4dff;
-      filter: url(#neon-glow);
-      animation: pulse-dot 2.5s ease-in-out infinite alternate;
+    .indicator-node {
+      fill: #7b2cbf;
+      filter: url(#soft-glow);
+      animation: pulse-node 2.5s ease-in-out infinite alternate;
     }
 
-    @keyframes pulse-dot {
-      0% { fill: #7c4dff; r: 3px; }
-      100% { fill: #00f0ff; r: 5px; }
+    @keyframes pulse-node {
+      0% { fill: #7b2cbf; r: 3px; }
+      100% { fill: #00f5d4; r: 4.5px; }
     }
   </style>
 
-  <!-- Background -->
-  <rect width="1000" height="220" rx="10" fill="url(#bg-grad)" stroke="#121b2d" stroke-width="1.5" />
+  <!-- Background Base -->
+  <rect class="background" width="1000" height="220" rx="10" stroke="#121a24" stroke-width="1.5" />
 
-  <!-- Title -->
+  <!-- Section Header -->
   <g transform="translate(40, 35)">
-    <text x="0" y="0" class="stack-title">TECHNICAL CORE SPECIALIZATION</text>
+    <text x="0" y="0" class="stack-title">SYSTEM ARCHITECTURE SPECIALIZATIONS</text>
     <line x1="0" y1="10" x2="920" y2="10" class="stack-header-line" />
   </g>
 
   <!-- Card 1: System Design -->
   <g transform="translate(40, 70)">
     <rect class="stack-card" width="280" height="110" />
-    <circle class="glow-dot" cx="245" cy="25" r="4" />
+    <circle class="indicator-node" cx="250" cy="25" r="4" />
     
     <g transform="translate(20, 25)">
       <text x="0" y="5" class="card-label">System Architecture</text>
-      <text x="0" y="30" class="card-desc">Decoupled microservices &amp;</text>
-      <text x="0" y="48" class="card-desc">distributed state machines.</text>
+      <text x="0" y="32" class="card-desc">Decoupled microservices,</text>
+      <text x="0" y="50" class="card-desc">API design, &amp; state engines.</text>
       
-      <!-- Tag -->
-      <rect x="0" y="65" width="95" height="18" class="tag-border" />
-      <text x="8" y="77" class="card-tag">SCALABILITY</text>
+      <rect x="0" y="66" width="95" height="18" class="tag-border" />
+      <text x="8" y="78" class="card-tag">SCALABILITY</text>
     </g>
   </g>
 
-  <!-- Card 2: Full-Stack Web -->
+  <!-- Card 2: Full-Stack -->
   <g transform="translate(360, 70)">
     <rect class="stack-card" width="280" height="110" />
-    <circle class="glow-dot" style="animation-delay: -0.8s;" cx="245" cy="25" r="4" />
+    <circle class="indicator-node" style="animation-delay: -0.8s;" cx="250" cy="25" r="4" />
     
     <g transform="translate(20, 25)">
-      <text x="0" y="5" class="card-label">Full-Stack Development</text>
-      <text x="0" y="30" class="card-desc">React, Node.js &amp; modern client</text>
-      <text x="0" y="48" class="card-desc">rendering frameworks.</text>
+      <text x="0" y="5" class="card-label">Full-Stack Systems</text>
+      <text x="0" y="32" class="card-desc">Modern React systems,</text>
+      <text x="0" y="50" class="card-desc">Next.js, &amp; robust backends.</text>
       
-      <!-- Tag -->
-      <rect x="0" y="65" width="85" height="18" class="tag-border" />
-      <text x="8" y="77" class="card-tag">INTEGRATION</text>
+      <rect x="0" y="66" width="95" height="18" class="tag-border" />
+      <text x="8" y="78" class="card-tag">INTEGRATION</text>
     </g>
   </g>
 
-  <!-- Card 3: Optimization & Audit -->
+  <!-- Card 3: Quality -->
   <g transform="translate(680, 70)">
     <rect class="stack-card" width="280" height="110" />
-    <circle class="glow-dot" style="animation-delay: -1.6s;" cx="245" cy="25" r="4" />
+    <circle class="indicator-node" style="animation-delay: -1.6s;" cx="250" cy="25" r="4" />
     
     <g transform="translate(20, 25)">
-      <text x="0" y="5" class="card-label">Performance &amp; Quality</text>
-      <text x="0" y="30" class="card-desc">Web Vitals profiling, clean code</text>
-      <text x="0" y="48" class="card-desc">standards &amp; security audits.</text>
+      <text x="0" y="5" class="card-label">Quality &amp; Performance</text>
+      <text x="0" y="32" class="card-desc">Web Vitals analysis, audits,</text>
+      <text x="0" y="50" class="card-desc">&amp; runtime optimizations.</text>
       
-      <!-- Tag -->
-      <rect x="0" y="65" width="80" height="18" class="tag-border" />
-      <text x="8" y="77" class="card-tag">EFFICIENCY</text>
+      <rect x="0" y="66" width="85" height="18" class="tag-border" />
+      <text x="8" y="78" class="card-tag">EFFICIENCY</text>
     </g>
   </g>
 </svg>

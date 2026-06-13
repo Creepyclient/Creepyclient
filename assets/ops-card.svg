@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="100%">
   <defs>
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07090e" />
-      <stop offset="100%" stop-color="#0c101b" />
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030508" />
+      <stop offset="100%" stop-color="#090d16" />
     </linearGradient>
 
-    <linearGradient id="cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f0ff" />
-      <stop offset="100%" stop-color="#7c4dff" />
+    <linearGradient id="primary-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4" />
+      <stop offset="100%" stop-color="#7b2cbf" />
     </linearGradient>
 
-    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -20,161 +20,151 @@
   </defs>
 
   <style>
+    .card-bg {
+      fill: url(#bg-gradient);
+    }
+
     .card-title {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 14px;
       fill: #ffffff;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
     }
 
     .card-header-line {
-      stroke: url(#cyan-purple);
-      stroke-width: 1.5;
+      stroke: url(#primary-glow);
+      stroke-width: 1;
     }
 
     .label-text {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       font-weight: 500;
       font-size: 13px;
-      fill: #8b9bb4;
-      letter-spacing: 1px;
+      fill: #6b7c96;
+      letter-spacing: 0.5px;
     }
 
     .val-text {
-      font-family: 'Courier New', monospace;
-      font-weight: bold;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 600;
       font-size: 13px;
-      fill: #00f0ff;
+      fill: #00f5d4;
     }
 
     .bg-bar {
-      fill: #141b2d;
-      rx: 3px;
+      fill: #101622;
+      rx: 2px;
     }
 
     .fill-bar {
-      fill: url(#cyan-purple);
-      rx: 3px;
-      filter: url(#neon-glow);
+      fill: url(#primary-glow);
+      rx: 2px;
+      filter: url(#soft-glow);
     }
 
-    .green-dot {
-      fill: #39ff14;
-      filter: url(#neon-glow);
-      animation: pulse-green 1.8s ease-in-out infinite alternate;
+    .status-dot {
+      fill: #00f5d4;
+      filter: url(#soft-glow);
+      animation: pulse-dot 2s ease-in-out infinite alternate;
     }
 
-    .grid-lines {
-      stroke: #121b2d;
-      stroke-width: 0.8;
-      stroke-dasharray: 2 4;
+    .divider-dash {
+      stroke: #121a24;
+      stroke-width: 1;
+      stroke-dasharray: 4 6;
     }
 
-    @keyframes pulse-green {
+    @keyframes pulse-dot {
       0% { opacity: 0.4; r: 3.5px; }
-      100% { opacity: 1; r: 5.5px; }
+      100% { opacity: 1; r: 5px; }
     }
 
-    .bar-animate-1 { animation: loadBar1 3s ease-out forwards; }
-    .bar-animate-2 { animation: loadBar2 3s ease-out forwards; }
-    .bar-animate-3 { animation: loadBar3 3s ease-out forwards; }
+    .bar-1 { animation: loadBar1 2.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+    .bar-2 { animation: loadBar2 2.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+    .bar-3 { animation: loadBar3 2.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
 
-    @keyframes loadBar1 { from { width: 0; } to { width: 220px; } }
-    @keyframes loadBar2 { from { width: 0; } to { width: 205px; } }
-    @keyframes loadBar3 { from { width: 0; } to { width: 215px; } }
+    @keyframes loadBar1 { from { width: 0; } to { width: 210px; } }
+    @keyframes loadBar2 { from { width: 0; } to { width: 195px; } }
+    @keyframes loadBar3 { from { width: 0; } to { width: 205px; } }
   </style>
 
-  <!-- Background -->
-  <rect width="1000" height="280" rx="10" fill="url(#bg-grad)" stroke="#121b2d" stroke-width="1.5" />
+  <!-- Background Card -->
+  <rect class="card-bg" width="1000" height="280" rx="10" stroke="#121a24" stroke-width="1.5" />
 
-  <!-- Grid overlay -->
-  <g class="grid-lines">
-    <line x1="333" y1="20" x2="333" y2="260" />
-    <line x1="666" y1="20" x2="666" y2="260" />
+  <!-- Grid separators -->
+  <g class="divider-dash">
+    <line x1="340" y1="30" x2="340" y2="250" />
+    <line x1="660" y1="30" x2="660" y2="250" />
   </g>
 
-  <!-- COLUMN 1: ARCHITECTURE PILLARS -->
-  <g transform="translate(40, 40)">
-    <text x="0" y="10" class="card-title">ENGINEERING FOCUS</text>
-    <line x1="0" y1="20" x2="250" y2="20" class="card-header-line" />
+  <!-- Column 1: Core Specialization -->
+  <g transform="translate(40, 45)">
+    <text x="0" y="10" class="card-title">CORE DISCIPLINE</text>
+    <line x1="0" y1="20" x2="260" y2="20" class="card-header-line" />
     
     <g transform="translate(0, 50)">
-      <!-- System Architecture -->
-      <text x="0" y="10" class="label-text">Frontend Architecture</text>
-      <text x="210" y="10" class="val-text">VITE / NEXT.JS</text>
+      <text x="0" y="10" class="label-text">Frontend Systems</text>
+      <text x="180" y="10" class="val-text">Vite / Next.js</text>
       
-      <!-- Backend Scalability -->
       <text x="0" y="45" class="label-text">Backend Design</text>
-      <text x="210" y="45" class="val-text">SCALABLE REST/WS</text>
+      <text x="180" y="45" class="val-text">REST / WebSockets</text>
 
-      <!-- Security First -->
-      <text x="0" y="80" class="label-text">System Performance</text>
-      <text x="210" y="80" class="val-text">OPTIMIZED</text>
+      <text x="0" y="80" class="label-text">Architecture Focus</text>
+      <text x="180" y="80" class="val-text">Clean Code / SOLID</text>
 
-      <!-- Code Integrity -->
-      <text x="0" y="115" class="label-text">Clean Code Practice</text>
-      <text x="210" y="115" class="val-text">SOLID / DRY</text>
+      <text x="0" y="115" class="label-text">Cloud Deployment</text>
+      <text x="180" y="115" class="val-text">Docker / Vercel</text>
       
-      <!-- Infrastructure -->
-      <text x="0" y="150" class="label-text">Cloud &amp; Containers</text>
-      <text x="210" y="150" class="val-text">DOCKER / VERCEL</text>
+      <text x="0" y="150" class="label-text">Quality Standards</text>
+      <text x="180" y="150" class="val-text">Optimized</text>
     </g>
   </g>
 
-  <!-- COLUMN 2: SYSTEM OPTIMIZATION STATUS -->
-  <g transform="translate(373, 40)">
-    <text x="0" y="10" class="card-title">OPTIMIZATION METRICS</text>
-    <line x1="0" y1="20" x2="250" y2="20" class="card-header-line" />
+  <!-- Column 2: System Metrics -->
+  <g transform="translate(380, 45)">
+    <text x="0" y="10" class="card-title">PERFORMANCE METRICS</text>
+    <line x1="0" y1="20" x2="240" y2="20" class="card-header-line" />
 
     <g transform="translate(0, 50)">
-      <!-- Metric 1 -->
-      <text x="0" y="10" class="label-text">Core Performance Velocity</text>
-      <text x="215" y="10" class="val-text">98%</text>
-      <rect x="0" y="20" width="230" height="6" class="bg-bar" />
-      <rect x="0" y="20" width="220" height="6" class="fill-bar bar-animate-1" />
+      <text x="0" y="10" class="label-text">Runtime Performance</text>
+      <text x="205" y="10" class="val-text">98%</text>
+      <rect x="0" y="22" width="220" height="4" class="bg-bar" />
+      <rect x="0" y="22" width="210" height="4" class="fill-bar bar-1" />
 
-      <!-- Metric 2 -->
-      <text x="0" y="60" class="label-text">Architectural Decoupling</text>
-      <text x="215" y="60" class="val-text">92%</text>
-      <rect x="0" y="70" width="230" height="6" class="bg-bar" />
-      <rect x="0" y="70" width="205" height="6" class="fill-bar bar-animate-2" />
+      <text x="0" y="65" class="label-text">Modular Decoupling</text>
+      <text x="205" y="65" class="val-text">92%</text>
+      <rect x="0" y="77" width="220" height="4" class="bg-bar" />
+      <rect x="0" y="77" width="195" height="4" class="fill-bar bar-2" />
 
-      <!-- Metric 3 -->
-      <text x="0" y="110" class="label-text">Resource Utilization</text>
-      <text x="215" y="110" class="val-text">96%</text>
-      <rect x="0" y="120" width="230" height="6" class="bg-bar" />
-      <rect x="0" y="120" width="215" height="6" class="fill-bar bar-animate-3" />
+      <text x="0" y="120" class="label-text">Resource Utilization</text>
+      <text x="205" y="120" class="val-text">96%</text>
+      <rect x="0" y="132" width="220" height="4" class="bg-bar" />
+      <rect x="0" y="132" width="205" height="4" class="fill-bar bar-3" />
     </g>
   </g>
 
-  <!-- COLUMN 3: PLATFORM STATUS -->
-  <g transform="translate(706, 40)">
-    <text x="0" y="10" class="card-title">PLATFORM STATUS</text>
-    <line x1="0" y1="20" x2="250" y2="20" class="card-header-line" />
+  <!-- Column 3: Platform Telemetry -->
+  <g transform="translate(700, 45)">
+    <text x="0" y="10" class="card-title">INFRASTRUCTURE STATUS</text>
+    <line x1="0" y1="20" x2="260" y2="20" class="card-header-line" />
 
     <g transform="translate(0, 50)">
-      <!-- Environment Status -->
       <text x="0" y="10" class="label-text">Deployment Env</text>
-      <circle class="green-dot" cx="210" cy="5" r="4.5" />
-      <text x="225" y="10" class="val-text" fill="#39ff14">UP</text>
+      <circle class="status-dot" cx="195" cy="5" r="4.5" />
+      <text x="210" y="10" class="val-text" fill="#00f5d4">Active</text>
 
-      <!-- System Uptime -->
-      <text x="0" y="45" class="label-text">System Uptime</text>
+      <text x="0" y="45" class="label-text">Service Uptime</text>
       <text x="180" y="45" class="val-text">99.98%</text>
 
-      <!-- Build Pipeline -->
       <text x="0" y="80" class="label-text">Build Pipeline</text>
-      <text x="180" y="80" class="val-text" fill="#39ff14">PASSING</text>
+      <text x="180" y="80" class="val-text" fill="#00f5d4">Passing</text>
 
-      <!-- Version Control -->
-      <text x="0" y="115" class="label-text">Branch Status</text>
-      <text x="180" y="115" class="val-text">SYNCED</text>
+      <text x="0" y="115" class="label-text">Sync Status</text>
+      <text x="180" y="115" class="val-text">Completed</text>
       
-      <!-- Tech stack signature -->
       <text x="0" y="150" class="label-text">Target Platform</text>
-      <text x="180" y="150" class="val-text">PRODUCTION</text>
+      <text x="180" y="150" class="val-text">Production</text>
     </g>
   </g>
-
 </svg>

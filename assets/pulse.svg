@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" width="100%">
   <defs>
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+    <filter id="soft-glow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="3.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -8,79 +8,73 @@
       </feMerge>
     </filter>
 
-    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7c4dff" />
-      <stop offset="50%" stop-color="#00f0ff" />
-      <stop offset="100%" stop-color="#39ff14" />
+    <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7b2cbf" />
+      <stop offset="50%" stop-color="#00f5d4" />
+      <stop offset="100%" stop-color="#7b2cbf" />
     </linearGradient>
   </defs>
 
   <style>
-    .node-conn {
-      stroke: #1b263b;
+    .conn-path {
+      stroke: #101826;
       stroke-width: 1.5;
       fill: none;
     }
 
-    .pulse-signal {
-      stroke: url(#line-grad);
-      stroke-width: 2.5;
-      fill: none;
-      filter: url(#glow);
-      stroke-dasharray: 50 150;
-      animation: pulse-flow 4s linear infinite;
-    }
-
-    .node-dot {
-      fill: #0d131f;
-      stroke: #394b6e;
+    .active-flow {
+      stroke: url(#line-gradient);
       stroke-width: 2;
+      fill: none;
+      filter: url(#soft-glow);
+      stroke-dasharray: 40 160;
+      animation: signal-flow 5s linear infinite;
     }
 
-    .node-dot-active {
-      fill: #00f0ff;
-      stroke: #00f0ff;
+    .node-base {
+      fill: #060910;
+      stroke: #1b2639;
       stroke-width: 1.5;
-      filter: url(#glow);
-      animation: pulse-dot 2s ease-in-out infinite alternate;
     }
 
-    @keyframes pulse-flow {
+    .node-active {
+      fill: #00f5d4;
+      stroke: #00f5d4;
+      stroke-width: 1;
+      filter: url(#soft-glow);
+      animation: pulse-active 2.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes signal-flow {
       0% { stroke-dashoffset: 200; }
       100% { stroke-dashoffset: 0; }
     }
 
-    @keyframes pulse-dot {
-      0% { r: 3.5px; opacity: 0.5; }
-      100% { r: 6px; opacity: 1; }
+    @keyframes pulse-active {
+      0% { r: 3px; opacity: 0.5; }
+      100% { r: 5px; opacity: 1; }
     }
   </style>
 
-  <!-- Connective lines -->
-  <path class="node-conn" d="M 50,60 L 200,60 L 300,20 L 450,20 L 550,100 L 700,100 L 800,60 L 950,60" />
-  <path class="node-conn" d="M 200,60 L 300,100 L 450,100 L 550,20 L 700,20 L 800,60" />
+  <!-- Connection Paths -->
+  <path class="conn-path" d="M 80,50 L 250,50 L 350,20 L 650,20 L 750,50 L 920,50" />
+  <path class="conn-path" d="M 250,50 L 350,80 L 650,80 L 750,50" />
 
-  <!-- Animated flow lines -->
-  <path class="pulse-signal" d="M 50,60 L 200,60 L 300,20 L 450,20 L 550,100 L 700,100 L 800,60 L 950,60" />
-  <path class="pulse-signal" style="animation-delay: -2s;" d="M 200,60 L 300,100 L 450,100 L 550,20 L 700,20 L 800,60" />
+  <!-- Flow Animations -->
+  <path class="active-flow" d="M 80,50 L 250,50 L 350,20 L 650,20 L 750,50 L 920,50" />
+  <path class="active-flow" style="animation-delay: -2.5s;" d="M 250,50 L 350,80 L 650,80 L 750,50" />
 
-  <!-- Stationary Node dots -->
-  <circle class="node-dot" cx="50" cy="60" r="5" />
-  <circle class="node-dot" cx="200" cy="60" r="5" />
-  <circle class="node-dot" cx="300" cy="20" r="5" />
-  <circle class="node-dot" cx="450" cy="20" r="5" />
-  <circle class="node-dot" cx="300" cy="100" r="5" />
-  <circle class="node-dot" cx="450" cy="100" r="5" />
-  <circle class="node-dot" cx="550" cy="20" r="5" />
-  <circle class="node-dot" cx="700" cy="20" r="5" />
-  <circle class="node-dot" cx="550" cy="100" r="5" />
-  <circle class="node-dot" cx="700" cy="100" r="5" />
-  <circle class="node-dot" cx="800" cy="60" r="5" />
-  <circle class="node-dot" cx="950" cy="60" r="5" />
+  <!-- Node Dots -->
+  <circle class="node-base" cx="80" cy="50" r="4.5" />
+  <circle class="node-base" cx="250" cy="50" r="4.5" />
+  <circle class="node-base" cx="350" cy="20" r="4.5" />
+  <circle class="node-base" cx="650" cy="20" r="4.5" />
+  <circle class="node-base" cx="350" cy="80" r="4.5" />
+  <circle class="node-base" cx="650" cy="80" r="4.5" />
+  <circle class="node-base" cx="750" cy="50" r="4.5" />
+  <circle class="node-base" cx="920" cy="50" r="4.5" />
 
-  <!-- Active/glowing node dots at junctions -->
-  <circle class="node-dot-active" cx="200" cy="60" r="4.5" />
-  <circle class="node-dot-active" style="animation-delay: -0.7s;" cx="550" cy="20" r="4.5" />
-  <circle class="node-dot-active" style="animation-delay: -1.4s;" cx="550" cy="100" r="4.5" />
-  <circle class="node-dot-active" style="animation-delay: -0.3s;" cx="800" cy="60" r="4.5" />
+  <!-- Glowing Nodes -->
+  <circle class="node-active" cx="250" cy="50" r="3.5" />
+  <circle class="node-active" style="animation-delay: -0.8s;" cx="750" cy="50" r="3.5" />
 </svg>

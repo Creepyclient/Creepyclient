@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 20" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 10" width="100%">
   <defs>
     <!-- Cyan to Purple Gradient -->
-    <linearGradient id="cyan-purple-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7c4dff" stop-opacity="0" />
-      <stop offset="15%" stop-color="#7c4dff" stop-opacity="0.5" />
-      <stop offset="50%" stop-color="#00f0ff" stop-opacity="1" />
-      <stop offset="85%" stop-color="#7c4dff" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#7c4dff" stop-opacity="0" />
+    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7b2cbf" stop-opacity="0" />
+      <stop offset="15%" stop-color="#7b2cbf" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#00f5d4" stop-opacity="1" />
+      <stop offset="85%" stop-color="#7b2cbf" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0" />
     </linearGradient>
 
-    <!-- Neon Glow Filter -->
-    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
+    <!-- Subtle Glow Filter -->
+    <filter id="subtle-glow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -20,41 +20,41 @@
   </defs>
 
   <style>
-    .line-base {
+    .divider-line {
       fill: none;
-      stroke: url(#cyan-purple-grad);
-      stroke-width: 2;
+      stroke: url(#line-grad);
+      stroke-width: 1;
     }
     
-    .line-glow {
+    .divider-glow {
       fill: none;
-      stroke: url(#cyan-purple-grad);
-      stroke-width: 4;
-      filter: url(#neon-glow);
-      opacity: 0.8;
+      stroke: url(#line-grad);
+      stroke-width: 3;
+      filter: url(#subtle-glow);
+      opacity: 0.6;
     }
 
     .pulse-dot {
-      fill: #00f0ff;
-      filter: url(#neon-glow);
-      animation: move-dot 6s linear infinite;
+      fill: #00f5d4;
+      filter: url(#subtle-glow);
+      animation: move-pulse 8s linear infinite;
     }
 
-    @keyframes move-dot {
-      0% { cx: 100; opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { cx: 900; opacity: 0; }
+    @keyframes move-pulse {
+      0% { cx: 50; opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { cx: 950; opacity: 0; }
     }
   </style>
 
   <!-- Glowing background line -->
-  <path class="line-glow" d="M 0,10 L 1000,10" />
+  <path class="divider-glow" d="M 0,5 L 1000,5" />
 
   <!-- Solid front line -->
-  <path class="line-base" d="M 0,10 L 1000,10" />
+  <path class="divider-line" d="M 0,5 L 1000,5" />
 
   <!-- Sliding pulse dot -->
-  <circle class="pulse-dot" cx="100" cy="10" r="3" />
-  <circle class="pulse-dot" style="animation-delay: -3s;" cx="100" cy="10" r="2.5" />
+  <circle class="pulse-dot" cx="50" cy="5" r="1.5" />
+  <circle class="pulse-dot" style="animation-delay: -4s;" cx="50" cy="5" r="1.2" />
 </svg>

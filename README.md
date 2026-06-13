@@ -111,7 +111,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://trophy.ryglcloud.net/?username=Creepyclient&theme=onestar&no-frame=true&column=6" width="100%" alt="Trophies" />
+  <img src="https://github-profile-trophy.vercel.app/?username=Creepyclient&theme=onestar&no-frame=true&column=6" width="100%" alt="Trophies" />
 </div>
 
 <br/>

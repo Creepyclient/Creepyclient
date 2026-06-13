@@ -1,228 +1,150 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="100%" height="100%">
-  <!-- Definitions for Gradients, Glow filters, and styles -->
   <defs>
-    <!-- Dark background gradient -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07090e" />
-      <stop offset="100%" stop-color="#0c101b" />
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030508" />
+      <stop offset="100%" stop-color="#090d16" />
     </linearGradient>
 
-    <!-- Neon Cyan & Violet Gradients -->
-    <linearGradient id="cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f0ff" />
-      <stop offset="100%" stop-color="#7c4dff" />
-    </linearGradient>
-    
-    <linearGradient id="glow-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.15" />
-      <stop offset="100%" stop-color="#7c4dff" stop-opacity="0.0" />
+    <!-- Unified Palette Gradients -->
+    <linearGradient id="primary-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4" />
+      <stop offset="100%" stop-color="#7b2cbf" />
     </linearGradient>
 
-    <!-- Neon Glow Filter -->
-    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
+    <!-- Subtle Glow Filter -->
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-
-    <filter id="intense-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="8" result="blur1" />
-      <feGaussianBlur stdDeviation="3" result="blur2" />
-      <feMerge>
-        <feMergeNode in="blur1" />
-        <feMergeNode in="blur2" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
   </defs>
 
   <style>
-    /* CSS Styles for animations */
-    .grid-lines {
-      stroke: #121b2d;
-      stroke-width: 1;
-    }
-    
-    .scanner-line {
-      stroke: url(#cyan-purple);
-      stroke-width: 2;
-      opacity: 0.7;
-      animation: scan 6s linear infinite;
+    .background {
+      fill: url(#bg-gradient);
     }
 
-    .pulse-node {
-      fill: #00f0ff;
-      animation: pulse 2s ease-in-out infinite alternate;
+    .matrix-dot {
+      fill: #141f30;
+      opacity: 0.3;
     }
 
-    .pulse-node-purple {
-      fill: #7c4dff;
-      animation: pulse-purple 2.5s ease-in-out infinite alternate;
+    .matrix-dot-animated {
+      fill: #00f5d4;
+      animation: pulse-dot 4s ease-in-out infinite alternate;
     }
 
-    .title-text {
-      font-family: 'Inter', 'Outfit', 'Segoe UI', sans-serif;
+    .wave-path {
+      fill: none;
+      stroke: url(#primary-glow);
+      stroke-width: 1.2;
+      opacity: 0.25;
+      stroke-dasharray: 1200;
+      stroke-dashoffset: 0;
+      animation: wave-flow 12s linear infinite;
+    }
+
+    .name-text {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       font-weight: 800;
       font-size: 38px;
       fill: #ffffff;
-      letter-spacing: 2px;
+      letter-spacing: -0.5px;
     }
 
-    .subtitle-text {
-      font-family: 'Inter', 'Outfit', 'Segoe UI', sans-serif;
+    .role-text {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       font-weight: 600;
-      font-size: 18px;
-      fill: #00f0ff;
-      letter-spacing: 4px;
-      filter: url(#neon-glow);
+      font-size: 16px;
+      fill: #00f5d4;
+      letter-spacing: 5px;
+      filter: url(#soft-glow);
     }
 
     .tagline-text {
-      font-family: 'Inter', 'Segoe UI', sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       font-weight: 400;
       font-size: 14px;
-      fill: #8b9bb4;
-      letter-spacing: 1px;
+      fill: #6b7c96;
+      letter-spacing: 0.5px;
     }
 
-    .metric-text {
-      font-family: 'Courier New', monospace;
-      font-size: 11px;
-      fill: #4b5a75;
+    .accent-bar {
+      fill: url(#primary-glow);
+      rx: 2px;
     }
 
-    .border-glow {
-      stroke: url(#cyan-purple);
-      stroke-width: 1.5;
-      fill: none;
-      filter: url(#neon-glow);
-      stroke-dasharray: 800;
-      stroke-dashoffset: 800;
-      animation: draw-border 4s ease-out forwards;
+    @keyframes pulse-dot {
+      0% { opacity: 0.1; r: 1.5px; }
+      100% { opacity: 0.7; r: 3.5px; filter: drop-shadow(0 0 4px #00f5d4); }
     }
 
-    /* Wave animations */
-    .wave-path {
-      fill: none;
-      stroke: url(#cyan-purple);
-      stroke-width: 1.5;
-      opacity: 0.3;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 0;
-      animation: wave-move 10s linear infinite;
-    }
-
-    @keyframes scan {
-      0% { transform: translateY(0); opacity: 0; }
-      10% { opacity: 0.8; }
-      90% { opacity: 0.8; }
-      100% { transform: translateY(300px); opacity: 0; }
-    }
-
-    @keyframes pulse {
-      0% { r: 2px; opacity: 0.4; filter: blur(0px); }
-      100% { r: 6px; opacity: 1; filter: drop-shadow(0 0 6px #00f0ff); }
-    }
-
-    @keyframes pulse-purple {
-      0% { r: 2px; opacity: 0.3; }
-      100% { r: 5px; opacity: 0.9; filter: drop-shadow(0 0 5px #7c4dff); }
-    }
-
-    @keyframes draw-border {
-      to { stroke-dashoffset: 0; }
-    }
-
-    @keyframes wave-move {
-      0% { stroke-dashoffset: 1000; }
+    @keyframes wave-flow {
+      0% { stroke-dashoffset: 1200; }
       100% { stroke-dashoffset: 0; }
     }
   </style>
 
   <!-- Background Base -->
-  <rect width="1000" height="300" rx="12" fill="url(#bg-grad)" />
+  <rect width="1000" height="300" rx="12" class="background" stroke="#121a24" stroke-width="1.5" />
 
-  <!-- Animated Background Grid -->
-  <g class="grid-lines">
-    <!-- Horizontal lines -->
-    <line x1="0" y1="30" x2="1000" y2="30" />
-    <line x1="0" y1="60" x2="1000" y2="60" />
-    <line x1="0" y1="90" x2="1000" y2="90" />
-    <line x1="0" y1="120" x2="1000" y2="120" />
-    <line x1="0" y1="150" x2="1000" y2="150" />
-    <line x1="0" y1="180" x2="1000" y2="180" />
-    <line x1="0" y1="210" x2="1000" y2="210" />
-    <line x1="0" y1="240" x2="1000" y2="240" />
-    <line x1="0" y1="270" x2="1000" y2="270" />
+  <!-- Designer Abstract Dot Matrix Grid -->
+  <g>
+    <!-- Column 1 -->
+    <circle class="matrix-dot" cx="80" cy="50" r="1.5" />
+    <circle class="matrix-dot" cx="80" cy="100" r="1.5" />
+    <circle class="matrix-dot" cx="80" cy="150" r="1.5" />
+    <circle class="matrix-dot" cx="80" cy="200" r="1.5" />
+    <circle class="matrix-dot" cx="80" cy="250" r="1.5" />
+    <!-- Column 2 -->
+    <circle class="matrix-dot" cx="160" cy="50" r="1.5" />
+    <circle class="matrix-dot-animated" cx="160" cy="100" r="1.5" />
+    <circle class="matrix-dot" cx="160" cy="150" r="1.5" />
+    <circle class="matrix-dot" cx="160" cy="200" r="1.5" />
+    <circle class="matrix-dot" cx="160" cy="250" r="1.5" />
+    <!-- Column 3 -->
+    <circle class="matrix-dot" cx="240" cy="50" r="1.5" />
+    <circle class="matrix-dot" cx="240" cy="100" r="1.5" />
+    <circle class="matrix-dot" cx="240" cy="150" r="1.5" />
+    <circle class="matrix-dot-animated" style="animation-delay: -2s;" cx="240" cy="200" r="1.5" />
+    <circle class="matrix-dot" cx="240" cy="250" r="1.5" />
+    <!-- Additional columns at the right edge -->
+    <circle class="matrix-dot" cx="840" cy="50" r="1.5" />
+    <circle class="matrix-dot" cx="840" cy="100" r="1.5" />
+    <circle class="matrix-dot-animated" cx="840" cy="150" r="1.5" />
+    <circle class="matrix-dot" cx="840" cy="200" r="1.5" />
+    <circle class="matrix-dot" cx="840" cy="250" r="1.5" />
 
-    <!-- Vertical lines -->
-    <line x1="50" y1="0" x2="50" y2="300" />
-    <line x1="100" y1="0" x2="100" y2="300" />
-    <line x1="150" y1="0" x2="150" y2="300" />
-    <line x1="200" y1="0" x2="200" y2="300" />
-    <line x1="250" y1="0" x2="250" y2="300" />
-    <line x1="300" y1="0" x2="300" y2="300" />
-    <line x1="350" y1="0" x2="350" y2="300" />
-    <line x1="400" y1="0" x2="400" y2="300" />
-    <line x1="450" y1="0" x2="450" y2="300" />
-    <line x1="500" y1="0" x2="500" y2="300" />
-    <line x1="550" y1="0" x2="550" y2="300" />
-    <line x1="600" y1="0" x2="600" y2="300" />
-    <line x1="650" y1="0" x2="650" y2="300" />
-    <line x1="700" y1="0" x2="700" y2="300" />
-    <line x1="750" y1="0" x2="750" y2="300" />
-    <line x1="800" y1="0" x2="800" y2="300" />
-    <line x1="850" y1="0" x2="850" y2="300" />
-    <line x1="900" y1="0" x2="900" y2="300" />
-    <line x1="950" y1="0" x2="950" y2="300" />
+    <circle class="matrix-dot" cx="920" cy="50" r="1.5" />
+    <circle class="matrix-dot" cx="920" cy="100" r="1.5" />
+    <circle class="matrix-dot" cx="920" cy="150" r="1.5" />
+    <circle class="matrix-dot" cx="920" cy="200" r="1.5" />
+    <circle class="matrix-dot-animated" style="animation-delay: -1.5s;" cx="920" cy="250" r="1.5" />
   </g>
 
-  <!-- Telemetry Waves (in background) -->
-  <path class="wave-path" d="M 0,220 C 150,150 250,280 400,200 C 550,120 650,250 800,180 C 900,140 950,200 1000,170" />
-  <path class="wave-path" style="animation-delay: -3s; opacity: 0.15;" d="M 0,180 C 100,240 200,160 350,210 C 500,260 700,170 850,230 C 920,260 960,200 1000,210" />
+  <!-- Elegant Abstract Vector Sine Curve -->
+  <path class="wave-path" d="M -50,150 Q 200,80 450,160 T 950,140 T 1050,150" />
+  <path class="wave-path" style="animation-delay: -6s; opacity: 0.12;" d="M -50,160 Q 250,220 500,140 T 1000,160 T 1050,160" />
 
-  <!-- Scanning laser beam effect -->
-  <line class="scanner-line" x1="0" y1="0" x2="1000" y2="0" />
+  <!-- Clean, Centered Typography -->
+  <g transform="translate(120, 0)">
+    <!-- Decorative side line -->
+    <rect x="-30" y="105" width="3" height="90" class="accent-bar" filter="url(#soft-glow)" />
 
-  <!-- Interactive/animated nodes at grid intersections -->
-  <circle class="pulse-node" cx="150" cy="90" r="4" />
-  <circle class="pulse-node-purple" cx="300" cy="180" r="3" />
-  <circle class="pulse-node" cx="650" cy="60" r="4" />
-  <circle class="pulse-node-purple" cx="800" cy="240" r="3.5" />
-  <circle class="pulse-node" cx="450" cy="150" r="5" />
-  <circle class="pulse-node-purple" cx="900" cy="120" r="3" />
-
-  <!-- Tech telemetry coordinates and numbers -->
-  <text x="25" y="45" class="metric-text">SYS.LOC: [0x7F][NODE_09]</text>
-  <text x="25" y="275" class="metric-text">CORE.SPEED: 4.80 GHz</text>
-  <text x="850" y="45" class="metric-text">LATENCY: 1.24 ms</text>
-  <text x="850" y="275" class="metric-text">STATUS: SECURE_RUN</text>
-
-  <!-- Glowing Border -->
-  <rect x="2" y="2" width="996" height="296" rx="10" fill="none" stroke="#101827" stroke-width="2" />
-  <rect class="border-glow" x="2" y="2" width="996" height="296" rx="10" />
-
-  <!-- Content Group (Center aligned text) -->
-  <g transform="translate(100, 0)">
-    <!-- Tech Design lines near title -->
-    <line x1="-20" y1="110" x2="-20" y2="190" stroke="#00f0ff" stroke-width="3" filter="url(#neon-glow)" />
-    <line x1="-30" y1="130" x2="-30" y2="170" stroke="#7c4dff" stroke-width="1.5" />
-
-    <!-- Main Title -->
-    <text x="10" y="130" class="title-text">Neyamul Islam <tspan fill="url(#cyan-purple)">(Creepyclient)</tspan></text>
+    <!-- Name -->
+    <text x="0" y="132" class="name-text">Neyamul Islam <tspan fill="url(#primary-glow)">(Creepyclient)</tspan></text>
     
     <!-- Subtitle / Role -->
-    <text x="12" y="165" class="subtitle-text">SYSTEMS ARCHITECT &amp; ENGINEER</text>
+    <text x="0" y="165" class="role-text">SYSTEMS ARCHITECT &amp; ENGINEER</text>
 
     <!-- Tagline -->
-    <text x="12" y="200" class="tagline-text">Transforming complex logic into elegant, high-velocity software solutions</text>
+    <text x="0" y="196" class="tagline-text">Transforming complex logic into elegant, high-velocity software solutions</text>
 
-    <!-- Abstract design accents -->
-    <rect x="12" y="220" width="120" height="4" fill="url(#cyan-purple)" rx="2" />
-    <rect x="140" y="220" width="20" height="4" fill="#00f0ff" rx="2" />
-    <rect x="168" y="220" width="8" height="4" fill="#7c4dff" rx="2" />
+    <!-- Minimal underline accent -->
+    <rect x="0" y="222" width="80" height="2" class="accent-bar" />
+    <rect x="90" y="222" width="10" height="2" fill="#00f5d4" />
   </g>
-
 </svg>

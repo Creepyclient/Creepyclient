@@ -4,41 +4,41 @@
 -->
 
 <div align="center">
-  <img src="assets/hero.svg" width="100%" alt="Neyamul Islam hero" />
+  <img src="assets/hero.svg?v=2" width="100%" alt="Neyamul Islam hero" />
 </div>
 
 <div align="center">
-  <img src="assets/divider.svg" width="100%" alt="divider" />
+  <img src="assets/divider.svg?v=2" width="100%" alt="divider" />
 </div>
 
 <h2 align="center">System Profile</h2>
 
 <div align="center">
-  <img src="assets/ops-card.svg" width="100%" alt="System architecture card" />
+  <img src="assets/ops-card.svg?v=2" width="100%" alt="System architecture card" />
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/wave.svg" width="100%" alt="Signal wave" />
+  <img src="assets/wave.svg?v=2" width="100%" alt="Signal wave" />
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/pulse.svg" width="100%" alt="Architecture components" />
+  <img src="assets/pulse.svg?v=2" width="100%" alt="Architecture components" />
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/matrix.svg" width="100%" alt="Data matrix overlay" />
+  <img src="assets/matrix.svg?v=2" width="100%" alt="Data matrix overlay" />
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/divider.svg" width="100%" alt="divider" />
+  <img src="assets/divider.svg?v=2" width="100%" alt="divider" />
 </div>
 
 <h2 align="center">Technical Stack</h2>
@@ -46,16 +46,16 @@
 <div align="center">
   <table>
     <tr>
-      <td align="center" width="120"><img src="assets/python.svg" width="42" height="42" /><br/><b>Python</b></td>
-      <td align="center" width="120"><img src="assets/javascript.svg" width="42" height="42" /><br/><b>JavaScript</b></td>
-      <td align="center" width="120"><img src="assets/react.svg" width="42" height="42" /><br/><b>React</b></td>
-      <td align="center" width="120"><img src="assets/docker.svg" width="42" height="42" /><br/><b>Docker</b></td>
+      <td align="center" width="120"><img src="assets/python.svg?v=2" width="42" height="42" /><br/><b>Python</b></td>
+      <td align="center" width="120"><img src="assets/javascript.svg?v=2" width="42" height="42" /><br/><b>JavaScript</b></td>
+      <td align="center" width="120"><img src="assets/react.svg?v=2" width="42" height="42" /><br/><b>React</b></td>
+      <td align="center" width="120"><img src="assets/docker.svg?v=2" width="42" height="42" /><br/><b>Docker</b></td>
     </tr>
     <tr>
-      <td align="center" width="120"><img src="assets/linux.svg" width="42" height="42" /><br/><b>Linux</b></td>
-      <td align="center" width="120"><img src="assets/git.svg" width="42" height="42" /><br/><b>Git</b></td>
-      <td align="center" width="120"><img src="assets/cpp.svg" width="42" height="42" /><br/><b>C++</b></td>
-      <td align="center" width="120"><img src="assets/java.svg" width="42" height="42" /><br/><b>Java</b></td>
+      <td align="center" width="120"><img src="assets/linux.svg?v=2" width="42" height="42" /><br/><b>Linux</b></td>
+      <td align="center" width="120"><img src="assets/git.svg?v=2" width="42" height="42" /><br/><b>Git</b></td>
+      <td align="center" width="120"><img src="assets/cpp.svg?v=2" width="42" height="42" /><br/><b>C++</b></td>
+      <td align="center" width="120"><img src="assets/java.svg?v=2" width="42" height="42" /><br/><b>Java</b></td>
     </tr>
   </table>
 </div>
@@ -65,13 +65,13 @@
 <h2 align="center">Developer Arcade</h2>
 
 <div align="center">
-  <img src="assets/pacman.svg" width="100%" alt="Arcade pacman" />
+  <img src="assets/pacman.svg?v=2" width="100%" alt="Arcade pacman" />
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/snake.svg" width="100%" alt="Arcade snake" />
+  <img src="assets/snake.svg?v=2" width="100%" alt="Arcade snake" />
 </div>
 
 <br/>
@@ -105,7 +105,7 @@
 <h2 align="center">Live Intel</h2>
 
 <div align="center">
-  <img src="assets/focus-stack.svg" width="100%" alt="Core specializations" />
+  <img src="assets/focus-stack.svg?v=2" width="100%" alt="Core specializations" />
 </div>
 
 <br/>
@@ -133,5 +133,5 @@
 <br/>
 
 <div align="center">
-  <img src="assets/divider.svg" width="100%" alt="divider" />
+  <img src="assets/divider.svg?v=2" width="100%" alt="divider" />
 </div>

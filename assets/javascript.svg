@@ -1,19 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="42" height="42">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&amp;display=swap');
+
+      .border-path {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 2.5;
+        stroke-linecap: square;
+        stroke-linejoin: miter;
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        animation: draw-border 2s ease-out 0.2s forwards;
+      }
+      .js-text {
+        font-family: 'Space Grotesk', 'Arial Black', sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        fill: #ffffff;
+        opacity: 0;
+        animation: text-appear 0.5s ease-out 1.8s forwards;
+      }
+      .corner-accent {
+        fill: #ffffff;
+        opacity: 0;
+        animation: corner-pop 0.25s ease-out 2s forwards;
+      }
+      @keyframes draw-border {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes text-appear {
+        0% { opacity: 0; transform: scale(0.8); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+      @keyframes corner-pop {
+        0% { opacity: 0; transform: scale(0); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+    </style>
   </defs>
-  <rect x="10" y="10" width="108" height="108" rx="8" fill="#07090e" stroke="#00f0ff" stroke-width="3" filter="url(#glow)" />
-  <!-- Stylized JS paths -->
-  <g fill="#7c4dff" filter="url(#glow)">
-    <!-- J -->
-    <path d="M48,35 L58,35 L58,78 C58,85 53,90 46,90 C39,90 34,85 34,78 L44,78 C44,80 45,81 46,81 C47,81 48,80 48,78 Z" />
-    <!-- S -->
-    <path d="M72,83 C78,83 82,80 82,75 C82,70 78,68 72,66 C65,64 60,61 60,53 C60,45 66,41 74,41 C82,41 87,45 87,51 L77,51 C77,49 76,48 74,48 C72,48 70,49 70,52 C70,55 74,57 80,59 C87,61 92,64 92,73 C92,81 86,89 74,89 C64,89 59,83 59,77 L69,77 C69,80 70,83 72,83 Z" />
-  </g>
+
+  <!-- Black background -->
+  <rect width="128" height="128" fill="#000000"/>
+
+  <!-- Thin white border square, draws itself -->
+  <rect class="border-path" x="14" y="14" width="100" height="100" rx="2"/>
+
+  <!-- Corner accents (small squares at each corner) -->
+  <rect class="corner-accent" x="10" y="10" width="8" height="8" style="transform-origin: 14px 14px;"/>
+  <rect class="corner-accent" x="110" y="10" width="8" height="8" style="transform-origin: 114px 14px; animation-delay: 2.05s;"/>
+  <rect class="corner-accent" x="10" y="110" width="8" height="8" style="transform-origin: 14px 114px; animation-delay: 2.1s;"/>
+  <rect class="corner-accent" x="110" y="110" width="8" height="8" style="transform-origin: 114px 114px; animation-delay: 2.15s;"/>
+
+  <!-- 'JS' centered text -->
+  <text class="js-text" x="64" y="76" text-anchor="middle" dominant-baseline="middle">JS</text>
 </svg>

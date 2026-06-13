@@ -1,170 +1,265 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="100%" style="display:block;">
   <defs>
-    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#030508" />
-      <stop offset="100%" stop-color="#090d16" />
-    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@300;400;700&amp;display=swap');
 
-    <linearGradient id="primary-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f5d4" />
-      <stop offset="100%" stop-color="#7b2cbf" />
-    </linearGradient>
+      /* Border draw */
+      .card-border {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 2560;
+        stroke-dashoffset: 2560;
+        animation: drawBorder 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.1s forwards;
+        rx: 4;
+      }
+      @keyframes drawBorder {
+        to { stroke-dashoffset: 0; }
+      }
 
-    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      /* Divider lines */
+      .divider {
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 4 5;
+        opacity: 0;
+        animation: fadeInLine 0.5s ease 1.5s forwards;
+      }
+      @keyframes fadeInLine {
+        to { opacity: 0.3; }
+      }
+
+      /* Column title */
+      .col-title {
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+        font-size: 11px;
+        fill: #ffffff;
+        letter-spacing: 3px;
+        font-weight: 400;
+        opacity: 0;
+        animation: fadeUp 0.5s ease forwards;
+      }
+      .col-title-1 { animation-delay: 1.6s; }
+      .col-title-2 { animation-delay: 1.8s; }
+      .col-title-3 { animation-delay: 2.0s; }
+
+      @keyframes fadeUp {
+        0%  { opacity: 0; transform: translateY(6px); }
+        100%{ opacity: 1; transform: translateY(0); }
+      }
+
+      /* Row text */
+      .row-key {
+        font-family: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+        font-size: 11px;
+        fill: #ffffff;
+        font-weight: 500;
+        opacity: 0;
+        animation: fadeUp 0.4s ease forwards;
+      }
+      .row-val {
+        font-family: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+        font-size: 10px;
+        fill: #888888;
+        font-weight: 400;
+        opacity: 0;
+        animation: fadeUp 0.4s ease forwards;
+      }
+
+      /* Bar track */
+      .bar-track {
+        fill: #111111;
+        rx: 2;
+        opacity: 0;
+        animation: fadeIn 0.3s ease forwards;
+      }
+      @keyframes fadeIn { to { opacity: 1; } }
+
+      /* Bar fill */
+      .bar-fill {
+        fill: #ffffff;
+        rx: 2;
+        transform-origin: left center;
+        transform-box: fill-box;
+        transform: scaleX(0);
+        animation: barGrow 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+      .bar-runtime    { animation-delay: 2.5s; }
+      .bar-modularity { animation-delay: 2.8s; }
+      .bar-util       { animation-delay: 3.1s; }
+
+      @keyframes barGrow {
+        0%   { transform: scaleX(0); opacity: 0; }
+        10%  { opacity: 1; }
+        100% { transform: scaleX(1); opacity: 1; }
+      }
+
+      /* Bar label */
+      .bar-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 9px;
+        fill: #ffffff;
+        opacity: 0;
+        animation: fadeIn 0.4s ease forwards;
+      }
+      .bar-pct {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 9px;
+        fill: #888888;
+        opacity: 0;
+        animation: fadeIn 0.4s ease forwards;
+      }
+
+      /* Status dot pulse */
+      .status-dot {
+        fill: #ffffff;
+        animation: dotPulse 2s ease-in-out infinite;
+        animation-delay: 3.5s;
+        opacity: 0;
+      }
+      .status-dot-ring {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 0.8;
+        animation: dotRing 2s ease-in-out infinite;
+        animation-delay: 3.5s;
+        opacity: 0;
+      }
+      @keyframes dotPulse {
+        0%   { opacity: 0.5; r: 3; }
+        50%  { opacity: 1; r: 3; }
+        100% { opacity: 0.5; r: 3; }
+      }
+      @keyframes dotRing {
+        0%   { opacity: 0; r: 3; }
+        20%  { opacity: 0.6; r: 6; }
+        100% { opacity: 0; r: 10; }
+      }
+
+      /* Status text */
+      .status-key {
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 11px;
+        fill: #ffffff;
+        font-weight: 500;
+        opacity: 0;
+        animation: fadeUp 0.4s ease forwards;
+      }
+      .status-val {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        fill: #888888;
+        opacity: 0;
+        animation: fadeUp 0.4s ease forwards;
+      }
+      .status-active {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        fill: #ffffff;
+        opacity: 0;
+        animation: fadeUp 0.4s ease forwards;
+      }
+
+      /* Title underline */
+      .col-underline {
+        stroke: #ffffff;
+        stroke-width: 0.5;
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+        opacity: 0.4;
+        animation: drawUnder 0.8s ease forwards;
+      }
+      .col-underline-1 { animation-delay: 1.7s; }
+      .col-underline-2 { animation-delay: 1.9s; }
+      .col-underline-3 { animation-delay: 2.1s; }
+      @keyframes drawUnder {
+        to { stroke-dashoffset: 0; }
+      }
+    </style>
+    <filter id="cardGlow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
       <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
 
-  <style>
-    .card-bg {
-      fill: url(#bg-gradient);
-    }
+  <!-- Black background -->
+  <rect width="1000" height="280" fill="#000000" rx="4"/>
 
-    .card-title {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      fill: #ffffff;
-      letter-spacing: 2.5px;
-    }
+  <!-- Outer border (draws itself) -->
+  <rect class="card-border" x="1" y="1" width="998" height="278" rx="4" filter="url(#cardGlow)"/>
 
-    .card-header-line {
-      stroke: url(#primary-glow);
-      stroke-width: 1;
-    }
+  <!-- Vertical dividers -->
+  <line class="divider" x1="333" y1="16" x2="333" y2="264"/>
+  <line class="divider" x1="666" y1="16" x2="666" y2="264"/>
 
-    .label-text {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 500;
-      font-size: 13px;
-      fill: #6b7c96;
-      letter-spacing: 0.5px;
-    }
+  <!-- ══════════════════════════════════════ -->
+  <!-- COLUMN 1: CORE DISCIPLINE (x: 30–303) -->
+  <!-- ══════════════════════════════════════ -->
+  <text class="col-title col-title-1" x="30" y="46">CORE DISCIPLINE</text>
+  <line class="col-underline col-underline-1" x1="30" y1="52" x2="290" y2="52"/>
 
-    .val-text {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 600;
-      font-size: 13px;
-      fill: #00f5d4;
-    }
+  <!-- Row 1 -->
+  <text class="row-key" x="30" y="88" style="animation-delay:2.0s">Frontend Systems</text>
+  <text class="row-val" x="30" y="104" style="animation-delay:2.1s">Vite + Next.js</text>
+  <!-- Row 2 -->
+  <text class="row-key" x="30" y="136" style="animation-delay:2.2s">Backend Architecture</text>
+  <text class="row-val" x="30" y="152" style="animation-delay:2.3s">REST + WebSockets</text>
+  <!-- Row 3 -->
+  <text class="row-key" x="30" y="184" style="animation-delay:2.4s">Code Quality</text>
+  <text class="row-val" x="30" y="200" style="animation-delay:2.5s">SOLID + DRY</text>
+  <!-- Row 4 -->
+  <text class="row-key" x="30" y="232" style="animation-delay:2.6s">Infrastructure</text>
+  <text class="row-val" x="30" y="248" style="animation-delay:2.7s">Docker + Vercel</text>
 
-    .bg-bar {
-      fill: #101622;
-      rx: 2px;
-    }
+  <!-- ══════════════════════════════════════ -->
+  <!-- COLUMN 2: PERFORMANCE (x: 363–636) -->
+  <!-- ══════════════════════════════════════ -->
+  <text class="col-title col-title-2" x="363" y="46">PERFORMANCE</text>
+  <line class="col-underline col-underline-2" x1="363" y1="52" x2="600" y2="52"/>
 
-    .fill-bar {
-      fill: url(#primary-glow);
-      rx: 2px;
-      filter: url(#soft-glow);
-    }
+  <!-- Runtime 98% -->
+  <text class="bar-label" x="363" y="88" style="animation-delay:2.3s">Runtime</text>
+  <text class="bar-pct"   x="596" y="88" style="animation-delay:2.3s; text-anchor:end">98%</text>
+  <rect class="bar-track" x="363" y="94" width="230" height="6" rx="2" style="animation-delay:2.4s"/>
+  <rect class="bar-fill bar-runtime" x="363" y="94" width="225" height="6" rx="2"/>
 
-    .status-dot {
-      fill: #00f5d4;
-      filter: url(#soft-glow);
-      animation: pulse-dot 2s ease-in-out infinite alternate;
-    }
+  <!-- Modularity 92% -->
+  <text class="bar-label" x="363" y="138" style="animation-delay:2.5s">Modularity</text>
+  <text class="bar-pct"   x="596" y="138" style="animation-delay:2.5s; text-anchor:end">92%</text>
+  <rect class="bar-track" x="363" y="144" width="230" height="6" rx="2" style="animation-delay:2.6s"/>
+  <rect class="bar-fill bar-modularity" x="363" y="144" width="212" height="6" rx="2"/>
 
-    .divider-dash {
-      stroke: #121a24;
-      stroke-width: 1;
-      stroke-dasharray: 4 6;
-    }
+  <!-- Utilization 96% -->
+  <text class="bar-label" x="363" y="188" style="animation-delay:2.7s">Utilization</text>
+  <text class="bar-pct"   x="596" y="188" style="animation-delay:2.7s; text-anchor:end">96%</text>
+  <rect class="bar-track" x="363" y="194" width="230" height="6" rx="2" style="animation-delay:2.8s"/>
+  <rect class="bar-fill bar-util" x="363" y="194" width="221" height="6" rx="2"/>
 
-    @keyframes pulse-dot {
-      0% { opacity: 0.4; r: 3.5px; }
-      100% { opacity: 1; r: 5px; }
-    }
+  <!-- ══════════════════════════════════════ -->
+  <!-- COLUMN 3: BUILD STATUS (x: 706–970) -->
+  <!-- ══════════════════════════════════════ -->
+  <text class="col-title col-title-3" x="706" y="46">BUILD STATUS</text>
+  <line class="col-underline col-underline-3" x1="706" y1="52" x2="960" y2="52"/>
 
-    .bar-1 { animation: loadBar1 2.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
-    .bar-2 { animation: loadBar2 2.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
-    .bar-3 { animation: loadBar3 2.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+  <!-- Deployment / Active -->
+  <text class="status-key"    x="706" y="88" style="animation-delay:2.2s">Deployment</text>
+  <!-- pulsing dot -->
+  <circle class="status-dot"      cx="840" cy="104" r="3"/>
+  <circle class="status-dot-ring" cx="840" cy="104" r="3"/>
+  <text class="status-active" x="852" y="108" style="animation-delay:3.6s">Active</text>
 
-    @keyframes loadBar1 { from { width: 0; } to { width: 210px; } }
-    @keyframes loadBar2 { from { width: 0; } to { width: 195px; } }
-    @keyframes loadBar3 { from { width: 0; } to { width: 205px; } }
-  </style>
+  <!-- Uptime -->
+  <text class="status-key" x="706" y="136" style="animation-delay:2.4s">Uptime</text>
+  <text class="status-val" x="706" y="152" style="animation-delay:2.5s">99.98%</text>
 
-  <!-- Background Card -->
-  <rect class="card-bg" width="1000" height="280" rx="10" stroke="#121a24" stroke-width="1.5" />
+  <!-- Pipeline -->
+  <text class="status-key" x="706" y="184" style="animation-delay:2.6s">Pipeline</text>
+  <text class="status-val" x="706" y="200" style="animation-delay:2.7s">Passing</text>
 
-  <!-- Grid separators -->
-  <g class="divider-dash">
-    <line x1="340" y1="30" x2="340" y2="250" />
-    <line x1="660" y1="30" x2="660" y2="250" />
-  </g>
-
-  <!-- Column 1: Core Specialization -->
-  <g transform="translate(40, 45)">
-    <text x="0" y="10" class="card-title">CORE DISCIPLINE</text>
-    <line x1="0" y1="20" x2="260" y2="20" class="card-header-line" />
-    
-    <g transform="translate(0, 50)">
-      <text x="0" y="10" class="label-text">Frontend Systems</text>
-      <text x="180" y="10" class="val-text">Vite / Next.js</text>
-      
-      <text x="0" y="45" class="label-text">Backend Design</text>
-      <text x="180" y="45" class="val-text">REST / WebSockets</text>
-
-      <text x="0" y="80" class="label-text">Architecture Focus</text>
-      <text x="180" y="80" class="val-text">Clean Code / SOLID</text>
-
-      <text x="0" y="115" class="label-text">Cloud Deployment</text>
-      <text x="180" y="115" class="val-text">Docker / Vercel</text>
-      
-      <text x="0" y="150" class="label-text">Quality Standards</text>
-      <text x="180" y="150" class="val-text">Optimized</text>
-    </g>
-  </g>
-
-  <!-- Column 2: System Metrics -->
-  <g transform="translate(380, 45)">
-    <text x="0" y="10" class="card-title">PERFORMANCE METRICS</text>
-    <line x1="0" y1="20" x2="240" y2="20" class="card-header-line" />
-
-    <g transform="translate(0, 50)">
-      <text x="0" y="10" class="label-text">Runtime Performance</text>
-      <text x="205" y="10" class="val-text">98%</text>
-      <rect x="0" y="22" width="220" height="4" class="bg-bar" />
-      <rect x="0" y="22" width="210" height="4" class="fill-bar bar-1" />
-
-      <text x="0" y="65" class="label-text">Modular Decoupling</text>
-      <text x="205" y="65" class="val-text">92%</text>
-      <rect x="0" y="77" width="220" height="4" class="bg-bar" />
-      <rect x="0" y="77" width="195" height="4" class="fill-bar bar-2" />
-
-      <text x="0" y="120" class="label-text">Resource Utilization</text>
-      <text x="205" y="120" class="val-text">96%</text>
-      <rect x="0" y="132" width="220" height="4" class="bg-bar" />
-      <rect x="0" y="132" width="205" height="4" class="fill-bar bar-3" />
-    </g>
-  </g>
-
-  <!-- Column 3: Platform Telemetry -->
-  <g transform="translate(700, 45)">
-    <text x="0" y="10" class="card-title">INFRASTRUCTURE STATUS</text>
-    <line x1="0" y1="20" x2="260" y2="20" class="card-header-line" />
-
-    <g transform="translate(0, 50)">
-      <text x="0" y="10" class="label-text">Deployment Env</text>
-      <circle class="status-dot" cx="195" cy="5" r="4.5" />
-      <text x="210" y="10" class="val-text" fill="#00f5d4">Active</text>
-
-      <text x="0" y="45" class="label-text">Service Uptime</text>
-      <text x="180" y="45" class="val-text">99.98%</text>
-
-      <text x="0" y="80" class="label-text">Build Pipeline</text>
-      <text x="180" y="80" class="val-text" fill="#00f5d4">Passing</text>
-
-      <text x="0" y="115" class="label-text">Sync Status</text>
-      <text x="180" y="115" class="val-text">Completed</text>
-      
-      <text x="0" y="150" class="label-text">Target Platform</text>
-      <text x="180" y="150" class="val-text">Production</text>
-    </g>
-  </g>
+  <!-- Branch -->
+  <text class="status-key" x="706" y="232" style="animation-delay:2.8s">Branch</text>
+  <text class="status-val" x="706" y="248" style="animation-delay:2.9s">Synced</text>
 </svg>

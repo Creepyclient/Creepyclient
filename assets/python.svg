@@ -1,18 +1,108 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="42" height="42">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
+
+      .snake-path-1 {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 320;
+        stroke-dashoffset: 320;
+        animation: draw-snake 2s ease-out 0s forwards;
+      }
+      .snake-path-2 {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 320;
+        stroke-dashoffset: 320;
+        animation: draw-snake 2s ease-out 0.4s forwards;
+      }
+      .snake-fill-1 {
+        fill: #ffffff;
+        opacity: 0;
+        animation: fade-in 0.3s ease-out 1.8s forwards;
+      }
+      .snake-fill-2 {
+        fill: #ffffff;
+        opacity: 0;
+        animation: fade-in 0.3s ease-out 2.0s forwards;
+      }
+      .eye {
+        fill: #000000;
+        opacity: 0;
+        animation: fade-in 0.3s ease-out 2.1s forwards;
+      }
+      @keyframes draw-snake {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes fade-in {
+        to { opacity: 1; }
+      }
+    </style>
   </defs>
-  <!-- Python Upper Snake (Cyan) -->
-  <path d="M64,9 C45.3,9 31,13.7 31,31 L31,44 L66,44 L66,49 L18,49 C11.3,49 9,56.5 9,63 C9,72.4 15.6,76 22.3,76 L35,76 L35,68.5 C35,53.2 44.8,49 61,49 L89,49 C97.5,49 104,41.2 104,31 C104,17.2 92.5,9 64,9 Z" fill="#00f0ff" filter="url(#glow)" />
-  <!-- Python Lower Snake (Purple) -->
-  <path d="M64,119 C82.7,119 97,114.3 97,97 L97,84 L62,84 L62,79 L110,79 C116.7,79 119,71.5 119,65 C119,55.6 112.4,52 105.7,52 L93,52 L93,59.5 C93,74.8 83.2,79 67,79 L39,79 C30.5,79 24,86.8 24,97 C24,110.8 35.5,119 64,119 Z" fill="#7c4dff" filter="url(#glow)" />
-  <!-- Snake Eyes -->
-  <circle cx="48" cy="23" r="4" fill="#0c101b" />
-  <circle cx="80" cy="105" r="4" fill="#0c101b" />
+
+  <!-- Black background -->
+  <rect width="128" height="128" fill="#000000"/>
+
+  <!-- Upper snake body (top-left, blue-ish in original but white here) -->
+  <!-- Body shape: coiled S-curve top snake -->
+  <path class="snake-path-1"
+    d="M 44 30
+       C 44 22, 52 16, 64 16
+       C 76 16, 84 22, 84 32
+       L 84 52
+       C 84 56, 80 58, 76 58
+       L 52 58
+       C 46 58, 44 62, 44 66"
+  />
+  <!-- Upper snake body fill outline (closed shape) -->
+  <path class="snake-fill-1"
+    d="M 48 30
+       C 48 24, 54 20, 64 20
+       C 74 20, 80 24, 80 32
+       L 80 52
+       C 80 54, 78 54, 76 54
+       L 52 54
+       C 44 54, 40 58, 40 66
+       L 40 86
+       C 40 94, 46 98, 54 98
+       L 74 98
+       C 82 98, 88 94, 88 86
+       C 88 78, 82 74, 74 74
+       L 54 74
+       C 50 74, 48 72, 48 68
+       L 48 30 Z"
+    opacity="0"
+    style="fill:none; stroke:#ffffff; stroke-width:2.5;"
+  />
+
+  <!-- Lower snake body (bottom-right) -->
+  <path class="snake-path-2"
+    d="M 84 98
+       C 84 106, 76 112, 64 112
+       C 52 112, 44 106, 44 96
+       L 44 76
+       C 44 72, 48 70, 52 70
+       L 76 70
+       C 82 70, 84 66, 84 62"
+  />
+
+  <!-- Snake eyes -->
+  <circle class="snake-fill-1" cx="72" cy="30" r="3.5"/>
+  <circle class="eye" cx="72" cy="30" r="1.5"/>
+
+  <circle class="snake-fill-2" cx="56" cy="98" r="3.5"/>
+  <circle class="eye" cx="56" cy="98" r="1.5"/>
+
+  <!-- Head bumps / flat top indicators -->
+  <!-- Top head highlight -->
+  <rect class="snake-fill-1" x="60" y="16" width="8" height="4" rx="2"/>
+  <!-- Bottom head highlight -->
+  <rect class="snake-fill-2" x="60" y="108" width="8" height="4" rx="2"/>
 </svg>

@@ -1,36 +1,140 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 60" fill="none" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 80" width="100%" style="display:block;">
   <defs>
-    <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7b2cbf" stop-opacity="0" />
-      <stop offset="30%" stop-color="#7b2cbf" stop-opacity="0.4" />
-      <stop offset="50%" stop-color="#00f5d4" stop-opacity="1" />
-      <stop offset="70%" stop-color="#7b2cbf" stop-opacity="0.4" />
-      <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0" />
-    </linearGradient>
-    
-    <filter id="soft-glow" x="-10%" y="-30%" width="120%" height="160%">
-      <feGaussianBlur stdDeviation="2.5" result="blur" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&amp;family=JetBrains+Mono:wght@300;400;700&amp;display=swap');
+
+      .wave-primary {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 3200;
+        stroke-dashoffset: 3200;
+        animation:
+          drawWave 5s cubic-bezier(0.77, 0, 0.175, 1) forwards,
+          breatheY 5s ease-in-out 5s infinite;
+        transform-origin: 500px 40px;
+      }
+      @keyframes drawWave {
+        0%   { stroke-dashoffset: 3200; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes breatheY {
+        0%   { transform: scaleY(0.5); }
+        50%  { transform: scaleY(1.2); }
+        100% { transform: scaleY(0.5); }
+      }
+
+      .wave-secondary {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.3;
+        stroke-dasharray: 3200;
+        stroke-dashoffset: 3200;
+        animation:
+          drawWave2 5s cubic-bezier(0.77, 0, 0.175, 1) 0.6s forwards,
+          breatheY2 5s ease-in-out 5s infinite;
+        transform-origin: 500px 40px;
+      }
+      @keyframes drawWave2 {
+        0%   { stroke-dashoffset: 3200; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes breatheY2 {
+        0%   { transform: scaleY(0.6) translateX(8px); }
+        50%  { transform: scaleY(1.15) translateX(8px); }
+        100% { transform: scaleY(0.6) translateX(8px); }
+      }
+
+      .scan-line {
+        stroke: #ffffff;
+        stroke-width: 0.5;
+        stroke-dasharray: 2 6;
+        opacity: 0.12;
+        animation: scanFade 3s ease forwards;
+        animation-delay: 4.5s;
+      }
+      @keyframes scanFade {
+        0%   { opacity: 0; }
+        100% { opacity: 0.12; }
+      }
+
+      .corner-mark {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 0.8;
+        opacity: 0;
+        animation: fadeIn 0.5s ease forwards;
+      }
+      @keyframes fadeIn {
+        to { opacity: 0.4; }
+      }
+
+      .label {
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+        font-size: 7px;
+        fill: #888888;
+        letter-spacing: 1px;
+        opacity: 0;
+        animation: fadeIn 0.8s ease 4.5s forwards;
+      }
+    </style>
+    <filter id="waveGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
       <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="0.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
 
-  <style>
-    .refined-wave {
-      stroke: url(#wave-gradient);
-      stroke-width: 1.5;
-      filter: url(#soft-glow);
-      animation: wave-breathe 6s ease-in-out infinite alternate;
-    }
+  <!-- Black background -->
+  <rect width="1000" height="80" fill="#000000"/>
 
-    @keyframes wave-breathe {
-      0% { transform: scaleY(0.8) translateY(5px); }
-      100% { transform: scaleY(1.1) translateY(-5px); }
-    }
-  </style>
+  <!-- Subtle horizontal grid lines -->
+  <line class="scan-line" x1="0" y1="20" x2="1000" y2="20" animation-delay="4.6s"/>
+  <line class="scan-line" x1="0" y1="40" x2="1000" y2="40" animation-delay="4.7s"/>
+  <line class="scan-line" x1="0" y1="60" x2="1000" y2="60" animation-delay="4.8s"/>
 
-  <!-- Elegant Single Sine Path -->
-  <path class="refined-wave" d="M 0,30 Q 125,5 250,30 T 500,30 T 750,30 T 1000,30" />
+  <!-- Subtle vertical grid lines -->
+  <line class="scan-line" x1="200" y1="0" x2="200" y2="80" animation-delay="4.65s"/>
+  <line class="scan-line" x1="400" y1="0" x2="400" y2="80" animation-delay="4.75s"/>
+  <line class="scan-line" x1="600" y1="0" x2="600" y2="80" animation-delay="4.85s"/>
+  <line class="scan-line" x1="800" y1="0" x2="800" y2="80" animation-delay="4.95s"/>
+
+  <!-- Corner bracket marks -->
+  <path class="corner-mark" d="M8,12 L8,4 L16,4" animation-delay="4.5s"/>
+  <path class="corner-mark" d="M992,12 L992,4 L984,4" animation-delay="4.5s"/>
+  <path class="corner-mark" d="M8,68 L8,76 L16,76" animation-delay="4.5s"/>
+  <path class="corner-mark" d="M992,68 L992,76 L984,76" animation-delay="4.5s"/>
+
+  <!-- Secondary wave (slightly offset, 30% opacity) -->
+  <!-- Sine wave: y = 40 + 28*sin(x * 2π / 100), sampled every 5px across 1000px -->
+  <path class="wave-secondary" filter="url(#softGlow)"
+    d="M0,40 C4.36,40 8.73,51.69 13.09,62.28 C17.45,72.87 21.82,79.99 26.18,79.99 C30.55,79.99 34.91,72.86 39.27,62.27 C43.64,51.68 48,40 52.36,40 C56.73,40 61.09,28.32 65.45,17.73 C69.82,7.14 74.18,0.01 78.55,0.01 C82.91,0.01 87.27,7.13 91.64,17.72 C96,28.31 100.36,40 104.73,40 C109.09,40 113.45,51.69 117.82,62.28 C122.18,72.87 126.55,79.99 130.91,79.99 C135.27,79.99 139.64,72.86 144,62.27 C148.36,51.68 152.73,40 157.09,40 C161.45,40 165.82,28.32 170.18,17.73 C174.55,7.14 178.91,0.01 183.27,0.01 C187.64,0.01 192,7.13 196.36,17.72 C200.73,28.31 205.09,40 209.45,40 C213.82,40 218.18,51.69 222.55,62.28 C226.91,72.87 231.27,79.99 235.64,79.99 C240,79.99 244.36,72.86 248.73,62.27 C253.09,51.68 257.45,40 261.82,40 C266.18,40 270.55,28.32 274.91,17.73 C279.27,7.14 283.64,0.01 288,0.01 C292.36,0.01 296.73,7.13 301.09,17.72 C305.45,28.31 309.82,40 314.18,40 C318.55,40 322.91,51.69 327.27,62.28 C331.64,72.87 336,79.99 340.36,79.99 C344.73,79.99 349.09,72.86 353.45,62.27 C357.82,51.68 362.18,40 366.55,40 C370.91,40 375.27,28.32 379.64,17.73 C384,7.14 388.36,0.01 392.73,0.01 C397.09,0.01 401.45,7.13 405.82,17.72 C410.18,28.31 414.55,40 418.91,40 C423.27,40 427.64,51.69 432,62.28 C436.36,72.87 440.73,79.99 445.09,79.99 C449.45,79.99 453.82,72.86 458.18,62.27 C462.55,51.68 466.91,40 471.27,40 C475.64,40 480,28.32 484.36,17.73 C488.73,7.14 493.09,0.01 497.45,0.01 C501.82,0.01 506.18,7.13 510.55,17.72 C514.91,28.31 519.27,40 523.64,40 C528,40 532.36,51.69 536.73,62.28 C541.09,72.87 545.45,79.99 549.82,79.99 C554.18,79.99 558.55,72.86 562.91,62.27 C567.27,51.68 571.64,40 576,40 C580.36,40 584.73,28.32 589.09,17.73 C593.45,7.14 597.82,0.01 602.18,0.01 C606.55,0.01 610.91,7.13 615.27,17.72 C619.64,28.31 624,40 628.36,40 C632.73,40 637.09,51.69 641.45,62.28 C645.82,72.87 650.18,79.99 654.55,79.99 C658.91,79.99 663.27,72.86 667.64,62.27 C672,51.68 676.36,40 680.73,40 C685.09,40 689.45,28.32 693.82,17.73 C698.18,7.14 702.55,0.01 706.91,0.01 C711.27,0.01 715.64,7.13 720,17.72 C724.36,28.31 728.73,40 733.09,40 C737.45,40 741.82,51.69 746.18,62.28 C750.55,72.87 754.91,79.99 759.27,79.99 C763.64,79.99 768,72.86 772.36,62.27 C776.73,51.68 781.09,40 785.45,40 C789.82,40 794.18,28.32 798.55,17.73 C802.91,7.14 807.27,0.01 811.64,0.01 C816,0.01 820.36,7.13 824.73,17.72 C829.09,28.31 833.45,40 837.82,40 C842.18,40 846.55,51.69 850.91,62.28 C855.27,72.87 859.64,79.99 864,79.99 C868.36,79.99 872.73,72.86 877.09,62.27 C881.45,51.68 885.82,40 890.18,40 C894.55,40 898.91,28.32 903.27,17.73 C907.64,7.14 912,0.01 916.36,0.01 C920.73,0.01 925.09,7.13 929.45,17.72 C933.82,28.31 938.18,40 942.55,40 C946.91,40 951.27,51.69 955.64,62.28 C960,72.87 964.36,79.99 968.73,79.99 C973.09,79.99 977.45,72.86 981.82,62.27 C986.18,51.68 990.55,40 994.91,40 L1000,40"/>
+
+  <!-- Primary sine wave -->
+  <path class="wave-primary" filter="url(#waveGlow)"
+    d="M0,40 C4.36,40 8.73,51.69 13.09,62.28 C17.45,72.87 21.82,79.99 26.18,79.99 C30.55,79.99 34.91,72.86 39.27,62.27 C43.64,51.68 48,40 52.36,40 C56.73,40 61.09,28.32 65.45,17.73 C69.82,7.14 74.18,0.01 78.55,0.01 C82.91,0.01 87.27,7.13 91.64,17.72 C96,28.31 100.36,40 104.73,40 C109.09,40 113.45,51.69 117.82,62.28 C122.18,72.87 126.55,79.99 130.91,79.99 C135.27,79.99 139.64,72.86 144,62.27 C148.36,51.68 152.73,40 157.09,40 C161.45,40 165.82,28.32 170.18,17.73 C174.55,7.14 178.91,0.01 183.27,0.01 C187.64,0.01 192,7.13 196.36,17.72 C200.73,28.31 205.09,40 209.45,40 C213.82,40 218.18,51.69 222.55,62.28 C226.91,72.87 231.27,79.99 235.64,79.99 C240,79.99 244.36,72.86 248.73,62.27 C253.09,51.68 257.45,40 261.82,40 C266.18,40 270.55,28.32 274.91,17.73 C279.27,7.14 283.64,0.01 288,0.01 C292.36,0.01 296.73,7.13 301.09,17.72 C305.45,28.31 309.82,40 314.18,40 C318.55,40 322.91,51.69 327.27,62.28 C331.64,72.87 336,79.99 340.36,79.99 C344.73,79.99 349.09,72.86 353.45,62.27 C357.82,51.68 362.18,40 366.55,40 C370.91,40 375.27,28.32 379.64,17.73 C384,7.14 388.36,0.01 392.73,0.01 C397.09,0.01 401.45,7.13 405.82,17.72 C410.18,28.31 414.55,40 418.91,40 C423.27,40 427.64,51.69 432,62.28 C436.36,72.87 440.73,79.99 445.09,79.99 C449.45,79.99 453.82,72.86 458.18,62.27 C462.55,51.68 466.91,40 471.27,40 C475.64,40 480,28.32 484.36,17.73 C488.73,7.14 493.09,0.01 497.45,0.01 C501.82,0.01 506.18,7.13 510.55,17.72 C514.91,28.31 519.27,40 523.64,40 C528,40 532.36,51.69 536.73,62.28 C541.09,72.87 545.45,79.99 549.82,79.99 C554.18,79.99 558.55,72.86 562.91,62.27 C567.27,51.68 571.64,40 576,40 C580.36,40 584.73,28.32 589.09,17.73 C593.45,7.14 597.82,0.01 602.18,0.01 C606.55,0.01 610.91,7.13 615.27,17.72 C619.64,28.31 624,40 628.36,40 C632.73,40 637.09,51.69 641.45,62.28 C645.82,72.87 650.18,79.99 654.55,79.99 C658.91,79.99 663.27,72.86 667.64,62.27 C672,51.68 676.36,40 680.73,40 C685.09,40 689.45,28.32 693.82,17.73 C698.18,7.14 702.55,0.01 706.91,0.01 C711.27,0.01 715.64,7.13 720,17.72 C724.36,28.31 728.73,40 733.09,40 C737.45,40 741.82,51.69 746.18,62.28 C750.55,72.87 754.91,79.99 759.27,79.99 C763.64,79.99 768,72.86 772.36,62.27 C776.73,51.68 781.09,40 785.45,40 C789.82,40 794.18,28.32 798.55,17.73 C802.91,7.14 807.27,0.01 811.64,0.01 C816,0.01 820.36,7.13 824.73,17.72 C829.09,28.31 833.45,40 837.82,40 C842.18,40 846.55,51.69 850.91,62.28 C855.27,72.87 859.64,79.99 864,79.99 C868.36,79.99 872.73,72.86 877.09,62.27 C881.45,51.68 885.82,40 890.18,40 C894.55,40 898.91,28.32 903.27,17.73 C907.64,7.14 912,0.01 916.36,0.01 C920.73,0.01 925.09,7.13 929.45,17.72 C933.82,28.31 938.18,40 942.55,40 C946.91,40 951.27,51.69 955.64,62.28 C960,72.87 964.36,79.99 968.73,79.99 C973.09,79.99 977.45,72.86 981.82,62.27 C986.18,51.68 990.55,40 994.91,40 L1000,40"/>
+
+  <!-- Axis center line -->
+  <line x1="0" y1="40" x2="1000" y2="40" stroke="#222222" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Labels -->
+  <text class="label" x="6" y="10">OSC</text>
+  <text class="label" x="960" y="10">1.0kHz</text>
+  <text class="label" x="6" y="76">CH1</text>
+  <text class="label" x="960" y="76">AC</text>
 </svg>

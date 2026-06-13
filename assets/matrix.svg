@@ -1,61 +1,140 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 80" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 90" width="100%" style="display:block;">
   <defs>
-    <linearGradient id="grid-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f5d4" stop-opacity="0" />
-      <stop offset="50%" stop-color="#00f5d4" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0" />
-    </linearGradient>
+    <style>
+      /* 10 columns x 3 rows, 14x14 squares */
+      /* Columns at x: 55, 145, 235, 325, 415, 505, 595, 685, 775, 865 */
+      /* Rows at y: 8, 38, 68 */
+
+      .sq {
+        fill: #ffffff;
+        transform-origin: center;
+        transform-box: fill-box;
+      }
+
+      /* Column-staggered reveal: scale 0 → 1 */
+      /* Col 1 */
+      .sq-c1 { animation: revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 0s; opacity: 0; transform: scale(0); }
+      /* Col 2 */
+      .sq-c2 { animation: revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 0.3s; opacity: 0; transform: scale(0); }
+      /* Col 3 */
+      .sq-c3 { animation: revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 0.6s; opacity: 0; transform: scale(0); }
+      /* Col 4 */
+      .sq-c4 { animation: revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 0.9s; opacity: 0; transform: scale(0); }
+      /* Col 5 */
+      .sq-c5 { animation: revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 1.2s; opacity: 0; transform: scale(0); }
+      /* Col 6 */
+      .sq-c6 { animation: revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 1.5s; opacity: 0; transform: scale(0); }
+      /* Col 7 */
+      .sq-c7 { animation: revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 1.8s; opacity: 0; transform: scale(0); }
+      /* Col 8 */
+      .sq-c8 { animation: revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 2.1s; opacity: 0; transform: scale(0); }
+      /* Col 9 */
+      .sq-c9 { animation: revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 2.4s; opacity: 0; transform: scale(0); }
+      /* Col 10 */
+      .sq-c10 { animation: revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; animation-delay: 2.7s; opacity: 0; transform: scale(0); }
+
+      @keyframes revealSq {
+        0%   { opacity: 0; transform: scale(0); }
+        60%  { opacity: 1; transform: scale(1.15); }
+        100% { opacity: 0.18; transform: scale(1); }
+      }
+
+      /* Accent pulse: 3 specific squares flicker brightly after reveal */
+      .sq-accent-a {
+        animation:
+          revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.9s forwards,
+          accentFlicker 2.4s ease-in-out 3.4s infinite;
+        opacity: 0; transform: scale(0);
+      }
+      .sq-accent-b {
+        animation:
+          revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.8s forwards,
+          accentFlicker 2.4s ease-in-out 4.2s infinite;
+        opacity: 0; transform: scale(0);
+      }
+      .sq-accent-c {
+        animation:
+          revealSq 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 2.4s forwards,
+          accentFlicker 2.4s ease-in-out 4.8s infinite;
+        opacity: 0; transform: scale(0);
+      }
+
+      @keyframes accentFlicker {
+        0%   { opacity: 0.18; }
+        10%  { opacity: 1; }
+        20%  { opacity: 0.3; }
+        30%  { opacity: 1; }
+        45%  { opacity: 0.18; }
+        100% { opacity: 0.18; }
+      }
+    </style>
+    <filter id="sqGlow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="accentGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
-  <style>
-    .grid-lines {
-      stroke: #101622;
-      stroke-width: 0.8;
-    }
+  <!-- Black background -->
+  <rect width="1000" height="90" fill="#000000"/>
 
-    .glowing-node {
-      fill: #00f5d4;
-      opacity: 0.2;
-      animation: breathe-node 4s ease-in-out infinite alternate;
-    }
+  <!-- Grid: 10 cols × 3 rows -->
+  <!-- Col 1: x=55 -->
+  <rect class="sq sq-c1" x="48" y="8"  width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c1" x="48" y="38" width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c1" x="48" y="68" width="14" height="14" filter="url(#sqGlow)"/>
 
-    .glowing-line {
-      stroke: url(#grid-glow);
-      stroke-width: 1.2;
-      fill: none;
-    }
+  <!-- Col 2: x=145 -->
+  <rect class="sq sq-c2" x="138" y="8"  width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c2" x="138" y="38" width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c2" x="138" y="68" width="14" height="14" filter="url(#sqGlow)"/>
 
-    @keyframes breathe-node {
-      0% { opacity: 0.1; r: 2px; }
-      100% { opacity: 0.6; r: 4px; }
-    }
-  </style>
+  <!-- Col 3: x=235 — accent on row 2 -->
+  <rect class="sq sq-c3" x="228" y="8"  width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-accent-a"  x="228" y="38" width="14" height="14" filter="url(#accentGlow)"/>
+  <rect class="sq sq-c3" x="228" y="68" width="14" height="14" filter="url(#sqGlow)"/>
 
-  <!-- Static Grid Lines -->
-  <g class="grid-lines">
-    <!-- Horizontal -->
-    <line x1="50" y1="15" x2="950" y2="15" />
-    <line x1="50" y1="40" x2="950" y2="40" />
-    <line x1="50" y1="65" x2="950" y2="65" />
+  <!-- Col 4: x=325 -->
+  <rect class="sq sq-c4" x="318" y="8"  width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c4" x="318" y="38" width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c4" x="318" y="68" width="14" height="14" filter="url(#sqGlow)"/>
 
-    <!-- Vertical -->
-    <line x1="100" y1="15" x2="100" y2="65" />
-    <line x1="200" y1="15" x2="200" y2="65" />
-    <line x1="300" y1="15" x2="300" y2="65" />
-    <line x1="400" y1="15" x2="400" y2="65" />
-    <line x1="500" y1="15" x2="500" y2="65" />
-    <line x1="600" y1="15" x2="600" y2="65" />
-    <line x1="700" y1="15" x2="700" y2="65" />
-    <line x1="800" y1="15" x2="800" y2="65" />
-    <line x1="900" y1="15" x2="900" y2="65" />
-  </g>
+  <!-- Col 5: x=415 — accent on row 3 -->
+  <rect class="sq sq-c5" x="408" y="8"  width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c5" x="408" y="38" width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-accent-b"  x="408" y="68" width="14" height="14" filter="url(#accentGlow)"/>
 
-  <!-- Accent glowing horizontal flow line -->
-  <path class="glowing-line" d="M 50,40 L 950,40" />
+  <!-- Col 6: x=505 -->
+  <rect class="sq sq-c6" x="498" y="8"  width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c6" x="498" y="38" width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c6" x="498" y="68" width="14" height="14" filter="url(#sqGlow)"/>
 
-  <!-- Dots at intersections -->
-  <circle class="glowing-node" cx="200" cy="40" r="3" />
-  <circle class="glowing-node" style="animation-delay: -1.3s;" cx="400" cy="15" r="3" />
-  <circle class="glowing-node" style="animation-delay: -2.6s;" cx="600" cy="65" r="3" />
-  <circle class="glowing-node" style="animation-delay: -0.7s;" cx="800" cy="40" r="3" />
+  <!-- Col 7: x=595 — accent on row 1 -->
+  <rect class="sq sq-accent-c"  x="588" y="8"  width="14" height="14" filter="url(#accentGlow)"/>
+  <rect class="sq sq-c7" x="588" y="38" width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c7" x="588" y="68" width="14" height="14" filter="url(#sqGlow)"/>
+
+  <!-- Col 8: x=685 -->
+  <rect class="sq sq-c8" x="678" y="8"  width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c8" x="678" y="38" width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c8" x="678" y="68" width="14" height="14" filter="url(#sqGlow)"/>
+
+  <!-- Col 9: x=775 -->
+  <rect class="sq sq-c9" x="768" y="8"  width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c9" x="768" y="38" width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c9" x="768" y="68" width="14" height="14" filter="url(#sqGlow)"/>
+
+  <!-- Col 10: x=865 -->
+  <rect class="sq sq-c10" x="858" y="8"  width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c10" x="858" y="38" width="14" height="14" filter="url(#sqGlow)"/>
+  <rect class="sq sq-c10" x="858" y="68" width="14" height="14" filter="url(#sqGlow)"/>
 </svg>

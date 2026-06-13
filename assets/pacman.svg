@@ -1,112 +1,208 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 140" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" width="100%" height="120">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3.5" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
+    <style>
+      /* Pac-Man mouth open/close animation */
+      @keyframes chomp {
+        0%   { d: path("M 500 60 L 532 43 A 36 36 0 1 1 532 77 Z"); }
+        50%  { d: path("M 500 60 L 536 60 A 36 36 0 1 1 536 60 Z"); }
+        100% { d: path("M 500 60 L 532 43 A 36 36 0 1 1 532 77 Z"); }
+      }
+
+      /* Pac-Man travels right to left then resets */
+      @keyframes pacman-move {
+        0%   { transform: translateX(-520px); }
+        100% { transform: translateX(520px); }
+      }
+
+      /* Ghost follows pac-man */
+      @keyframes ghost-move {
+        0%   { transform: translateX(-580px); }
+        100% { transform: translateX(460px); }
+      }
+
+      /* Ghost body wobble */
+      @keyframes ghost-wobble {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(-3px); }
+      }
+
+      /* Dot eaten: disappear when pac-man passes */
+      @keyframes dot-1-eat {
+        0%, 14.9% { opacity: 1; }
+        15%, 100% { opacity: 0; }
+      }
+      @keyframes dot-2-eat {
+        0%, 30.9% { opacity: 1; }
+        31%, 100% { opacity: 0; }
+      }
+      @keyframes dot-3-eat {
+        0%, 49.9% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes dot-4-eat {
+        0%, 67.9% { opacity: 1; }
+        68%, 100% { opacity: 0; }
+      }
+      @keyframes dot-5-eat {
+        0%, 83.9% { opacity: 1; }
+        84%, 100% { opacity: 0; }
+      }
+
+      /* Ghost eye bob */
+      @keyframes eye-bob {
+        0%, 100% { ry: 4; }
+        50%       { ry: 5; }
+      }
+
+      .maze-border {
+        stroke: #ffffff;
+        stroke-width: 1;
+        fill: none;
+      }
+      .dot {
+        fill: #ffffff;
+      }
+      .dot-1 { animation: dot-1-eat 12s linear 0s infinite; }
+      .dot-2 { animation: dot-2-eat 12s linear 0s infinite; }
+      .dot-3 { animation: dot-3-eat 12s linear 0s infinite; }
+      .dot-4 { animation: dot-4-eat 12s linear 0s infinite; }
+      .dot-5 { animation: dot-5-eat 12s linear 0s infinite; }
+
+      .pacman-group {
+        animation: pacman-move 12s linear 0s infinite;
+      }
+      .pacman-body {
+        fill: #ffffff;
+        animation: chomp 0.3s linear infinite;
+      }
+
+      .ghost-group {
+        animation: ghost-move 12s linear 0s infinite;
+      }
+      .ghost-body-wrap {
+        animation: ghost-wobble 0.5s ease-in-out infinite;
+      }
+      .ghost-eye {
+        fill: #000000;
+        animation: eye-bob 0.5s ease-in-out infinite;
+      }
+    </style>
   </defs>
 
-  <style>
-    .maze-wall {
-      stroke: #172237;
-      stroke-width: 3;
-      fill: none;
-    }
+  <!-- Black background -->
+  <rect width="1000" height="120" fill="#000000"/>
 
-    .maze-wall-glow {
-      stroke: #7c4dff;
-      stroke-width: 5;
-      fill: none;
-      filter: url(#glow);
-      opacity: 0.5;
-    }
+  <!-- Maze border lines: top channel wall -->
+  <line class="maze-border" x1="0" y1="20" x2="1000" y2="20"/>
+  <!-- bottom channel wall -->
+  <line class="maze-border" x1="0" y1="100" x2="1000" y2="100"/>
+  <!-- Left cap -->
+  <line class="maze-border" x1="0" y1="20" x2="0" y2="100"/>
+  <!-- Right cap -->
+  <line class="maze-border" x1="1000" y1="20" x2="1000" y2="100"/>
 
-    .pacman {
-      fill: #ffd43b;
-      filter: url(#glow);
-    }
+  <!-- Inner corridor decorations (subtle pillars) -->
+  <line class="maze-border" x1="200" y1="20" x2="200" y2="35" stroke-width="1"/>
+  <line class="maze-border" x1="200" y1="85" x2="200" y2="100" stroke-width="1"/>
+  <line class="maze-border" x1="400" y1="20" x2="400" y2="35" stroke-width="1"/>
+  <line class="maze-border" x1="400" y1="85" x2="400" y2="100" stroke-width="1"/>
+  <line class="maze-border" x1="600" y1="20" x2="600" y2="35" stroke-width="1"/>
+  <line class="maze-border" x1="600" y1="85" x2="600" y2="100" stroke-width="1"/>
+  <line class="maze-border" x1="800" y1="20" x2="800" y2="35" stroke-width="1"/>
+  <line class="maze-border" x1="800" y1="85" x2="800" y2="100" stroke-width="1"/>
 
-    .ghost {
-      fill: #00f0ff;
-      filter: url(#glow);
-    }
+  <!-- 5 dots evenly spaced (at x = 166, 333, 500, 666, 833) -->
+  <circle class="dot dot-1" cx="166" cy="60" r="5"/>
+  <circle class="dot dot-2" cx="333" cy="60" r="5"/>
+  <circle class="dot dot-3" cx="500" cy="60" r="5"/>
+  <circle class="dot dot-4" cx="666" cy="60" r="5"/>
+  <circle class="dot dot-5" cx="833" cy="60" r="5"/>
 
-    .ghost-eye {
-      fill: #ffffff;
-    }
-
-    .ghost-pupil {
-      fill: #0c101b;
-    }
-
-    .dot {
-      fill: #ffffff;
-      filter: url(#glow);
-      animation: flash-dot 1.5s ease-in-out infinite alternate;
-    }
-
-    /* Pacman mouth animation using clipPath or path morphing */
-    .pacman-mouth {
-      animation: chomp 0.5s step-start infinite;
-    }
-
-    /* Pacman movement across maze */
-    .sprite-group {
-      animation: walk 16s linear infinite;
-    }
-
-    @keyframes flash-dot {
-      0% { opacity: 0.3; r: 2px; }
-      100% { opacity: 1; r: 4px; }
-    }
-
-    @keyframes walk {
-      0% { transform: translateX(-200px); }
-      100% { transform: translateX(1100px); }
-    }
-  </style>
-
-  <!-- Background -->
-  <rect width="1000" height="140" rx="10" fill="#07090e" stroke="#121b2d" stroke-width="1.5" />
-
-  <!-- Maze Walls -->
-  <path class="maze-wall-glow" d="M 30,25 L 970,25 M 30,115 L 970,115 M 500,25 L 500,55 M 250,85 L 250,115 M 750,85 L 750,115" />
-  <path class="maze-wall" d="M 30,25 L 970,25 M 30,115 L 970,115 M 500,25 L 500,55 M 250,85 L 250,115 M 750,85 L 750,115" />
-
-  <!-- Stationary Dots that disappear (or just pulsate) -->
-  <circle class="dot" cx="100" cy="70" r="3.5" />
-  <circle class="dot" cx="200" cy="70" r="3.5" />
-  <circle class="dot" cx="300" cy="70" r="3.5" />
-  <circle class="dot" cx="400" cy="70" r="3.5" />
-  <circle class="dot" cx="500" cy="70" r="3.5" />
-  <circle class="dot" cx="600" cy="70" r="3.5" />
-  <circle class="dot" cx="700" cy="70" r="3.5" />
-  <circle class="dot" cx="800" cy="70" r="3.5" />
-  <circle class="dot" cx="900" cy="70" r="3.5" />
-
-  <!-- Moving Character Group -->
-  <g class="sprite-group">
-    <!-- Ghost (Blinky / Inky styled) -->
-    <g class="ghost" transform="translate(0, 50)">
-      <!-- Ghost body path -->
-      <path d="M 10,20 C 10,5 30,5 30,20 L 30,35 L 26,32 L 22,35 L 18,32 L 14,35 L 10,32 Z" />
-      <!-- Eyes -->
-      <circle class="ghost-eye" cx="16" cy="15" r="3" />
-      <circle class="ghost-eye" cx="24" cy="15" r="3" />
-      <!-- Pupils looking right -->
-      <circle class="ghost-pupil" cx="17" cy="15" r="1.2" />
-      <circle class="ghost-pupil" cx="25" cy="15" r="1.2" />
-    </g>
-
-    <!-- Pacman -->
-    <g class="pacman" transform="translate(60, 50)">
-      <!-- Pacman base shape with mouth cut out -->
-      <path d="M 20,20 A 15,15 0 1,0 20,20.1 Z" />
-      <!-- Eye -->
-      <circle cx="20" cy="12" r="1.5" fill="#000" />
+  <!-- Ghost (follows pac-man, offset behind) -->
+  <!-- Ghost starts at x=420 and travels with ghost-move -->
+  <g class="ghost-group" transform="translate(420, 0)">
+    <g class="ghost-body-wrap">
+      <!-- Ghost outline: semicircle top + wavy bottom -->
+      <path
+        d="M -20 70
+           L -20 50
+           A 20 20 0 0 1 20 50
+           L 20 70
+           Q 15 64, 10 70
+           Q 5 76, 0 70
+           Q -5 64, -10 70
+           Q -15 76, -20 70 Z"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="2"
+        stroke-linejoin="round"/>
+      <!-- Ghost left eye hole -->
+      <ellipse class="ghost-eye" cx="-8" cy="54" rx="4" ry="4"/>
+      <!-- Ghost right eye hole -->
+      <ellipse class="ghost-eye" cx="8" cy="54" rx="4" ry="4"/>
+      <!-- Eye pupils (white dot inside) -->
+      <circle fill="#ffffff" cx="-6" cy="54" r="1.5"/>
+      <circle fill="#ffffff" cx="10" cy="54" r="1.5"/>
     </g>
   </g>
+
+  <!-- Pac-Man (starts at right, moves right→reset) -->
+  <!-- Pac-man starts at x=480 translated left -->
+  <g class="pacman-group" transform="translate(480, 0)">
+    <!-- Pac-man body: wedge with animating mouth -->
+    <!-- Using clip-path approach since CSS d animation may not work in all renderers -->
+    <!-- Fallback: use two arcs with rotation animation for chomping -->
+    <g transform="translate(0, 60)">
+      <!-- Top jaw -->
+      <path
+        d="M 0 0 L 30 -17 A 36 36 0 0 0 0 0"
+        fill="#ffffff"
+        style="transform-origin:0 0; animation: jaw-top 0.3s linear infinite;">
+        <animateTransform attributeName="transform" type="rotate"
+          values="-20;0;-20" dur="0.3s" repeatCount="indefinite"/>
+      </path>
+      <!-- Bottom jaw -->
+      <path
+        d="M 0 0 L 30 17 A 36 36 0 0 1 0 0"
+        fill="#ffffff"
+        style="transform-origin:0 0;">
+        <animateTransform attributeName="transform" type="rotate"
+          values="20;0;20" dur="0.3s" repeatCount="indefinite"/>
+      </path>
+      <!-- Main body (back 3/4 circle) -->
+      <path
+        d="M 0 0 A 36 36 0 0 0 0 0
+           M 30 -17 A 36 36 0 1 0 30 17"
+        fill="#ffffff"
+        stroke="none"/>
+      <!-- Simplified: full circle minus a wedge -->
+      <!-- Use a static white circle with two black triangles for mouth illusion -->
+    </g>
+  </g>
+
+  <!-- Simplified Pac-Man with SMIL animation for broad SVG support -->
+  <!-- Override above with cleaner version -->
+  <g style="animation: pacman-move 12s linear 0s infinite;" transform="translate(480,0)">
+    <!-- White filled circle -->
+    <circle cx="0" cy="60" r="34" fill="#ffffff"/>
+    <!-- Black wedge for mouth - top -->
+    <polygon fill="#000000" points="0,60 36,38 42,60">
+      <animateTransform attributeName="transform" type="rotate"
+        values="-18,0,60; 0,0,60; -18,0,60" dur="0.28s" repeatCount="indefinite"/>
+    </polygon>
+    <!-- Black wedge for mouth - bottom -->
+    <polygon fill="#000000" points="0,60 36,82 42,60">
+      <animateTransform attributeName="transform" type="rotate"
+        values="18,0,60; 0,0,60; 18,0,60" dur="0.28s" repeatCount="indefinite"/>
+    </polygon>
+    <!-- Mask out areas outside the maze channel (above/below walls) -->
+  </g>
+
+  <!-- Re-draw maze walls on top so pac-man goes "through" the channel -->
+  <rect x="0" y="0" width="1000" height="20" fill="#000000"/>
+  <rect x="0" y="100" width="1000" height="20" fill="#000000"/>
+  <line class="maze-border" x1="0" y1="20" x2="1000" y2="20"/>
+  <line class="maze-border" x1="0" y1="100" x2="1000" y2="100"/>
+  <line class="maze-border" x1="0" y1="20" x2="0" y2="100"/>
+  <line class="maze-border" x1="1000" y1="20" x2="1000" y2="100"/>
 </svg>

@@ -1,80 +1,261 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" width="100%" style="display:block;">
   <defs>
-    <filter id="soft-glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="3.5" result="blur" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&amp;display=swap');
+
+      /* Node sequential light-up */
+      .node { fill: #ffffff; opacity: 0.1; }
+
+      .node-1 { animation: nodeLight 8s ease-in-out infinite; animation-delay: 0s; }
+      .node-2 { animation: nodeLight 8s ease-in-out infinite; animation-delay: 1s; }
+      .node-3 { animation: nodeLight 8s ease-in-out infinite; animation-delay: 1.4s; }
+      .node-4 { animation: nodeLight 8s ease-in-out infinite; animation-delay: 2.4s; }
+      .node-5 { animation: nodeLight 8s ease-in-out infinite; animation-delay: 2.8s; }
+      .node-6 { animation: nodeLight 8s ease-in-out infinite; animation-delay: 4s; }
+      .node-7 { animation: nodeLight 8s ease-in-out infinite; animation-delay: 5s; }
+      .node-8 { animation: nodeLight 8s ease-in-out infinite; animation-delay: 5.3s; }
+
+      @keyframes nodeLight {
+        0%    { opacity: 0.1; }
+        8%    { opacity: 1; box-shadow: 0 0 8px #fff; }
+        20%   { opacity: 0.15; }
+        100%  { opacity: 0.1; }
+      }
+
+      /* Node halo rings */
+      .halo { fill: none; stroke: #ffffff; stroke-width: 0.8; opacity: 0; }
+      .halo-1 { animation: haloExpand 8s ease-out infinite; animation-delay: 0s; }
+      .halo-2 { animation: haloExpand 8s ease-out infinite; animation-delay: 1s; }
+      .halo-3 { animation: haloExpand 8s ease-out infinite; animation-delay: 1.4s; }
+      .halo-4 { animation: haloExpand 8s ease-out infinite; animation-delay: 2.4s; }
+      .halo-5 { animation: haloExpand 8s ease-out infinite; animation-delay: 2.8s; }
+      .halo-6 { animation: haloExpand 8s ease-out infinite; animation-delay: 4s; }
+      .halo-7 { animation: haloExpand 8s ease-out infinite; animation-delay: 5s; }
+      .halo-8 { animation: haloExpand 8s ease-out infinite; animation-delay: 5.3s; }
+
+      @keyframes haloExpand {
+        0%   { opacity: 0; r: 6; }
+        5%   { opacity: 0.6; }
+        18%  { opacity: 0; r: 16; }
+        100% { opacity: 0; r: 6; }
+      }
+
+      /* Connection paths */
+      .conn {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 4 5;
+        opacity: 0.25;
+      }
+
+      /* Signal traveling dots */
+      .sig {
+        fill: #ffffff;
+        opacity: 0;
+      }
+
+      /* Path 1→2: (80,60)→(230,25), length ≈ 157 */
+      .sig-12 {
+        animation: sig12 8s linear infinite;
+        animation-delay: 0.5s;
+        offset-path: path('M80,60 L230,25');
+        offset-rotate: 0deg;
+      }
+      @keyframes sig12 {
+        0%    { opacity: 0; offset-distance: 0%; }
+        2%    { opacity: 1; }
+        12%   { opacity: 1; offset-distance: 100%; }
+        14%   { opacity: 0; offset-distance: 100%; }
+        100%  { opacity: 0; offset-distance: 100%; }
+      }
+
+      /* Path 1→3: (80,60)→(230,95) */
+      .sig-13 {
+        animation: sig13 8s linear infinite;
+        animation-delay: 0.5s;
+        offset-path: path('M80,60 L230,95');
+        offset-rotate: 0deg;
+      }
+      @keyframes sig13 {
+        0%    { opacity: 0; offset-distance: 0%; }
+        2%    { opacity: 1; }
+        12%   { opacity: 1; offset-distance: 100%; }
+        14%   { opacity: 0; }
+        100%  { opacity: 0; }
+      }
+
+      /* Path 2→4: (230,25)→(430,25) */
+      .sig-24 {
+        animation: sig24 8s linear infinite;
+        animation-delay: 1.5s;
+        offset-path: path('M230,25 L430,25');
+        offset-rotate: 0deg;
+      }
+      @keyframes sig24 {
+        0%    { opacity: 0; offset-distance: 0%; }
+        2%    { opacity: 1; }
+        14%   { opacity: 1; offset-distance: 100%; }
+        16%   { opacity: 0; }
+        100%  { opacity: 0; }
+      }
+
+      /* Path 3→5: (230,95)→(430,95) */
+      .sig-35 {
+        animation: sig35 8s linear infinite;
+        animation-delay: 1.9s;
+        offset-path: path('M230,95 L430,95');
+        offset-rotate: 0deg;
+      }
+      @keyframes sig35 {
+        0%    { opacity: 0; offset-distance: 0%; }
+        2%    { opacity: 1; }
+        14%   { opacity: 1; offset-distance: 100%; }
+        16%   { opacity: 0; }
+        100%  { opacity: 0; }
+      }
+
+      /* Path 4→6: (430,25)→(650,60) */
+      .sig-46 {
+        animation: sig46 8s linear infinite;
+        animation-delay: 3s;
+        offset-path: path('M430,25 L650,60');
+        offset-rotate: 0deg;
+      }
+      @keyframes sig46 {
+        0%    { opacity: 0; offset-distance: 0%; }
+        2%    { opacity: 1; }
+        14%   { opacity: 1; offset-distance: 100%; }
+        16%   { opacity: 0; }
+        100%  { opacity: 0; }
+      }
+
+      /* Path 5→6: (430,95)→(650,60) */
+      .sig-56 {
+        animation: sig56 8s linear infinite;
+        animation-delay: 3.3s;
+        offset-path: path('M430,95 L650,60');
+        offset-rotate: 0deg;
+      }
+      @keyframes sig56 {
+        0%    { opacity: 0; offset-distance: 0%; }
+        2%    { opacity: 1; }
+        14%   { opacity: 1; offset-distance: 100%; }
+        16%   { opacity: 0; }
+        100%  { opacity: 0; }
+      }
+
+      /* Path 6→7: (650,60)→(800,25) */
+      .sig-67 {
+        animation: sig67 8s linear infinite;
+        animation-delay: 4.5s;
+        offset-path: path('M650,60 L800,25');
+        offset-rotate: 0deg;
+      }
+      @keyframes sig67 {
+        0%    { opacity: 0; offset-distance: 0%; }
+        2%    { opacity: 1; }
+        12%   { opacity: 1; offset-distance: 100%; }
+        14%   { opacity: 0; }
+        100%  { opacity: 0; }
+      }
+
+      /* Path 6→8: (650,60)→(800,95) */
+      .sig-68 {
+        animation: sig68 8s linear infinite;
+        animation-delay: 4.5s;
+        offset-path: path('M650,60 L800,95');
+        offset-rotate: 0deg;
+      }
+      @keyframes sig68 {
+        0%    { opacity: 0; offset-distance: 0%; }
+        2%    { opacity: 1; }
+        12%   { opacity: 1; offset-distance: 100%; }
+        14%   { opacity: 0; }
+        100%  { opacity: 0; }
+      }
+
+      .node-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 6px;
+        fill: #888888;
+        text-anchor: middle;
+        letter-spacing: 0.5px;
+      }
+    </style>
+    <filter id="nodeGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-
-    <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7b2cbf" />
-      <stop offset="50%" stop-color="#00f5d4" />
-      <stop offset="100%" stop-color="#7b2cbf" />
-    </linearGradient>
+    <filter id="sigGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
-  <style>
-    .conn-path {
-      stroke: #101826;
-      stroke-width: 1.5;
-      fill: none;
-    }
+  <!-- Black background -->
+  <rect width="1000" height="120" fill="#000000"/>
 
-    .active-flow {
-      stroke: url(#line-gradient);
-      stroke-width: 2;
-      fill: none;
-      filter: url(#soft-glow);
-      stroke-dasharray: 40 160;
-      animation: signal-flow 5s linear infinite;
-    }
+  <!-- Connection lines -->
+  <line class="conn" x1="80" y1="60" x2="230" y2="25"/>
+  <line class="conn" x1="80" y1="60" x2="230" y2="95"/>
+  <line class="conn" x1="230" y1="25" x2="430" y2="25"/>
+  <line class="conn" x1="230" y1="95" x2="430" y2="95"/>
+  <line class="conn" x1="430" y1="25" x2="650" y2="60"/>
+  <line class="conn" x1="430" y1="95" x2="650" y2="60"/>
+  <line class="conn" x1="650" y1="60" x2="800" y2="25"/>
+  <line class="conn" x1="650" y1="60" x2="800" y2="95"/>
 
-    .node-base {
-      fill: #060910;
-      stroke: #1b2639;
-      stroke-width: 1.5;
-    }
+  <!-- Node halo rings -->
+  <circle class="halo halo-1" cx="84" cy="64" r="6"/>
+  <circle class="halo halo-2" cx="234" cy="29" r="6"/>
+  <circle class="halo halo-3" cx="234" cy="99" r="6"/>
+  <circle class="halo halo-4" cx="434" cy="29" r="6"/>
+  <circle class="halo halo-5" cx="434" cy="99" r="6"/>
+  <circle class="halo halo-6" cx="654" cy="64" r="6"/>
+  <circle class="halo halo-7" cx="804" cy="29" r="6"/>
+  <circle class="halo halo-8" cx="804" cy="99" r="6"/>
 
-    .node-active {
-      fill: #00f5d4;
-      stroke: #00f5d4;
-      stroke-width: 1;
-      filter: url(#soft-glow);
-      animation: pulse-active 2.5s ease-in-out infinite alternate;
-    }
+  <!-- Node 1: (80,60) 8x8 square centered -->
+  <rect class="node node-1" x="76" y="56" width="8" height="8" filter="url(#nodeGlow)"/>
+  <!-- Node 2: (230,25) -->
+  <rect class="node node-2" x="226" y="21" width="8" height="8" filter="url(#nodeGlow)"/>
+  <!-- Node 3: (230,95) -->
+  <rect class="node node-3" x="226" y="91" width="8" height="8" filter="url(#nodeGlow)"/>
+  <!-- Node 4: (430,25) -->
+  <rect class="node node-4" x="426" y="21" width="8" height="8" filter="url(#nodeGlow)"/>
+  <!-- Node 5: (430,95) -->
+  <rect class="node node-5" x="426" y="91" width="8" height="8" filter="url(#nodeGlow)"/>
+  <!-- Node 6: (650,60) -->
+  <rect class="node node-6" x="646" y="56" width="8" height="8" filter="url(#nodeGlow)"/>
+  <!-- Node 7: (800,25) -->
+  <rect class="node node-7" x="796" y="21" width="8" height="8" filter="url(#nodeGlow)"/>
+  <!-- Node 8: (800,95) -->
+  <rect class="node node-8" x="796" y="91" width="8" height="8" filter="url(#nodeGlow)"/>
 
-    @keyframes signal-flow {
-      0% { stroke-dashoffset: 200; }
-      100% { stroke-dashoffset: 0; }
-    }
+  <!-- Traveling signal dots -->
+  <circle class="sig sig-12" cx="0" cy="0" r="2.5" filter="url(#sigGlow)"/>
+  <circle class="sig sig-13" cx="0" cy="0" r="2.5" filter="url(#sigGlow)"/>
+  <circle class="sig sig-24" cx="0" cy="0" r="2.5" filter="url(#sigGlow)"/>
+  <circle class="sig sig-35" cx="0" cy="0" r="2.5" filter="url(#sigGlow)"/>
+  <circle class="sig sig-46" cx="0" cy="0" r="2.5" filter="url(#sigGlow)"/>
+  <circle class="sig sig-56" cx="0" cy="0" r="2.5" filter="url(#sigGlow)"/>
+  <circle class="sig sig-67" cx="0" cy="0" r="2.5" filter="url(#sigGlow)"/>
+  <circle class="sig sig-68" cx="0" cy="0" r="2.5" filter="url(#sigGlow)"/>
 
-    @keyframes pulse-active {
-      0% { r: 3px; opacity: 0.5; }
-      100% { r: 5px; opacity: 1; }
-    }
-  </style>
-
-  <!-- Connection Paths -->
-  <path class="conn-path" d="M 80,50 L 250,50 L 350,20 L 650,20 L 750,50 L 920,50" />
-  <path class="conn-path" d="M 250,50 L 350,80 L 650,80 L 750,50" />
-
-  <!-- Flow Animations -->
-  <path class="active-flow" d="M 80,50 L 250,50 L 350,20 L 650,20 L 750,50 L 920,50" />
-  <path class="active-flow" style="animation-delay: -2.5s;" d="M 250,50 L 350,80 L 650,80 L 750,50" />
-
-  <!-- Node Dots -->
-  <circle class="node-base" cx="80" cy="50" r="4.5" />
-  <circle class="node-base" cx="250" cy="50" r="4.5" />
-  <circle class="node-base" cx="350" cy="20" r="4.5" />
-  <circle class="node-base" cx="650" cy="20" r="4.5" />
-  <circle class="node-base" cx="350" cy="80" r="4.5" />
-  <circle class="node-base" cx="650" cy="80" r="4.5" />
-  <circle class="node-base" cx="750" cy="50" r="4.5" />
-  <circle class="node-base" cx="920" cy="50" r="4.5" />
-
-  <!-- Glowing Nodes -->
-  <circle class="node-active" cx="250" cy="50" r="3.5" />
-  <circle class="node-active" style="animation-delay: -0.8s;" cx="750" cy="50" r="3.5" />
+  <!-- Node labels -->
+  <text class="node-label" x="80" y="74">IN</text>
+  <text class="node-label" x="230" y="15">A</text>
+  <text class="node-label" x="230" y="109">B</text>
+  <text class="node-label" x="430" y="15">C</text>
+  <text class="node-label" x="430" y="109">D</text>
+  <text class="node-label" x="650" y="74">HUB</text>
+  <text class="node-label" x="800" y="15">OUT1</text>
+  <text class="node-label" x="800" y="109">OUT2</text>
 </svg>

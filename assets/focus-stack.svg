@@ -1,147 +1,198 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 220" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 230" width="100%" style="display:block;">
   <defs>
-    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#030508" />
-      <stop offset="100%" stop-color="#090d16" />
-    </linearGradient>
-    
-    <linearGradient id="primary-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f5d4" />
-      <stop offset="100%" stop-color="#7b2cbf" />
-    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@300;400;700&amp;display=swap');
 
-    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      /* Outer border draw */
+      .outer-border {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 2460;
+        stroke-dashoffset: 2460;
+        animation: drawOuter 1.6s cubic-bezier(0.77, 0, 0.175, 1) 0.1s forwards;
+      }
+      @keyframes drawOuter {
+        to { stroke-dashoffset: 0; }
+      }
+
+      /* Title */
+      .main-title {
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+        font-size: 11px;
+        fill: #ffffff;
+        letter-spacing: 3px;
+        opacity: 0;
+        animation: fadeUp 0.6s ease 1.7s forwards;
+      }
+      @keyframes fadeUp {
+        0%  { opacity: 0; transform: translateY(8px); }
+        100%{ opacity: 1; transform: translateY(0); }
+      }
+
+      /* Title underline draws itself */
+      .title-underline {
+        stroke: #ffffff;
+        stroke-width: 0.8;
+        stroke-dasharray: 920;
+        stroke-dashoffset: 920;
+        animation: drawUnder 2s cubic-bezier(0.77, 0, 0.175, 1) 1.9s forwards;
+        opacity: 0.6;
+      }
+      @keyframes drawUnder {
+        to { stroke-dashoffset: 0; }
+      }
+
+      /* Card: slide in from translateY(30px) + opacity 0 */
+      /* Card borders are drawn using stroke-dasharray */
+      .card-bg {
+        fill: #000000;
+      }
+      .card-border {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: drawCard 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        rx: 3;
+      }
+      .card-1-border { animation-delay: 2.2s; }
+      .card-2-border { animation-delay: 2.5s; }
+      .card-3-border { animation-delay: 2.8s; }
+
+      /* Card group slide in */
+      .card-group {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: slideCard 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+      }
+      .card-group-1 { animation-delay: 2.1s; }
+      .card-group-2 { animation-delay: 2.4s; }
+      .card-group-3 { animation-delay: 2.7s; }
+
+      @keyframes slideCard {
+        0%   { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Card title */
+      .card-title {
+        font-family: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+        font-size: 12px;
+        fill: #ffffff;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      /* Card body */
+      .card-body {
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 10px;
+        fill: #888888;
+        font-weight: 400;
+        leading-trim: both;
+        text-edge: cap alphabetic;
+      }
+      /* Tag */
+      .tag-rect {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 0.8;
+        rx: 2;
+        opacity: 0.6;
+      }
+      .tag-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 8px;
+        fill: #ffffff;
+        letter-spacing: 1.5px;
+        opacity: 0.7;
+      }
+
+      /* Tag glow on hover sim */
+      .tag-group {
+        animation: tagFade 0.5s ease forwards;
+        opacity: 0;
+      }
+      .tag-group-1 { animation-delay: 3.0s; }
+      .tag-group-2 { animation-delay: 3.3s; }
+      .tag-group-3 { animation-delay: 3.6s; }
+      @keyframes tagFade {
+        0%  { opacity: 0; }
+        100%{ opacity: 1; }
+      }
+    </style>
+    <filter id="borderGlow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
       <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
 
-  <style>
-    .background {
-      fill: url(#bg-gradient);
-    }
+  <!-- Black background -->
+  <rect width="1000" height="230" fill="#000000" rx="4"/>
 
-    .stack-title {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      fill: #ffffff;
-      letter-spacing: 2.5px;
-    }
+  <!-- Outer border (self-drawing) -->
+  <rect class="outer-border" x="1" y="1" width="998" height="228" rx="4" filter="url(#borderGlow)"/>
 
-    .stack-header-line {
-      stroke: url(#primary-glow);
-      stroke-width: 1;
-    }
+  <!-- SPECIALIZATIONS title -->
+  <text class="main-title" x="40" y="44">SPECIALIZATIONS</text>
+  <!-- Underline draws itself from left to right -->
+  <line class="title-underline" x1="40" y1="52" x2="960" y2="52"/>
 
-    .stack-card {
-      fill: #060910;
-      stroke: #121a24;
-      stroke-width: 1.2;
-      rx: 6px;
-    }
+  <!-- ═══════════════ CARD 1: System Architecture (x: 40–300) ═══════════════ -->
+  <g class="card-group card-group-1">
+    <!-- Card bg -->
+    <rect class="card-bg" x="40" y="68" width="260" height="144" rx="3"/>
+    <!-- Card border (self-drawing) -->
+    <rect class="card-border card-1-border" x="40" y="68" width="260" height="144" rx="3"/>
 
-    .stack-card:hover {
-      stroke: #00f5d4;
-    }
+    <!-- Card content -->
+    <text class="card-title" x="58" y="98">System Architecture</text>
+    <text class="card-body" x="58" y="120">Decoupled microservices,</text>
+    <text class="card-body" x="58" y="135">API design, distributed</text>
+    <text class="card-body" x="58" y="150">state management.</text>
 
-    .card-label {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      fill: #ffffff;
-      letter-spacing: 0.5px;
-    }
-
-    .card-desc {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 400;
-      font-size: 12px;
-      fill: #6b7c96;
-      line-height: 1.6;
-    }
-
-    .card-tag {
-      font-family: 'Courier New', monospace;
-      font-weight: bold;
-      font-size: 10px;
-      fill: #00f5d4;
-    }
-
-    .tag-border {
-      fill: none;
-      stroke: #00f5d4;
-      stroke-width: 1;
-      rx: 2px;
-      opacity: 0.7;
-    }
-
-    .indicator-node {
-      fill: #7b2cbf;
-      filter: url(#soft-glow);
-      animation: pulse-node 2.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes pulse-node {
-      0% { fill: #7b2cbf; r: 3px; }
-      100% { fill: #00f5d4; r: 4.5px; }
-    }
-  </style>
-
-  <!-- Background Base -->
-  <rect class="background" width="1000" height="220" rx="10" stroke="#121a24" stroke-width="1.5" />
-
-  <!-- Section Header -->
-  <g transform="translate(40, 35)">
-    <text x="0" y="0" class="stack-title">SYSTEM ARCHITECTURE SPECIALIZATIONS</text>
-    <line x1="0" y1="10" x2="920" y2="10" class="stack-header-line" />
-  </g>
-
-  <!-- Card 1: System Design -->
-  <g transform="translate(40, 70)">
-    <rect class="stack-card" width="280" height="110" />
-    <circle class="indicator-node" cx="250" cy="25" r="4" />
-    
-    <g transform="translate(20, 25)">
-      <text x="0" y="5" class="card-label">System Architecture</text>
-      <text x="0" y="32" class="card-desc">Decoupled microservices,</text>
-      <text x="0" y="50" class="card-desc">API design, &amp; state engines.</text>
-      
-      <rect x="0" y="66" width="95" height="18" class="tag-border" />
-      <text x="8" y="78" class="card-tag">SCALABILITY</text>
+    <!-- Tag: SCALABLE -->
+    <g class="tag-group tag-group-1">
+      <rect class="tag-rect" x="58" y="184" width="72" height="16" rx="2"/>
+      <text class="tag-text" x="94" y="196" text-anchor="middle">SCALABLE</text>
     </g>
   </g>
 
-  <!-- Card 2: Full-Stack -->
-  <g transform="translate(360, 70)">
-    <rect class="stack-card" width="280" height="110" />
-    <circle class="indicator-node" style="animation-delay: -0.8s;" cx="250" cy="25" r="4" />
-    
-    <g transform="translate(20, 25)">
-      <text x="0" y="5" class="card-label">Full-Stack Systems</text>
-      <text x="0" y="32" class="card-desc">Modern React systems,</text>
-      <text x="0" y="50" class="card-desc">Next.js, &amp; robust backends.</text>
-      
-      <rect x="0" y="66" width="95" height="18" class="tag-border" />
-      <text x="8" y="78" class="card-tag">INTEGRATION</text>
+  <!-- ═══════════════ CARD 2: Full-Stack Development (x: 360–620) ═══════════════ -->
+  <g class="card-group card-group-2">
+    <rect class="card-bg" x="370" y="68" width="260" height="144" rx="3"/>
+    <rect class="card-border card-2-border" x="370" y="68" width="260" height="144" rx="3"/>
+
+    <text class="card-title" x="388" y="98">Full-Stack Development</text>
+    <text class="card-body" x="388" y="120">React, Next.js, and</text>
+    <text class="card-body" x="388" y="135">robust backend services</text>
+    <text class="card-body" x="388" y="150">built for production.</text>
+
+    <!-- Tag: INTEGRATED -->
+    <g class="tag-group tag-group-2">
+      <rect class="tag-rect" x="388" y="184" width="80" height="16" rx="2"/>
+      <text class="tag-text" x="428" y="196" text-anchor="middle">INTEGRATED</text>
     </g>
   </g>
 
-  <!-- Card 3: Quality -->
-  <g transform="translate(680, 70)">
-    <rect class="stack-card" width="280" height="110" />
-    <circle class="indicator-node" style="animation-delay: -1.6s;" cx="250" cy="25" r="4" />
-    
-    <g transform="translate(20, 25)">
-      <text x="0" y="5" class="card-label">Quality &amp; Performance</text>
-      <text x="0" y="32" class="card-desc">Web Vitals analysis, audits,</text>
-      <text x="0" y="50" class="card-desc">&amp; runtime optimizations.</text>
-      
-      <rect x="0" y="66" width="85" height="18" class="tag-border" />
-      <text x="8" y="78" class="card-tag">EFFICIENCY</text>
+  <!-- ═══════════════ CARD 3: Performance & Quality (x: 680–940) ═══════════════ -->
+  <g class="card-group card-group-3">
+    <rect class="card-bg" x="700" y="68" width="260" height="144" rx="3"/>
+    <rect class="card-border card-3-border" x="700" y="68" width="260" height="144" rx="3"/>
+
+    <text class="card-title" x="718" y="98">Performance &amp; Quality</text>
+    <text class="card-body" x="718" y="120">Web Vitals, code audits,</text>
+    <text class="card-body" x="718" y="135">runtime optimizations,</text>
+    <text class="card-body" x="718" y="150">zero-regression policy.</text>
+
+    <!-- Tag: OPTIMIZED -->
+    <g class="tag-group tag-group-3">
+      <rect class="tag-rect" x="718" y="184" width="76" height="16" rx="2"/>
+      <text class="tag-text" x="756" y="196" text-anchor="middle">OPTIMIZED</text>
     </g>
   </g>
 </svg>

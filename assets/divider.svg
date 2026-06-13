@@ -1,60 +1,102 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 10" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 12" width="100%" style="display:block;">
   <defs>
-    <!-- Cyan to Purple Gradient -->
-    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7b2cbf" stop-opacity="0" />
-      <stop offset="15%" stop-color="#7b2cbf" stop-opacity="0.3" />
-      <stop offset="50%" stop-color="#00f5d4" stop-opacity="1" />
-      <stop offset="85%" stop-color="#7b2cbf" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0" />
-    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@300;400;700&amp;display=swap');
 
-    <!-- Subtle Glow Filter -->
-    <filter id="subtle-glow" x="-10%" y="-30%" width="120%" height="160%">
-      <feGaussianBlur stdDeviation="2" result="blur" />
+      .line {
+        stroke: #ffffff;
+        stroke-width: 1;
+        fill: none;
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        animation: drawLine 4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        transform-origin: center;
+      }
+      @keyframes drawLine {
+        0%   { stroke-dashoffset: 500; }
+        100% { stroke-dashoffset: 0; }
+      }
+
+      .line-right {
+        stroke: #ffffff;
+        stroke-width: 1;
+        fill: none;
+        stroke-dasharray: 500;
+        stroke-dashoffset: -500;
+        animation: drawLineRight 4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      }
+      @keyframes drawLineRight {
+        0%   { stroke-dashoffset: -500; }
+        100% { stroke-dashoffset: 0; }
+      }
+
+      .pulse-dot {
+        fill: #ffffff;
+        animation: travelDot 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        animation-delay: 4.2s;
+        opacity: 0;
+      }
+      @keyframes travelDot {
+        0%   { opacity: 0; transform: translateX(-10px); }
+        5%   { opacity: 1; }
+        50%  { opacity: 1; transform: translateX(1010px); }
+        55%  { opacity: 0; transform: translateX(1010px); }
+        100% { opacity: 0; transform: translateX(-10px); }
+      }
+
+      .glow-dot {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 0.5;
+        opacity: 0;
+        animation: glowPulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        animation-delay: 4.2s;
+      }
+      @keyframes glowPulse {
+        0%   { opacity: 0; transform: translateX(-10px); }
+        5%   { opacity: 0.3; }
+        50%  { opacity: 0.3; transform: translateX(1010px); }
+        55%  { opacity: 0; }
+        100% { opacity: 0; transform: translateX(-10px); }
+      }
+
+      .center-node {
+        fill: #ffffff;
+        animation: nodeAppear 0.4s ease forwards;
+        animation-delay: 3.8s;
+        opacity: 0;
+      }
+      @keyframes nodeAppear {
+        0%   { opacity: 0; transform: scale(0); }
+        60%  { opacity: 1; transform: scale(1.4); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+    </style>
+    <filter id="dotGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="lineGlow">
+      <feGaussianBlur stdDeviation="0.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
 
-  <style>
-    .divider-line {
-      fill: none;
-      stroke: url(#line-grad);
-      stroke-width: 1;
-    }
-    
-    .divider-glow {
-      fill: none;
-      stroke: url(#line-grad);
-      stroke-width: 3;
-      filter: url(#subtle-glow);
-      opacity: 0.6;
-    }
+  <!-- Left arm: draws from center (500) leftward to 0 -->
+  <line class="line" x1="500" y1="6" x2="0" y2="6" filter="url(#lineGlow)"/>
+  <!-- Right arm: draws from center (500) rightward to 1000 -->
+  <line class="line-right" x1="500" y1="6" x2="1000" y2="6" filter="url(#lineGlow)"/>
 
-    .pulse-dot {
-      fill: #00f5d4;
-      filter: url(#subtle-glow);
-      animation: move-pulse 8s linear infinite;
-    }
+  <!-- Center node diamond -->
+  <rect class="center-node" x="497" y="3" width="6" height="6" transform="rotate(45 500 6)" transform-origin="500 6"/>
 
-    @keyframes move-pulse {
-      0% { cx: 50; opacity: 0; }
-      10% { opacity: 0.8; }
-      90% { opacity: 0.8; }
-      100% { cx: 950; opacity: 0; }
-    }
-  </style>
-
-  <!-- Glowing background line -->
-  <path class="divider-glow" d="M 0,5 L 1000,5" />
-
-  <!-- Solid front line -->
-  <path class="divider-line" d="M 0,5 L 1000,5" />
-
-  <!-- Sliding pulse dot -->
-  <circle class="pulse-dot" cx="50" cy="5" r="1.5" />
-  <circle class="pulse-dot" style="animation-delay: -4s;" cx="50" cy="5" r="1.2" />
+  <!-- Traveling pulse dot with glow halo -->
+  <circle class="glow-dot" cx="0" cy="6" r="5" filter="url(#dotGlow)"/>
+  <circle class="pulse-dot" cx="0" cy="6" r="2.5" filter="url(#dotGlow)"/>
 </svg>

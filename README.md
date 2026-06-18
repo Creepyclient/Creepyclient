@@ -74,6 +74,10 @@
 
 <img src="assets/snake.svg?v=5" width="100%" alt="Snake" />
 
+<img src="assets/invaders.svg?v=5" width="100%" alt="Space Invaders" />
+
+<img src="assets/tetris.svg?v=5" width="100%" alt="Tetris" />
+
 <img src="assets/divider.svg?v=5" width="100%" alt="" />
 
 <h2 align="center">Contribution Activity</h2>

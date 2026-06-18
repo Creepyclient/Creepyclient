@@ -1,0 +1,250 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" width="100%">
+  <defs>
+    <!-- Dot Grid Pattern -->
+    <pattern id="arcade-grid-tetris" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#141414" />
+    </pattern>
+
+    <style>
+      .font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .font-grotesk { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; }
+
+      /* Outer border draw */
+      .border-outer {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 2240;
+        stroke-dashoffset: 2240;
+        animation: borderDraw 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      @keyframes borderDraw { to { stroke-dashoffset: 0; } }
+
+      /* Corner brackets */
+      .bracket { fill: none; stroke: #333333; stroke-width: 1; }
+
+      /* Tetris Screen Borders */
+      .screen-border {
+        fill: #000000;
+        stroke: #333333;
+        stroke-width: 1;
+      }
+
+      /* Grid lines inside playing board */
+      .board-grid {
+        stroke: #111111;
+        stroke-width: 0.5;
+      }
+
+      /* Falling blocks animations */
+      /* Block 1: T-Tetromino falling, rotating, landing */
+      .block-t {
+        animation: fallT 8s infinite linear;
+        transform-origin: 500px 60px;
+      }
+      @keyframes fallT {
+        0%   { transform: translate(0, -60px) rotate(0deg); opacity: 1; }
+        25%  { transform: translate(0, -10px) rotate(90deg); }
+        35%  { transform: translate(-20px, 15px) rotate(90deg); }
+        45%  { transform: translate(-20px, 35px) rotate(90deg); opacity: 1; }
+        46%  { transform: translate(-20px, 35px) rotate(90deg); opacity: 0; } /* Clear row event */
+        100% { transform: translate(-20px, 35px) rotate(90deg); opacity: 0; }
+      }
+
+      /* Block 2: I-Tetromino falling, sliding, filling the row */
+      .block-i {
+        animation: fallI 8s infinite linear;
+        transform-origin: 500px 60px;
+      }
+      @keyframes fallI {
+        0%, 30% { transform: translate(10px, -60px) rotate(0deg); opacity: 0; }
+        32%     { opacity: 1; }
+        55%     { transform: translate(10px, -10px) rotate(90deg); }
+        68%     { transform: translate(30px, 35px) rotate(90deg); opacity: 1; }
+        78%     { transform: translate(30px, 35px) rotate(90deg); opacity: 1; }
+        80%     { transform: translate(30px, 35px) rotate(90deg); opacity: 0; } /* Flashes clear */
+        100%    { transform: translate(30px, 35px) rotate(90deg); opacity: 0; }
+      }
+
+      /* Block 3: Square (O) Tetromino landing on bottom right */
+      .block-o {
+        animation: fallO 8s infinite linear;
+      }
+      @keyframes fallO {
+        0%, 50% { transform: translate(0, -60px); opacity: 0; }
+        52%     { opacity: 1; }
+        85%     { transform: translate(20px, 45px); opacity: 1; }
+        100%    { transform: translate(20px, 45px); opacity: 1; }
+      }
+
+      /* Clearing row flash animation */
+      .clear-row {
+        fill: #ffffff;
+        opacity: 0;
+        animation: flashRow 8s infinite linear;
+      }
+      @keyframes flashRow {
+        0%, 42%   { opacity: 0; }
+        43%, 45%   { opacity: 0.8; }
+        46%, 77%   { opacity: 0; }
+        78%, 80%   { opacity: 0.8; }
+        81%, 100%  { opacity: 0; }
+      }
+
+      /* Static stack of blocks at the bottom */
+      .static-stack {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+      }
+
+      .piece-outline {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1.2;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="120" fill="#000000" />
+  <rect width="1000" height="120" fill="url(#arcade-grid-tetris)" />
+
+  <!-- Outer Border -->
+  <rect class="border-outer" x="1" y="1" width="998" height="118" />
+
+  <!-- Corner Brackets -->
+  <g class="bracket">
+    <path d="M 1,12 L 1,1 L 12,1" />
+    <path d="M 988,1 L 999,1 L 999,12" />
+    <path d="M 1,108 L 1,119 L 12,119" />
+    <path d="M 988,119 L 999,119 L 999,108" />
+  </g>
+
+  <!-- Left Sidebar (Cabinet HUD) -->
+  <g transform="translate(180, 0)">
+    <text class="font-mono" x="0" y="24" font-size="8" fill="#444444">STATISTICS</text>
+    
+    <!-- Mini Tetromino Icons and counts -->
+    <!-- T piece -->
+    <path class="piece-outline" d="M 0,38 L 15,38 L 15,43 L 10,43 L 10,48 L 5,48 L 5,43 L 0,43 Z" />
+    <text class="font-mono" x="25" y="45" font-size="8" fill="#888888">014</text>
+
+    <!-- I piece -->
+    <path class="piece-outline" d="M 50,35 L 55,35 L 55,55 L 50,55 Z" />
+    <text class="font-mono" x="65" y="45" font-size="8" fill="#888888">009</text>
+
+    <!-- O piece -->
+    <path class="piece-outline" d="M 0,60 L 10,60 L 10,70 L 0,70 Z" />
+    <text class="font-mono" x="25" y="68" font-size="8" fill="#888888">021</text>
+
+    <!-- L piece -->
+    <path class="piece-outline" d="M 50,60 L 55,60 L 55,75 L 62,75 L 62,80 L 50,80 Z" />
+    <text class="font-mono" x="70" y="73" font-size="8" fill="#888888">012</text>
+  </g>
+
+  <!-- Center Cabinet Gameboard -->
+  <g transform="translate(450, 10)">
+    <!-- Screen Outer Frame -->
+    <rect class="screen-border" x="0" y="0" width="100" height="100" />
+
+    <!-- Grid Layout Lines -->
+    <g class="board-grid">
+      <line x1="10" y1="0" x2="10" y2="100" />
+      <line x1="20" y1="0" x2="20" y2="100" />
+      <line x1="30" y1="0" x2="30" y2="100" />
+      <line x1="40" y1="0" x2="40" y2="100" />
+      <line x1="50" y1="0" x2="50" y2="100" />
+      <line x1="60" y1="0" x2="60" y2="100" />
+      <line x1="70" y1="0" x2="70" y2="100" />
+      <line x1="80" y1="0" x2="80" y2="100" />
+      <line x1="90" y1="0" x2="90" y2="100" />
+      
+      <line x1="0" y1="10" x2="100" y2="10" />
+      <line x1="0" y1="20" x2="100" y2="20" />
+      <line x1="0" y1="30" x2="100" y2="30" />
+      <line x1="0" y1="40" x2="100" y2="40" />
+      <line x1="0" y1="50" x2="100" y2="50" />
+      <line x1="0" y1="60" x2="100" y2="60" />
+      <line x1="0" y1="70" x2="100" y2="70" />
+      <line x1="0" y1="80" x2="100" y2="80" />
+      <line x1="0" y1="90" x2="100" y2="90" />
+    </g>
+
+    <!-- Static stacked blocks at the bottom representing historical stack -->
+    <g class="static-stack">
+      <!-- Row 10 (y=90 to 100) -->
+      <rect x="0" y="90" width="10" height="10" fill="#222222" />
+      <rect x="10" y="90" width="10" height="10" fill="#222222" />
+      <rect x="20" y="90" width="10" height="10" fill="#222222" />
+      <rect x="30" y="90" width="10" height="10" fill="#222222" />
+      <!-- Gap at x=40 (filled later by T) -->
+      <rect x="50" y="90" width="10" height="10" fill="#222222" />
+      <rect x="60" y="90" width="10" height="10" fill="#222222" />
+      <rect x="70" y="90" width="10" height="10" fill="#222222" />
+      <rect x="80" y="90" width="10" height="10" fill="#222222" />
+      <rect x="90" y="90" width="10" height="10" fill="#222222" />
+
+      <!-- Row 9 (y=80 to 90) -->
+      <rect x="0" y="80" width="10" height="10" fill="#111111" />
+      <rect x="10" y="80" width="10" height="10" fill="#111111" />
+      <!-- Gap at x=20, 30 -->
+      <rect x="40" y="80" width="10" height="10" fill="#111111" />
+      <rect x="50" y="80" width="10" height="10" fill="#111111" />
+      <!-- Gap at x=60, 70 (filled later by I) -->
+      <rect x="80" y="80" width="10" height="10" fill="#111111" />
+      <rect x="90" y="80" width="10" height="10" fill="#111111" />
+    </g>
+
+    <!-- Clearing Row Flash Highlights -->
+    <rect class="clear-row" x="0" y="90" width="100" height="10" />
+    <rect class="clear-row" x="0" y="80" width="100" height="10" />
+
+    <!-- Animated falling blocks -->
+    <!-- Block 1: T piece (local center x=50, y=10) -->
+    <g class="block-t">
+      <rect x="450" y="50" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+      <rect x="440" y="60" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+      <rect x="450" y="60" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+      <rect x="460" y="60" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+    </g>
+
+    <!-- Block 2: I piece (local center x=50, y=10) -->
+    <g class="block-i">
+      <rect x="440" y="50" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+      <rect x="440" y="60" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+      <rect x="440" y="70" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+      <rect x="440" y="80" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+    </g>
+
+    <!-- Block 3: O piece (local center x=50, y=10) -->
+    <g class="block-o">
+      <rect x="440" y="30" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+      <rect x="450" y="30" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+      <rect x="440" y="40" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+      <rect x="450" y="40" width="10" height="10" fill="#ffffff" stroke="#000000" stroke-width="0.5" />
+    </g>
+  </g>
+
+  <!-- Right Sidebar (Cabinet HUD) -->
+  <g transform="translate(680, 0)">
+    <text class="font-mono" x="0" y="24" font-size="8" fill="#444444">STATUS DISPLAY</text>
+
+    <text class="font-mono" x="0" y="44" font-size="8" fill="#888888">SCORE</text>
+    <text class="font-mono" x="0" y="56" font-size="10" fill="#ffffff" font-weight="700">038500</text>
+
+    <text class="font-mono" x="0" y="76" font-size="8" fill="#888888">LINES</text>
+    <text class="font-mono" x="0" y="88" font-size="10" fill="#ffffff" font-weight="700">042</text>
+
+    <!-- Next preview box -->
+    <rect x="80" y="38" width="40" height="40" fill="none" stroke="#222222" />
+    <text class="font-mono" x="80" y="32" font-size="7" fill="#444444">NEXT</text>
+    <!-- Preview piece (Z shape) -->
+    <g transform="translate(90, 48)">
+      <rect x="0" y="0" width="8" height="8" fill="#888888" />
+      <rect x="8" y="0" width="8" height="8" fill="#888888" />
+      <rect x="8" y="8" width="8" height="8" fill="#888888" />
+      <rect x="16" y="8" width="8" height="8" fill="#888888" />
+    </g>
+  </g>
+</svg>

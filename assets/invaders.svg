@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" width="100%">
+  <defs>
+    <!-- Dot Grid Pattern -->
+    <pattern id="arcade-grid-invaders" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#141414" />
+    </pattern>
+
+    <style>
+      .font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .font-grotesk { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; }
+
+      /* Outer border draw */
+      .border-outer {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 2240;
+        stroke-dashoffset: 2240;
+        animation: borderDraw 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      @keyframes borderDraw { to { stroke-dashoffset: 0; } }
+
+      /* Corner brackets */
+      .bracket { fill: none; stroke: #333333; stroke-width: 1; }
+
+      /* Laser Cannon sliding animation */
+      .cannon {
+        animation: moveCannon 10s ease-in-out infinite;
+      }
+      @keyframes moveCannon {
+        0%, 100% { transform: translateX(0); }
+        20%      { transform: translateX(180px); }
+        40%      { transform: translateX(80px); }
+        60%      { transform: translateX(280px); }
+        80%      { transform: translateX(120px); }
+      }
+
+      /* Player Laser beam firing */
+      .player-laser {
+        stroke: #ffffff;
+        stroke-width: 2;
+        stroke-linecap: round;
+        animation: fireLaser 2.5s infinite linear;
+      }
+      .laser-1 { animation-delay: 0.5s; }
+      .laser-2 { animation-delay: 1.7s; }
+
+      @keyframes fireLaser {
+        0%   { x1: 400; y1: 100; x2: 400; y2: 100; opacity: 0; }
+        10%  { opacity: 1; }
+        35%  { x1: 400; y1: 25;  x2: 400; y2: 35;  opacity: 1; }
+        36%  { opacity: 0; }
+        100% { x1: 400; y1: 100; x2: 400; y2: 100; opacity: 0; }
+      }
+
+      /* Alien Grid movement */
+      .alien-grid {
+        animation: moveAliens 15s ease-in-out infinite alternate;
+      }
+      @keyframes moveAliens {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(120px); }
+      }
+
+      /* Individual Alien animations (death/explosion) */
+      .alien-1 { animation: alienDie1 5s step-end infinite; }
+      .alien-2 { animation: alienDie2 5s step-end infinite; }
+      .alien-3 { animation: alienDie3 5s step-end infinite; }
+
+      @keyframes alienDie1 {
+        0%, 100% { opacity: 1; }
+        25%      { opacity: 0; } /* Dies when first laser hits */
+      }
+      @keyframes alienDie2 {
+        0%, 100% { opacity: 1; }
+        55%      { opacity: 0; } /* Dies when second laser hits */
+      }
+      @keyframes alienDie3 {
+        0%, 40%  { opacity: 1; }
+        80%      { opacity: 1; }
+      }
+
+      /* Explosion particles */
+      .explosion {
+        stroke: #ffffff;
+        stroke-width: 1.5;
+        opacity: 0;
+      }
+      .exp-1 { animation: explode1 5s ease-out infinite; }
+      .exp-2 { animation: explode2 5s ease-out infinite; }
+
+      @keyframes explode1 {
+        0%, 24%   { opacity: 0; transform: translate(0, 0) scale(0.2); }
+        25%       { opacity: 1; transform: translate(0, 0) scale(1); }
+        28%, 100% { opacity: 0; transform: translate(0, -5px) scale(1.5); }
+      }
+      @keyframes explode2 {
+        0%, 54%   { opacity: 0; transform: translate(0, 0) scale(0.2); }
+        55%       { opacity: 1; transform: translate(0, 0) scale(1); }
+        58%, 100% { opacity: 0; transform: translate(0, -5px) scale(1.5); }
+      }
+
+      /* Alien lasers falling */
+      .alien-laser {
+        stroke: #ffffff;
+        stroke-dasharray: 4 4;
+        stroke-width: 1.5;
+        animation: fallLaser 3s infinite linear;
+      }
+      .al-1 { animation-delay: 1s; }
+      .al-2 { animation-delay: 2.2s; }
+
+      @keyframes fallLaser {
+        0%   { x1: 520; y1: 55; x2: 520; y2: 65; opacity: 0; }
+        5%   { opacity: 1; }
+        60%  { x1: 520; y1: 105; x2: 520; y2: 115; opacity: 1; }
+        65%  { opacity: 0; }
+        100% { x1: 520; y1: 55; x2: 520; y2: 65; opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="120" fill="#000000" />
+  <rect width="1000" height="120" fill="url(#arcade-grid-invaders)" />
+
+  <!-- Outer Border -->
+  <rect class="border-outer" x="1" y="1" width="998" height="118" />
+
+  <!-- Corner Brackets -->
+  <g class="bracket">
+    <path d="M 1,12 L 1,1 L 12,1" />
+    <path d="M 988,1 L 999,1 L 999,12" />
+    <path d="M 1,108 L 1,119 L 12,119" />
+    <path d="M 988,119 L 999,119 L 999,108" />
+  </g>
+
+  <!-- Arcade HUD details -->
+  <g class="font-mono" font-size="8" fill="#444444" opacity="0.8">
+    <text x="25" y="22">SCORE</text>
+    <text x="25" y="34" fill="#ffffff" font-size="10" font-weight="700">01620</text>
+    
+    <text x="115" y="22">HI-SCORE</text>
+    <text x="115" y="34" fill="#888888" font-size="10" font-weight="700">99990</text>
+
+    <text x="890" y="22" text-anchor="end">SHIPS: 3</text>
+    <!-- Little ship icons -->
+    <path d="M 910,28 L 910,24 L 913,24 L 913,28 L 919,28 L 919,32 L 904,32 L 904,28 Z" fill="#888888" />
+    <path d="M 930,28 L 930,24 L 933,24 L 933,28 L 939,28 L 939,32 L 924,32 Z" fill="#888888" />
+    <path d="M 950,28 L 950,24 L 953,24 L 953,28 L 959,28 L 959,32 L 944,32 Z" fill="#888888" />
+
+    <text x="500" y="20" text-anchor="middle" letter-spacing="2">SPACE INVADERS</text>
+  </g>
+
+  <!-- Game Arena Section -->
+  <g transform="translate(140, 0)">
+    
+    <!-- Dynamic Player Lasers -->
+    <!-- Laser 1 targets Alien 1 position -->
+    <line class="player-laser laser-1" x1="380" y1="102" x2="380" y2="102" />
+    <!-- Laser 2 targets Alien 2 position -->
+    <line class="player-laser laser-2" x1="480" y1="102" x2="480" y2="102" />
+
+    <!-- Alien project laser -->
+    <line class="alien-laser al-1" x1="410" y1="55" x2="410" y2="55" />
+
+    <!-- Moving Alien Grid -->
+    <g class="alien-grid">
+      
+      <!-- Row of Aliens (Pixel Art Styles in Outlines) -->
+      <!-- Alien 1 (destructible) -->
+      <g class="alien-1" transform="translate(240, 40)">
+        <!-- Pixel style shape -->
+        <path d="M 6,0 L 18,0 L 18,3 L 24,3 L 24,9 L 21,9 L 21,12 L 18,12 L 18,9 L 6,9 L 6,12 L 3,12 L 3,9 L 0,9 L 0,3 L 6,3 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+        <rect x="6" y="4" width="2" height="2" fill="#ffffff" />
+        <rect x="16" y="4" width="2" height="2" fill="#ffffff" />
+      </g>
+      <!-- Explosion 1 (centered at Alien 1 y=46, x=252) -->
+      <g class="explosion exp-1" transform="translate(252, 46)">
+        <line x1="-10" y1="-10" x2="-4" y2="-4" />
+        <line x1="10" y1="-10" x2="4" y2="-4" />
+        <line x1="-10" y1="10" x2="-4" y2="4" />
+        <line x1="10" y1="10" x2="4" y2="4" />
+        <line x1="0" y1="-12" x2="0" y2="-6" />
+        <line x1="0" y1="12" x2="0" y2="6" />
+      </g>
+
+      <!-- Alien 2 (destructible) -->
+      <g class="alien-2" transform="translate(340, 40)">
+        <path d="M 3,0 L 21,0 L 21,3 L 24,3 L 24,9 L 18,9 L 18,12 L 15,12 L 15,9 L 9,9 L 9,12 L 6,12 L 6,9 L 0,9 L 0,3 L 3,3 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+        <rect x="6" y="4" width="2" height="2" fill="#ffffff" />
+        <rect x="16" y="4" width="2" height="2" fill="#ffffff" />
+      </g>
+      <!-- Explosion 2 -->
+      <g class="explosion exp-2" transform="translate(352, 46)">
+        <line x1="-10" y1="-10" x2="-4" y2="-4" /><line x1="10" y1="-10" x2="4" y2="-4" />
+        <line x1="-10" y1="10" x2="-4" y2="4" /><line x1="10" y1="10" x2="4" y2="4" />
+      </g>
+
+      <!-- Alien 3 (permanent loop) -->
+      <g class="alien-3" transform="translate(440, 40)">
+        <path d="M 6,0 L 18,0 L 18,3 L 24,3 L 24,9 L 21,9 L 21,12 L 18,12 L 18,9 L 6,9 L 6,12 L 3,12 L 3,9 L 0,9 L 0,3 L 6,3 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+        <rect x="6" y="4" width="2" height="2" fill="#ffffff" />
+        <rect x="16" y="4" width="2" height="2" fill="#ffffff" />
+      </g>
+
+      <!-- Alien 4 (permanent loop) -->
+      <g class="alien-3" transform="translate(540, 40)">
+        <path d="M 3,0 L 21,0 L 21,3 L 24,3 L 24,9 L 18,9 L 18,12 L 15,12 L 15,9 L 9,9 L 9,12 L 6,12 L 6,9 L 0,9 L 0,3 L 3,3 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+        <rect x="6" y="4" width="2" height="2" fill="#ffffff" />
+        <rect x="16" y="4" width="2" height="2" fill="#ffffff" />
+      </g>
+    </g>
+
+    <!-- Laser Cannon (Player) sliding -->
+    <g class="cannon" transform="translate(300, 95)">
+      <!-- Cannon shape -->
+      <rect x="12" y="0" width="6" height="6" fill="#ffffff" />
+      <rect x="9" y="6" width="12" height="4" fill="#ffffff" />
+      <rect x="0" y="10" width="30" height="8" fill="#ffffff" rx="1" />
+      <!-- Wheels -->
+      <circle cx="5" cy="19" r="2" fill="#ffffff" />
+      <circle cx="25" cy="19" r="2" fill="#ffffff" />
+    </g>
+
+  </g>
+</svg>

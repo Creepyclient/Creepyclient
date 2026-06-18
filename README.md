@@ -1,10 +1,10 @@
 <!--  Neyamul Islam (Creepyclient) — GitHub Profile · ZERO SIGNAL  -->
 
 <div align="center">
-  <img src="assets/hero.svg?v=5" width="100%" alt="Neyamul Islam" />
+  <img src="assets/hero.svg?v=6" width="100%" alt="Neyamul Islam" />
 </div>
 
-<img src="assets/divider.svg?v=5" width="100%" alt="" />
+<img src="assets/divider.svg?v=6" width="100%" alt="" />
 
 <h2 align="center">About</h2>
 
@@ -14,36 +14,36 @@
       <img src="assets/avatar.jpg" width="220" style="border-radius:10px;" alt="Neyamul Islam" />
     </td>
     <td valign="top" width="100%">
-      <img src="assets/about-bio.svg?v=6" width="100%" alt="Bio" />
+      <img src="assets/about-bio.svg?v=7" width="100%" alt="Bio" />
     </td>
   </tr>
 </table>
 
-<img src="assets/divider.svg?v=5" width="100%" alt="" />
+<img src="assets/divider.svg?v=6" width="100%" alt="" />
 
 <h2 align="center">By the Numbers</h2>
 
-<img src="assets/highlights.svg?v=5" width="100%" alt="Highlights" />
+<img src="assets/highlights.svg?v=6" width="100%" alt="Highlights" />
 
-<img src="assets/divider.svg?v=5" width="100%" alt="" />
+<img src="assets/divider.svg?v=6" width="100%" alt="" />
 
 <h2 align="center">System Profile</h2>
 
-<img src="assets/ops-card.svg?v=5" width="100%" alt="System architecture card" />
+<img src="assets/ops-card.svg?v=6" width="100%" alt="System architecture card" />
 
-<img src="assets/wave.svg?v=5" width="100%" alt="" />
+<img src="assets/wave.svg?v=6" width="100%" alt="" />
 
-<img src="assets/pulse.svg?v=5" width="100%" alt="Architecture flow" />
+<img src="assets/pulse.svg?v=6" width="100%" alt="Architecture flow" />
 
-<img src="assets/matrix.svg?v=5" width="100%" alt="" />
+<img src="assets/matrix.svg?v=6" width="100%" alt="" />
 
-<img src="assets/divider.svg?v=5" width="100%" alt="" />
+<img src="assets/divider.svg?v=6" width="100%" alt="" />
 
 <h2 align="center">Featured Work</h2>
 
-<img src="assets/projects.svg?v=5" width="100%" alt="Featured Projects" />
+<img src="assets/projects.svg?v=6" width="100%" alt="Featured Projects" />
 
-<img src="assets/divider.svg?v=5" width="100%" alt="" />
+<img src="assets/divider.svg?v=6" width="100%" alt="" />
 
 <h2 align="center">Technical Stack</h2>
 
@@ -51,34 +51,34 @@
 
 | | | | |
 |:---:|:---:|:---:|:---:|
-| <img src="assets/python.svg?v=5" width="48" /><br/>**Python** | <img src="assets/javascript.svg?v=5" width="48" /><br/>**JavaScript** | <img src="assets/react.svg?v=5" width="48" /><br/>**React** | <img src="assets/docker.svg?v=5" width="48" /><br/>**Docker** |
-| <img src="assets/linux.svg?v=5" width="48" /><br/>**Linux** | <img src="assets/git.svg?v=5" width="48" /><br/>**Git** | <img src="assets/cpp.svg?v=5" width="48" /><br/>**C++** | <img src="assets/java.svg?v=5" width="48" /><br/>**Java** |
+| <img src="assets/python.svg?v=6" width="48" /><br/>**Python** | <img src="assets/javascript.svg?v=6" width="48" /><br/>**JavaScript** | <img src="assets/react.svg?v=6" width="48" /><br/>**React** | <img src="assets/docker.svg?v=6" width="48" /><br/>**Docker** |
+| <img src="assets/linux.svg?v=6" width="48" /><br/>**Linux** | <img src="assets/git.svg?v=6" width="48" /><br/>**Git** | <img src="assets/cpp.svg?v=6" width="48" /><br/>**C++** | <img src="assets/java.svg?v=6" width="48" /><br/>**Java** |
 
 </div>
 
-<img src="assets/divider.svg?v=5" width="100%" alt="" />
+<img src="assets/divider.svg?v=6" width="100%" alt="" />
 
 <h2 align="center">Specializations</h2>
 
-<img src="assets/focus-stack.svg?v=5" width="100%" alt="Specializations" />
+<img src="assets/focus-stack.svg?v=6" width="100%" alt="Specializations" />
 
-<img src="assets/divider.svg?v=5" width="100%" alt="" />
+<img src="assets/divider.svg?v=6" width="100%" alt="" />
 
 <h2 align="center">Currently Building</h2>
 
-<img src="assets/now.svg?v=5" width="100%" alt="Currently Building" />
+<img src="assets/now.svg?v=6" width="100%" alt="Currently Building" />
 
 <h2 align="center">Developer Arcade</h2>
 
-<img src="assets/pacman.svg?v=5" width="100%" alt="Pacman" />
+<img src="assets/pacman.svg?v=6" width="100%" alt="Pacman" />
 
-<img src="assets/snake.svg?v=5" width="100%" alt="Snake" />
+<img src="assets/snake.svg?v=6" width="100%" alt="Snake" />
 
-<img src="assets/invaders.svg?v=5" width="100%" alt="Space Invaders" />
+<img src="assets/invaders.svg?v=6" width="100%" alt="Space Invaders" />
 
-<img src="assets/tetris.svg?v=5" width="100%" alt="Tetris" />
+<img src="assets/tetris.svg?v=6" width="100%" alt="Tetris" />
 
-<img src="assets/divider.svg?v=5" width="100%" alt="" />
+<img src="assets/divider.svg?v=6" width="100%" alt="" />
 
 <h2 align="center">Contribution Activity</h2>
 
@@ -96,18 +96,27 @@
   </picture>
 </div>
 
-<img src="assets/divider.svg?v=5" width="100%" alt="" />
+<img src="assets/divider.svg?v=6" width="100%" alt="" />
 
 <h2 align="center">GitHub Stats</h2>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Creepyclient&show_icons=true&bg_color=000000&title_color=ffffff&icon_color=ffffff&text_color=888888&border_color=333333&rank_icon=github" width="49%" alt="GitHub Stats" />
-  <img src="https://streak-stats.demolab.com/?user=Creepyclient&background=000000&stroke=333333&ring=ffffff&fire=ffffff&currStreakNum=ffffff&sideNums=888888&currStreakLabel=888888&sideLabels=888888&dates=555555&border=333333" width="49%" alt="GitHub Streak" />
-</div>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <img src="https://github-readme-stats.vercel.app/api?username=Creepyclient&amp;show_icons=true&amp;bg_color=000000&amp;title_color=ffffff&amp;icon_color=ffffff&amp;text_color=888888&amp;border_color=333333&amp;rank_icon=github" width="100%" alt="GitHub Stats" />
+    </td>
+    <td width="50%" align="center" valign="top">
+      <img src="https://streak-stats.demolab.com/?user=Creepyclient&amp;background=000000&amp;stroke=333333&amp;ring=ffffff&amp;fire=ffffff&amp;currStreakNum=ffffff&amp;sideNums=888888&amp;currStreakLabel=888888&amp;sideLabels=888888&amp;dates=555555&amp;border=333333" width="100%" alt="GitHub Streak" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Creepyclient&amp;layout=compact&amp;bg_color=000000&amp;title_color=ffffff&amp;text_color=888888&amp;border_color=333333&amp;langs_count=8" width="100%" alt="Top Languages" />
+    </td>
+    <td width="50%" align="center" valign="top">
+      <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&amp;bg_color=000000&amp;color=ffffff&amp;line=ffffff&amp;point=ffffff&amp;area=true&amp;area_color=1a1a1a&amp;hide_border=true&amp;title_color=ffffff" width="100%" alt="Activity Graph" />
+    </td>
+  </tr>
+</table>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Creepyclient&layout=compact&bg_color=000000&title_color=ffffff&text_color=888888&border_color=333333&langs_count=8" width="49%" alt="Top Languages" />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&bg_color=000000&color=ffffff&line=ffffff&point=ffffff&area=true&area_color=1a1a1a&hide_border=true&title_color=ffffff" width="49%" alt="Activity Graph" />
-</div>
-
-<img src="assets/divider.svg?v=5" width="100%" alt="" />
+<img src="assets/divider.svg?v=6" width="100%" alt="" />

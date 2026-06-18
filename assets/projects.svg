@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" width="100%" style="background:#000000;">
   <defs>
+    <pattern id="proj-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#141414" />
+    </pattern>
     <style>
       /* ── Font stacks ── */
       .font-mono   { font-family: 'JetBrains Mono', 'Courier New', monospace; }
@@ -111,6 +114,7 @@
 
   <!-- Background -->
   <rect width="1000" height="320" fill="#000000"/>
+  <rect width="1000" height="320" fill="url(#proj-grid)"/>
 
   <!-- Outer border -->
   <rect class="border-outer" x="1" y="1" width="998" height="318"/>

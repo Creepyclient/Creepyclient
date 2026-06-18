@@ -1,181 +1,166 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" width="100%" style="background:#000000;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" width="100%">
   <defs>
-    <style>
-      /* ── Font stacks ── */
-      .font-mono   { font-family: 'JetBrains Mono', 'Courier New', monospace; }
-      .font-grotesk{ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; }
+    <!-- Grid Pattern -->
+    <pattern id="now-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#141414" />
+    </pattern>
 
-      /* ── Outer border draw ── */
+    <style>
+      /* Font stacks */
+      .font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .font-grotesk { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; }
+
+      /* Outer border draw */
       .border-outer {
         fill: none;
         stroke: #ffffff;
         stroke-width: 1;
         stroke-dasharray: 2400;
         stroke-dashoffset: 2400;
-        animation: borderDraw 1.5s cubic-bezier(0.4,0,0.2,1) 0.1s forwards;
+        animation: borderDraw 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
       }
-      @keyframes borderDraw { to { stroke-dashoffset: 0; } }
+      @keyframes borderDraw {
+        to { stroke-dashoffset: 0; }
+      }
 
-      /* ── Section title ── */
+      /* Section title & components */
       .section-title {
         opacity: 0;
-        animation: fadeUp 0.6s ease 1.6s forwards;
+        animation: fadeReveal 0.6s ease 1.2s forwards;
       }
-
-      /* ── Underline draw ── */
       .underline-draw {
         stroke: #ffffff;
         stroke-width: 1;
         stroke-dasharray: 940;
         stroke-dashoffset: 940;
-        animation: underlineDraw 1s ease 1.7s forwards;
+        animation: lineDraw 1s ease 1.4s forwards;
       }
-      @keyframes underlineDraw { to { stroke-dashoffset: 0; } }
+      @keyframes lineDraw { to { stroke-dashoffset: 0; } }
 
-      /* ── Grid items ── */
+      /* Grid items entry */
       .grid-item {
         opacity: 0;
-        animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) forwards;
+        animation: itemFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
-      .item-1 { animation-delay: 1.8s; }
-      .item-2 { animation-delay: 2.0s; }
-      .item-3 { animation-delay: 2.2s; }
-      .item-4 { animation-delay: 2.4s; }
+      .item-1 { animation-delay: 1.6s; }
+      .item-2 { animation-delay: 1.8s; }
+      .item-3 { animation-delay: 2.0s; }
+      .item-4 { animation-delay: 2.2s; }
 
-      @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(10px); }
-        to   { opacity: 1; transform: translateY(0); }
+      @keyframes itemFadeUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
-      /* ── Corner brackets ── */
-      .bracket {
-        fill: none;
-        stroke: #ffffff;
-        stroke-width: 1.5;
-        stroke-linecap: square;
-        opacity: 0;
-        animation: bracketFade 0.4s ease 1.5s forwards;
+      @keyframes fadeReveal {
+        to { opacity: 1; }
       }
-      @keyframes bracketFade { to { opacity: 1; } }
 
-      /* ── NOW indicator pulse ── */
+      /* Now indicator pulse */
       .now-dot {
         fill: #ffffff;
-        transform-origin: 960px 32px;
-        animation: nowPulse 2.4s ease-in-out 2s infinite;
+        transform-origin: 940px 32px;
+        animation: nowPulse 2.4s ease-in-out infinite;
       }
       @keyframes nowPulse {
-        0%   { transform: scale(1);   opacity: 1; }
-        50%  { transform: scale(1.4); opacity: 0.6; }
-        100% { transform: scale(1);   opacity: 1; }
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.4); opacity: 0.5; }
       }
 
       .now-ring {
         fill: none;
         stroke: #ffffff;
         stroke-width: 1;
-        transform-origin: 960px 32px;
-        animation: nowRing 2.4s ease-out 2s infinite;
+        transform-origin: 940px 32px;
+        animation: nowRing 2.4s ease-out infinite;
       }
       @keyframes nowRing {
-        0%   { r: 5; opacity: 0.7; stroke-width: 1.2; }
-        100% { r: 11; opacity: 0; stroke-width: 0.3; }
+        0% { r: 5; opacity: 0.8; stroke-width: 1; }
+        100% { r: 12; opacity: 0; stroke-width: 0.2; }
       }
 
-      .now-label {
-        opacity: 0;
-        animation: fadeUp 0.5s ease 2s forwards;
-      }
-
-      /* ── Mid divider ── */
-      .mid-divider {
+      /* Divider lines */
+      .divider {
         stroke: #222222;
-        stroke-width: 0.5;
-        stroke-dasharray: 440;
-        stroke-dashoffset: 440;
-        animation: dividerDraw 0.8s ease 2.1s forwards;
+        stroke-width: 1;
+        stroke-dasharray: 6 6;
       }
-      @keyframes dividerDraw { to { stroke-dashoffset: 0; } }
 
-      /* ── Vertical center divider ── */
-      .vert-divider {
-        stroke: #222222;
-        stroke-width: 0.5;
-        stroke-dasharray: 120;
-        stroke-dashoffset: 120;
-        animation: dividerDraw 0.8s ease 2.0s forwards;
+      .bracket {
+        fill: none;
+        stroke: #333333;
+        stroke-width: 1.2;
       }
     </style>
   </defs>
 
-  <!-- Background -->
-  <rect width="1000" height="200" fill="#000000"/>
+  <!-- Background and grid pattern -->
+  <rect width="1000" height="200" fill="#000000" />
+  <rect width="1000" height="200" fill="url(#now-grid)" />
 
   <!-- Outer border -->
-  <rect class="border-outer" x="1" y="1" width="998" height="198"/>
+  <rect class="border-outer" x="1" y="1" width="998" height="198" rx="0" />
 
-  <!-- Corner brackets -->
-  <polyline class="bracket" points="1,13 1,1 13,1"/>
-  <polyline class="bracket" points="987,1 999,1 999,13"/>
-  <polyline class="bracket" points="1,187 1,199 13,199"/>
-  <polyline class="bracket" points="987,199 999,199 999,187"/>
+  <!-- Corner Brackets -->
+  <g class="bracket">
+    <path d="M 1,15 L 1,1 L 15,1" />
+    <path d="M 985,1 L 999,1 L 999,15" />
+    <path d="M 1,185 L 1,199 L 15,199" />
+    <path d="M 985,199 L 999,199 L 999,185" />
+  </g>
 
-  <!-- NOW indicator (top-right) -->
-  <circle class="now-dot" cx="960" cy="32" r="5"/>
-  <circle class="now-ring" cx="960" cy="32" r="5"/>
-  <text class="font-mono now-label" x="972" y="36"
-    font-size="9" fill="#888888" letter-spacing="1.5">NOW</text>
+  <!-- Section Title -->
+  <text class="font-mono section-title" x="30" y="42" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="3">[CURRENTLY BUILDING]</text>
 
-  <!-- Section title -->
-  <text class="font-mono section-title" x="30" y="42"
-    font-size="11" fill="#ffffff" letter-spacing="3">CURRENTLY BUILDING</text>
+  <!-- NOW Pulse Indicator -->
+  <g class="section-title">
+    <circle class="now-dot" cx="940" cy="32" r="4" />
+    <circle class="now-ring" cx="940" cy="32" r="4" />
+    <text class="font-mono" x="952" y="35" font-size="8" fill="#888888" letter-spacing="1.5">NOW_OP</text>
+  </g>
 
   <!-- Underline -->
-  <line class="underline-draw" x1="30" y1="60" x2="970" y2="60"/>
+  <line class="underline-draw" x1="30" y1="60" x2="970" y2="60" />
 
-  <!-- Vertical center divider -->
-  <line class="vert-divider" x1="500" y1="75" x2="500" y2="185"/>
+  <!-- Grid Dividers -->
+  <line class="divider" x1="500" y1="75" x2="500" y2="185" />
+  <line class="divider" x1="60" y1="130" x2="470" y2="130" />
+  <line class="divider" x1="530" y1="130" x2="940" y2="130" />
 
-  <!-- Horizontal mid divider -->
-  <line class="mid-divider" x1="60" y1="132" x2="485" y2="132"/>
-  <line class="mid-divider" x1="515" y1="132" x2="950" y2="132"/>
-
-  <!-- ─── LEFT COLUMN ─── -->
-  <!-- Item 1 (left, row 1) -->
-  <g class="grid-item item-1" transform="translate(60,100)">
-    <!-- Bullet: 8×8 white square -->
-    <rect x="0" y="-8" width="8" height="8" fill="#ffffff"/>
-    <text class="font-grotesk" x="18" y="0"
-      font-size="13" fill="#cccccc">Deepening expertise in React</text>
-    <text class="font-grotesk" x="18" y="17"
-      font-size="13" fill="#cccccc">and backend architecture</text>
+  <!-- GRID ITEMS (Safe nested translation groups) -->
+  <!-- Left Column - Item 1 -->
+  <g transform="translate(60, 102)">
+    <g class="grid-item item-1">
+      <rect x="0" y="-8" width="6" height="6" fill="#ffffff" />
+      <text class="font-grotesk" x="18" y="0" font-size="13" fill="#ffffff" font-weight="600">Deepening expertise in React</text>
+      <text class="font-grotesk" x="18" y="16" font-size="12" fill="#888888">and backend architecture systems.</text>
+    </g>
   </g>
 
-  <!-- Item 2 (left, row 2) -->
-  <g class="grid-item item-2" transform="translate(60,155)">
-    <rect x="0" y="-8" width="8" height="8" fill="#ffffff"/>
-    <text class="font-grotesk" x="18" y="0"
-      font-size="13" fill="#cccccc">Exploring data structures,</text>
-    <text class="font-grotesk" x="18" y="17"
-      font-size="13" fill="#cccccc">algorithms, and system design</text>
+  <!-- Left Column - Item 2 -->
+  <g transform="translate(60, 157)">
+    <g class="grid-item item-2">
+      <rect x="0" y="-8" width="6" height="6" fill="#ffffff" />
+      <text class="font-grotesk" x="18" y="0" font-size="13" fill="#ffffff" font-weight="600">Exploring data structures</text>
+      <text class="font-grotesk" x="18" y="16" font-size="12" fill="#888888">algorithms, and modular design patterns.</text>
+    </g>
   </g>
 
-  <!-- ─── RIGHT COLUMN ─── -->
-  <!-- Item 3 (right, row 1) -->
-  <g class="grid-item item-3" transform="translate(530,100)">
-    <rect x="0" y="-8" width="8" height="8" fill="#ffffff"/>
-    <text class="font-grotesk" x="18" y="0"
-      font-size="13" fill="#cccccc">Contributing to open-source</text>
-    <text class="font-grotesk" x="18" y="17"
-      font-size="13" fill="#cccccc">tools and dev utilities</text>
+  <!-- Right Column - Item 3 -->
+  <g transform="translate(530, 102)">
+    <g class="grid-item item-3">
+      <rect x="0" y="-8" width="6" height="6" fill="#ffffff" />
+      <text class="font-grotesk" x="18" y="0" font-size="13" fill="#ffffff" font-weight="600">Contributing to open-source</text>
+      <text class="font-grotesk" x="18" y="16" font-size="12" fill="#888888">tools, workflows, and developer packages.</text>
+    </g>
   </g>
 
-  <!-- Item 4 (right, row 2) -->
-  <g class="grid-item item-4" transform="translate(530,155)">
-    <rect x="0" y="-8" width="8" height="8" fill="#ffffff"/>
-    <text class="font-grotesk" x="18" y="0"
-      font-size="13" fill="#cccccc">Refining full-stack workflows</text>
-    <text class="font-grotesk" x="18" y="17"
-      font-size="13" fill="#cccccc">with Docker and CI/CD</text>
+  <!-- Right Column - Item 4 -->
+  <g transform="translate(530, 157)">
+    <g class="grid-item item-4">
+      <rect x="0" y="-8" width="6" height="6" fill="#ffffff" />
+      <text class="font-grotesk" x="18" y="0" font-size="13" fill="#ffffff" font-weight="600">Refining full-stack systems</text>
+      <text class="font-grotesk" x="18" y="16" font-size="12" fill="#888888">using Docker containers and CI/CD pipelines.</text>
+    </g>
   </g>
 </svg>

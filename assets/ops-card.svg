@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="100%" style="display:block;">
   <defs>
+    <pattern id="ops-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#141414" />
+    </pattern>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@300;400;700&amp;display=swap');
 
@@ -187,6 +190,7 @@
 
   <!-- Black background -->
   <rect width="1000" height="280" fill="#000000" rx="4"/>
+  <rect width="1000" height="280" fill="url(#ops-grid)" rx="4"/>
 
   <!-- Outer border (draws itself) -->
   <rect class="card-border" x="1" y="1" width="998" height="278" rx="4" filter="url(#cardGlow)"/>

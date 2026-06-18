@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="100%">
+  <defs>
+    <pattern id="about-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#141414" />
+    </pattern>
+  </defs>
   <style>
     .card-border {
       fill: none;
@@ -97,6 +102,7 @@
 
   <!-- Background -->
   <rect width="820" height="380" fill="#000000" rx="10"/>
+  <rect width="820" height="380" fill="url(#about-grid)" rx="10"/>
 
   <!-- Corner accents -->
   <g class="corner">

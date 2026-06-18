@@ -102,18 +102,22 @@
 
 <table width="100%">
   <tr>
-    <td width="50%" align="center" valign="top">
+    <td align="center" style="padding: 10px 0;">
       <img src="https://github-readme-stats.vercel.app/api?username=Creepyclient&amp;show_icons=true&amp;bg_color=000000&amp;title_color=ffffff&amp;icon_color=ffffff&amp;text_color=888888&amp;border_color=333333&amp;rank_icon=github" width="100%" alt="GitHub Stats" />
     </td>
-    <td width="50%" align="center" valign="top">
+  </tr>
+  <tr>
+    <td align="center" style="padding: 10px 0;">
       <img src="https://streak-stats.demolab.com/?user=Creepyclient&amp;background=000000&amp;stroke=333333&amp;ring=ffffff&amp;fire=ffffff&amp;currStreakNum=ffffff&amp;sideNums=888888&amp;currStreakLabel=888888&amp;sideLabels=888888&amp;dates=555555&amp;border=333333" width="100%" alt="GitHub Streak" />
     </td>
   </tr>
   <tr>
-    <td width="50%" align="center" valign="top">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Creepyclient&amp;layout=compact&amp;bg_color=000000&amp;title_color=ffffff&amp;text_color=888888&amp;border_color=333333&amp;langs_count=8" width="100%" alt="Top Languages" />
+    <td align="center" style="padding: 10px 0;">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Creepyclient&amp;bg_color=000000&amp;title_color=ffffff&amp;text_color=888888&amp;border_color=333333&amp;langs_count=8" width="100%" alt="Top Languages" />
     </td>
-    <td width="50%" align="center" valign="top">
+  </tr>
+  <tr>
+    <td align="center" style="padding: 10px 0;">
       <img src="https://github-readme-activity-graph.vercel.app/graph?username=Creepyclient&amp;bg_color=000000&amp;color=ffffff&amp;line=ffffff&amp;point=ffffff&amp;area=true&amp;area_color=1a1a1a&amp;hide_border=true&amp;title_color=ffffff" width="100%" alt="Activity Graph" />
     </td>
   </tr>

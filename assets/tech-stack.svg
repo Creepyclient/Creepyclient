@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 180" width="100%">
+  <defs>
+    <!-- Dot Grid Pattern -->
+    <pattern id="tech-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#141414" />
+    </pattern>
+
+    <style>
+      .font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .font-grotesk { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; }
+
+      /* Outer border draw */
+      .border-outer {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 2360;
+        stroke-dashoffset: 2360;
+        animation: borderDraw 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      @keyframes borderDraw { to { stroke-dashoffset: 0; } }
+
+      /* Corner brackets */
+      .bracket { fill: none; stroke: #333333; stroke-width: 1.2; }
+
+      /* Title */
+      .title {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        fill: #ffffff;
+        letter-spacing: 3px;
+        opacity: 0;
+        animation: fadeIn 0.5s ease 1s forwards;
+      }
+      @keyframes fadeIn { to { opacity: 1; } }
+
+      /* Underline */
+      .underline {
+        stroke: #ffffff;
+        stroke-width: 0.8;
+        stroke-dasharray: 940;
+        stroke-dashoffset: 940;
+        animation: lineDraw 1s ease 1.2s forwards;
+      }
+      @keyframes lineDraw { to { stroke-dashoffset: 0; } }
+
+      /* Skill group stagger */
+      .skill-group {
+        opacity: 0;
+        animation: itemFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .sg-1 { animation-delay: 1.4s; }
+      .sg-2 { animation-delay: 1.5s; }
+      .sg-3 { animation-delay: 1.6s; }
+      .sg-4 { animation-delay: 1.7s; }
+      .sg-5 { animation-delay: 1.8s; }
+      .sg-6 { animation-delay: 1.9s; }
+      .sg-7 { animation-delay: 2.0s; }
+      .sg-8 { animation-delay: 2.1s; }
+
+      @keyframes itemFade {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Bar track */
+      .bar-track { fill: #111111; rx: 1; }
+      
+      /* Bar fill */
+      .bar-fill {
+        fill: #ffffff;
+        rx: 1;
+        transform-origin: left center;
+        transform-box: fill-box;
+        transform: scaleX(0);
+        animation: growBar 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+      .sg-1 .bar-fill { animation-delay: 1.8s; }
+      .sg-2 .bar-fill { animation-delay: 1.9s; }
+      .sg-3 .bar-fill { animation-delay: 2.0s; }
+      .sg-4 .bar-fill { animation-delay: 2.1s; }
+      .sg-5 .bar-fill { animation-delay: 2.2s; }
+      .sg-6 .bar-fill { animation-delay: 2.3s; }
+      .sg-7 .bar-fill { animation-delay: 2.4s; }
+      .sg-8 .bar-fill { animation-delay: 2.5s; }
+
+      @keyframes growBar {
+        to { transform: scaleX(1); }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="180" fill="#000000" />
+  <rect width="1000" height="180" fill="url(#tech-grid)" />
+
+  <!-- Outer Border -->
+  <rect class="border-outer" x="1" y="1" width="998" height="178" rx="0" />
+
+  <!-- Corner Brackets -->
+  <g class="bracket">
+    <path d="M 1,15 L 1,1 L 15,1" />
+    <path d="M 985,1 L 999,1 L 999,15" />
+    <path d="M 1,165 L 1,179 L 15,179" />
+    <path d="M 985,179 L 999,179 L 999,165" />
+  </g>
+
+  <!-- Section Title -->
+  <text class="title" x="30" y="38">[TECHNICAL_CORE_STACK]</text>
+  <line class="underline" x1="30" y1="48" x2="970" y2="48" />
+
+  <!-- SKILL 1: Python (x=50) -->
+  <g class="skill-group sg-1" transform="translate(50, 65)">
+    <!-- Mini Python Symbol -->
+    <path d="M 16,5 C 16,1, 20,0, 25,0 C 30,0, 34,1, 34,5 L 34,14 L 25,14 C 22,14, 21,16, 21,18 L 21,20 L 16,20 C 13,20, 12,22, 12,25 C 12,29, 13,31, 16,31 L 21,31 L 21,29 C 21,25, 23,23, 27,23 L 36,23 C 39,23, 40,21, 40,18 L 40,13 C 40,9, 36,8, 32,8 L 30,8 L 30,5 C 30,2, 27,2, 25,2 C 23,2, 20,2, 20,5 L 20,7 C 20,9, 18,10, 16,10 L 12,10 C 9,10, 8,12, 8,15 L 8,18 C 8,21, 9,22, 12,22 L 15,22 L 15,5 Z" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <circle cx="27" cy="4" r="1" fill="#ffffff" />
+    <circle cx="21" cy="27" r="1" fill="#ffffff" />
+
+    <text class="font-mono" x="24" y="52" font-size="10" fill="#ffffff" text-anchor="middle">PYTHON</text>
+    <rect class="bar-track" x="0" y="62" width="48" height="3" />
+    <rect class="bar-fill" x="0" y="62" width="42" height="3" /> <!-- 88% -->
+  </g>
+
+  <!-- SKILL 2: JavaScript (x=168) -->
+  <g class="skill-group sg-2" transform="translate(168, 65)">
+    <!-- JS Square -->
+    <rect x="8" y="0" width="32" height="32" rx="2" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <text class="font-mono" x="29" y="24" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">JS</text>
+
+    <text class="font-mono" x="24" y="52" font-size="10" fill="#ffffff" text-anchor="middle">JAVASCRIPT</text>
+    <rect class="bar-track" x="0" y="62" width="48" height="3" />
+    <rect class="bar-fill" x="0" y="62" width="46" height="3" /> <!-- 95% -->
+  </g>
+
+  <!-- SKILL 3: React (x=286) -->
+  <g class="skill-group sg-3" transform="translate(286, 65)">
+    <!-- React ellipses -->
+    <ellipse cx="24" cy="16" rx="6" ry="16" transform="rotate(30 24 16)" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <ellipse cx="24" cy="16" rx="6" ry="16" transform="rotate(90 24 16)" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <ellipse cx="24" cy="16" rx="6" ry="16" transform="rotate(150 24 16)" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <circle cx="24" cy="16" r="2.5" fill="#ffffff" />
+
+    <text class="font-mono" x="24" y="52" font-size="10" fill="#ffffff" text-anchor="middle">REACT</text>
+    <rect class="bar-track" x="0" y="62" width="48" height="3" />
+    <rect class="bar-fill" x="0" y="62" width="44" height="3" /> <!-- 92% -->
+  </g>
+
+  <!-- SKILL 4: Next.js / HTML (x=404) -->
+  <g class="skill-group sg-4" transform="translate(404, 65)">
+    <!-- Custom geometric shape representing Next -->
+    <circle cx="24" cy="16" r="16" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <path d="M 16,24 L 28,10 L 29,10 L 29,22 L 32,22" fill="none" stroke="#ffffff" stroke-width="1.2" />
+
+    <text class="font-mono" x="24" y="52" font-size="10" fill="#ffffff" text-anchor="middle">NEXT.JS</text>
+    <rect class="bar-track" x="0" y="62" width="48" height="3" />
+    <rect class="bar-fill" x="0" y="62" width="43" height="3" /> <!-- 90% -->
+  </g>
+
+  <!-- SKILL 5: Node.js (x=522) -->
+  <g class="skill-group sg-5" transform="translate(522, 65)">
+    <!-- Hexagon Node shape -->
+    <path d="M 24,2 L 38,10 L 38,26 L 24,34 L 10,26 L 10,10 Z" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <path d="M 24,10 L 24,26" fill="none" stroke="#ffffff" stroke-width="1" />
+
+    <text class="font-mono" x="24" y="52" font-size="10" fill="#ffffff" text-anchor="middle">NODE.JS</text>
+    <rect class="bar-track" x="0" y="62" width="48" height="3" />
+    <rect class="bar-fill" x="0" y="62" width="41" height="3" /> <!-- 85% -->
+  </g>
+
+  <!-- SKILL 6: Docker (x=640) -->
+  <g class="skill-group sg-6" transform="translate(640, 65)">
+    <!-- Docker stack -->
+    <rect x="14" y="8" width="6" height="6" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <rect x="21" y="8" width="6" height="6" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <rect x="28" y="8" width="6" height="6" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <rect x="17" y="15" width="6" height="6" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <rect x="24" y="15" width="6" height="6" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <path d="M 8,24 C 8,24 12,26 24,26 C 36,26 40,24 40,24" fill="none" stroke="#ffffff" stroke-width="1.2" />
+
+    <text class="font-mono" x="24" y="52" font-size="10" fill="#ffffff" text-anchor="middle">DOCKER</text>
+    <rect class="bar-track" x="0" y="62" width="48" height="3" />
+    <rect class="bar-fill" x="0" y="62" width="38" height="3" /> <!-- 80% -->
+  </g>
+
+  <!-- SKILL 7: Linux (x=758) -->
+  <g class="skill-group sg-7" transform="translate(758, 65)">
+    <!-- Geometric penguin outline -->
+    <path d="M 24,4 C 20,4 17,9 17,14 C 17,16 15,17 14,20 C 13,23 15,28 24,28 C 33,28 35,23 34,20 C 33,17 31,16 31,14 C 31,9 28,4 24,4 Z" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <line x1="20" y1="12" x2="21" y2="12" stroke="#ffffff" stroke-width="1.5" />
+    <line x1="27" y1="12" x2="28" y2="12" stroke="#ffffff" stroke-width="1.5" />
+    <path d="M 19,20 C 22,22 26,22 29,20" fill="none" stroke="#ffffff" stroke-width="1" />
+
+    <text class="font-mono" x="24" y="52" font-size="10" fill="#ffffff" text-anchor="middle">LINUX</text>
+    <rect class="bar-track" x="0" y="62" width="48" height="3" />
+    <rect class="bar-fill" x="0" y="62" width="45" height="3" /> <!-- 94% -->
+  </g>
+
+  <!-- SKILL 8: Git (x=876) -->
+  <g class="skill-group sg-8" transform="translate(876, 65)">
+    <!-- Branch shape -->
+    <circle cx="16" cy="24" r="3" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <circle cx="16" cy="8" r="3" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <circle cx="32" cy="14" r="3" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <line x1="16" y1="21" x2="16" y2="11" stroke="#ffffff" stroke-width="1.2" />
+    <path d="M 16,18 C 22,18 26,17 32,17" fill="none" stroke="#ffffff" stroke-width="1.2" />
+
+    <text class="font-mono" x="24" y="52" font-size="10" fill="#ffffff" text-anchor="middle">GIT</text>
+    <rect class="bar-track" x="0" y="62" width="48" height="3" />
+    <rect class="bar-fill" x="0" y="62" width="44" height="3" /> <!-- 92% -->
+  </g>
+</svg>

@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="100%">
+  <defs>
+    <!-- Dot Grid Pattern -->
+    <pattern id="stats-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#141414" />
+    </pattern>
+
+    <style>
+      .font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .font-grotesk { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; }
+
+      /* Outer border draw */
+      .border-outer {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 2760;
+        stroke-dashoffset: 2760;
+        animation: borderDraw 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      @keyframes borderDraw { to { stroke-dashoffset: 0; } }
+
+      /* Divider lines */
+      .divider {
+        stroke: #ffffff;
+        stroke-width: 1;
+        stroke-dasharray: 4 6;
+        opacity: 0;
+        animation: fadeLine 0.5s ease 1.2s forwards;
+      }
+      @keyframes fadeLine { to { opacity: 0.15; } }
+
+      /* Column sections fade-up */
+      .col-group {
+        opacity: 0;
+        animation: colFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .col-1 { animation-delay: 0.4s; }
+      .col-2 { animation-delay: 0.7s; }
+      .col-3 { animation-delay: 1.0s; }
+
+      @keyframes colFadeUp {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Titles and text */
+      .col-title {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        fill: #ffffff;
+        letter-spacing: 3px;
+        font-weight: 700;
+      }
+      .col-underline {
+        stroke: #ffffff;
+        stroke-width: 0.8;
+        stroke-dasharray: 260;
+        stroke-dashoffset: 260;
+        animation: underDraw 1s ease forwards;
+      }
+      .col-1 .col-underline { animation-delay: 0.6s; }
+      .col-2 .col-underline { animation-delay: 0.9s; }
+      .col-3 .col-underline { animation-delay: 1.2s; }
+
+      @keyframes underDraw { to { stroke-dashoffset: 0; } }
+
+      /* Key value rows */
+      .stat-key {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        fill: #444444;
+        letter-spacing: 1.5px;
+      }
+      .stat-val {
+        font-family: 'Space Grotesk', system-ui, sans-serif;
+        font-size: 13px;
+        fill: #ffffff;
+        font-weight: 600;
+      }
+
+      /* Hexagon rank display */
+      .rank-hex {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1.5;
+        stroke-dasharray: 180;
+        stroke-dashoffset: 180;
+        animation: hexDraw 1.2s ease 1.2s forwards;
+      }
+      @keyframes hexDraw { to { stroke-dashoffset: 0; } }
+
+      .rank-glow {
+        stroke: #ffffff;
+        stroke-width: 4;
+        opacity: 0.2;
+        fill: none;
+      }
+
+      /* Horizontal Bar Charts */
+      .bar-track { fill: #111111; rx: 2; }
+      .bar-fill {
+        fill: #ffffff;
+        rx: 2;
+        transform-origin: left center;
+        transform-box: fill-box;
+        transform: scaleX(0);
+        animation: barFill 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+      .bar-fill-1 { animation-delay: 1.2s; }
+      .bar-fill-2 { animation-delay: 1.4s; }
+      .bar-fill-3 { animation-delay: 1.6s; }
+      .bar-fill-4 { animation-delay: 1.8s; }
+
+      @keyframes barFill { to { transform: scaleX(1); } }
+
+      /* Bouncing Waveform */
+      .wave-path {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        animation: waveDraw 2.5s cubic-bezier(0.77, 0, 0.175, 1) 1.5s forwards;
+      }
+      @keyframes waveDraw { to { stroke-dashoffset: 0; } }
+
+      .bracket { fill: none; stroke: #333333; stroke-width: 1.2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="380" fill="#000000" rx="0" />
+  <rect width="1000" height="380" fill="url(#stats-grid)" rx="0" />
+
+  <!-- Outer Border -->
+  <rect class="border-outer" x="1" y="1" width="998" height="378" rx="0" />
+
+  <!-- Corner Brackets -->
+  <g class="bracket">
+    <path d="M 1,15 L 1,1 L 15,1" />
+    <path d="M 985,1 L 999,1 L 999,15" />
+    <path d="M 1,365 L 1,379 L 15,379" />
+    <path d="M 985,379 L 999,379 L 999,365" />
+  </g>
+
+  <!-- Vertical Dividers -->
+  <line class="divider" x1="333" y1="20" x2="333" y2="360" />
+  <line class="divider" x1="666" y1="20" x2="666" y2="360" />
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- COLUMN 1: TELEMETRY (x=50)            -->
+  <!-- ══════════════════════════════════════ -->
+  <g class="col-group col-1" transform="translate(50, 45)">
+    <text class="col-title" x="0" y="0">[SYS_TELEMETRY: OK]</text>
+    <line class="col-underline" x1="0" y1="8" x2="250" y2="8" />
+
+    <!-- Stat Rows -->
+    <g transform="translate(0, 40)">
+      <text class="stat-key" x="0" y="0">TOTAL_COMMITS</text>
+      <text class="stat-val" x="0" y="18">1,496 Commits</text>
+    </g>
+
+    <g transform="translate(0, 95)">
+      <text class="stat-key" x="0" y="0">MERGED_PRS</text>
+      <text class="stat-val" x="0" y="18">94 Pull Requests</text>
+    </g>
+
+    <g transform="translate(0, 150)">
+      <text class="stat-key" x="0" y="0">OPEN_ISSUES</text>
+      <text class="stat-val" x="0" y="18">42 Solved</text>
+    </g>
+
+    <g transform="translate(0, 205)">
+      <text class="stat-key" x="0" y="0">STARS_EARNED</text>
+      <text class="stat-val" x="0" y="18">18 Stars</text>
+    </g>
+
+    <!-- Rank Hexagon Frame (Lower right of col 1, centered around x=200, y=245) -->
+    <g transform="translate(180, 205)">
+      <!-- Hexagon points: 30 wide, 35 high -->
+      <polygon class="rank-glow" points="25,0 50,15 50,45 25,60 0,45 0,15" />
+      <polygon class="rank-hex" points="25,0 50,15 50,45 25,60 0,45 0,15" />
+      <text class="font-mono" x="25" y="34" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">A++</text>
+      <text class="font-mono" x="25" y="72" font-size="7" fill="#888888" letter-spacing="1" text-anchor="middle">RANK</text>
+    </g>
+  </g>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- COLUMN 2: LANGUAGES (x=383)           -->
+  <!-- ══════════════════════════════════════ -->
+  <g class="col-group col-2" transform="translate(383, 45)">
+    <text class="col-title" x="0" y="0">[LANG_DISTRIBUTION]</text>
+    <line class="col-underline" x1="0" y1="8" x2="250" y2="8" />
+
+    <!-- Language 1: JavaScript (42%) -->
+    <g transform="translate(0, 40)">
+      <text class="font-mono" x="0" y="0" font-size="10" fill="#ffffff" font-weight="700">JAVASCRIPT</text>
+      <text class="font-mono" x="250" y="0" font-size="9" fill="#888888" text-anchor="end">42%</text>
+      <rect class="bar-track" x="0" y="8" width="250" height="6" />
+      <rect class="bar-fill bar-fill-1" x="0" y="8" width="105" height="6" /> <!-- 42% -->
+    </g>
+
+    <!-- Language 2: Python (28%) -->
+    <g transform="translate(0, 100)">
+      <text class="font-mono" x="0" y="0" font-size="10" fill="#ffffff" font-weight="700">PYTHON</text>
+      <text class="font-mono" x="250" y="0" font-size="9" fill="#888888" text-anchor="end">28%</text>
+      <rect class="bar-track" x="0" y="8" width="250" height="6" />
+      <rect class="bar-fill bar-fill-2" x="0" y="8" width="70" height="6" /> <!-- 28% -->
+    </g>
+
+    <!-- Language 3: React / TypeScript (20%) -->
+    <g transform="translate(0, 160)">
+      <text class="font-mono" x="0" y="0" font-size="10" fill="#ffffff" font-weight="700">TYPESCRIPT</text>
+      <text class="font-mono" x="250" y="0" font-size="9" fill="#888888" text-anchor="end">20%</text>
+      <rect class="bar-track" x="0" y="8" width="250" height="6" />
+      <rect class="bar-fill bar-fill-3" x="0" y="8" width="50" height="6" /> <!-- 20% -->
+    </g>
+
+    <!-- Language 4: HTML/CSS/C++ (10%) -->
+    <g transform="translate(0, 220)">
+      <text class="font-mono" x="0" y="0" font-size="10" fill="#ffffff" font-weight="700">C++ / OTHERS</text>
+      <text class="font-mono" x="250" y="0" font-size="9" fill="#888888" text-anchor="end">10%</text>
+      <rect class="bar-track" x="0" y="8" width="250" height="6" />
+      <rect class="bar-fill bar-fill-4" x="0" y="8" width="25" height="6" /> <!-- 10% -->
+    </g>
+
+    <text class="font-mono" x="125" y="304" font-size="8" fill="#444444" text-anchor="middle" letter-spacing="1">INDEXED_COMPILATION: COMPLETE</text>
+  </g>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- COLUMN 3: STREAK & GRAPH (x=716)      -->
+  <!-- ══════════════════════════════════════ -->
+  <g class="col-group col-3" transform="translate(716, 45)">
+    <text class="col-title" x="0" y="0">[SYS_STREAK_METRICS]</text>
+    <line class="col-underline" x1="0" y1="8" x2="250" y2="8" />
+
+    <!-- Streaks info side by side -->
+    <g transform="translate(0, 32)">
+      <text class="stat-key" x="0" y="0">CURRENT_STREAK</text>
+      <text class="stat-val" x="0" y="16" fill="#ffffff">32 Days</text>
+    </g>
+
+    <g transform="translate(130, 32)">
+      <text class="stat-key" x="0" y="0">MAX_STREAK</text>
+      <text class="stat-val" x="0" y="16" fill="#888888">84 Days</text>
+    </g>
+
+    <!-- Contribution waveform graph container -->
+    <g transform="translate(0, 85)">
+      <text class="stat-key" x="0" y="0">WEEKLY_COMMITS_WAVE</text>
+      
+      <!-- Graph Frame -->
+      <rect x="0" y="10" width="250" height="180" fill="#030303" stroke="#222222" stroke-width="0.5" />
+      
+      <!-- Grid Lines Inside -->
+      <line x1="50"  y1="10" x2="50"  y2="190" stroke="#111111" stroke-width="0.5" />
+      <line x1="100" y1="10" x2="100" y2="190" stroke="#111111" stroke-width="0.5" />
+      <line x1="150" y1="10" x2="150" y2="190" stroke="#111111" stroke-width="0.5" />
+      <line x1="200" y1="10" x2="200" y2="190" stroke="#111111" stroke-width="0.5" />
+      <line x1="0"   y1="55"  x2="250" y2="55"  stroke="#111111" stroke-width="0.5" />
+      <line x1="0"   y1="100" x2="250" y2="100" stroke="#111111" stroke-width="0.5" />
+      <line x1="0"   y1="145" x2="250" y2="145" stroke="#111111" stroke-width="0.5" />
+
+      <!-- Waveform path (Draws itself on load) -->
+      <!-- x coordinates range from 10 to 240, y from 40 to 180 -->
+      <path class="wave-path" d="M 10,170 C 30,170, 40,80, 60,80 C 80,80, 90,150, 110,150 C 130,150, 140,50, 160,50 C 180,50, 190,140, 210,140 C 230,140, 235,90, 240,90" />
+      
+      <!-- Graph tags -->
+      <text class="font-mono" x="10" y="18" font-size="6" fill="#444444">Y_VAL: COMMITS</text>
+      <text class="font-mono" x="240" y="18" font-size="6" fill="#444444" text-anchor="end">X_VAL: 7_DAYS</text>
+    </g>
+  </g>
+</svg>
